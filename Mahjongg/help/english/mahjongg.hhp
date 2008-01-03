@@ -1,0 +1,82 @@
+[OPTIONS]
+Compatibility=1.1 or later
+Compiled file=mahjongg.chm
+Contents file=mahjongg.hhc
+Default Font=Tahoma,8,0
+Default topic=getting_started.htm
+Display compile notes=No
+Display compile progress=No
+Enhanced decompilation=Yes
+Flat=Yes
+Full-text search=Yes
+Index file=mahjongg.hhk
+Language=0x409 English (United States)
+Title=Amazing Mahjongg 3D
+
+
+[FILES]
+tileset.htm
+about.htm
+author.htm
+ch_customize.htm
+ch_game.htm
+ch_support.htm
+controls.htm
+cust_layouts.htm
+cust_pictures.htm
+cust_preferences.htm
+cust_tilesets.htm
+faq.htm
+getting_started.htm
+mainmenu.htm
+overview.htm
+requirements.htm
+rules.htm
+savegame.htm
+support.htm
+make_tileset.htm
+..\tileset\01.jpg
+..\tileset\02.jpg
+..\tileset\03.jpg
+..\tileset\04.jpg
+..\tileset\05.jpg
+..\tileset\06.jpg
+..\tileset\07.jpg
+..\tileset\08.jpg
+..\tileset\09.jpg
+..\tileset\10.jpg
+..\tileset\11.jpg
+..\tileset\12.jpg
+..\tileset\13.jpg
+..\tileset\14.jpg
+..\tileset\15.jpg
+..\tileset\16.jpg
+..\tileset\17.jpg
+..\tileset\18.jpg
+..\tileset\19.jpg
+..\tileset\20.jpg
+..\tileset\21.jpg
+..\tileset\22.jpg
+..\tileset\23.jpg
+..\tileset\24.jpg
+..\tileset\25.jpg
+..\tileset\26.jpg
+..\tileset\27.jpg
+..\tileset\28.jpg
+..\tileset\29.jpg
+..\tileset\30.jpg
+..\tileset\31.jpg
+..\tileset\32.jpg
+..\tileset\33.jpg
+..\tileset\34.jpg
+..\tileset\35.jpg
+..\tileset\36.jpg
+..\tileset\37.jpg
+..\tileset\38.jpg
+..\tileset\39.jpg
+..\tileset\40.jpg
+..\tileset\41.jpg
+..\tileset\42.jpg
+
+[INFOTYPES]
+

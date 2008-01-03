@@ -1,0 +1,56 @@
+body
+{
+  background-color : #FFFFFF;    
+}
+h1
+{
+  font-family : arial;
+  font-size : 16pt;
+  color : #000000;
+  text-align : center;
+  padding : 0 0 0 0;
+}
+h2
+{
+  font-family : arial;
+  font-size : 14pt;
+  color : #000000;
+  padding : 0 0 0 0;
+}
+h3
+{
+  font-family : arial;
+  font-size : 12pt;
+  color : #000000;
+  padding : 0 0 0 0;
+}
+p,ul,ol,li
+{
+  font-family : verdana,tahoma,arial,helvetica;
+  font-size : 10pt;
+  color : #000000;
+  padding : 0 0 0 0;
+  margin : 5 5 5 5;
+}
+.footer
+{
+  font-size : 8pt;
+  text-align : center;
+}
+.menuitem
+{
+  background-color : #A0A0A0;
+  color : #000000;
+  font-family : Arial;
+  font-size : 8pt;
+  padding : 0 0 0 0;
+}
+.highlight
+{
+  font-family : courier;
+  font-size : 10pt;
+  font-weight : bold;
+  color : #004080;
+  padding : 0 0 0 0;
+  margin : 5 5 5 5;
+}

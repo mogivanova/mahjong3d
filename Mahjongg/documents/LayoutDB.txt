@@ -1,0 +1,15 @@
+Layout DB
+
+- Name
+- URL
+
+Tile set DB
+
+- Name
+- URL
+
+
+Version DB
+- version
+- file URL
+- ?whatsnew URL

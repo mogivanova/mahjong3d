@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="windows-1251"?>
+<language>
+  <version>1.1.11</version>
+  <language_name>Russian</language_name>
+  <language_local_name>Русский</language_local_name>
+  <author>Thinking Thing Software</author>
+  <codepage>Cyrillic</codepage>
+  <strings>
+    <!-- menu description -->
+    <menu_game>&amp;Игра</menu_game>
+    <menu_game_new>Новая\tF3</menu_game_new>
+    <menu_game_repeat>Повторить\tCtrl+R</menu_game_repeat>
+    <menu_game_save>Сохранить...\tCtrl+S</menu_game_save>
+    <menu_game_load>Загрузить...\tCtrl+L</menu_game_load>
+    <menu_game_exit>&amp;Выход\tAlt+X</menu_game_exit>
+    
+    <menu_play>Управление</menu_play>
+    <menu_play_undo>Отменить ход\tBackspace</menu_play_undo>
+    <menu_play_player_name>Игрок...</menu_play_player_name>
+    <menu_play_scores>Таблица рекордов</menu_play_scores>
+    <menu_play_default_view>Вид по умолчанию\tC</menu_play_default_view>
+    
+    <menu_settings>Настройки</menu_settings>
+      <menu_settings_background>&amp;Фон</menu_settings_background>
+        <menu_settings_background_default>Картинка по умолчанию</menu_settings_background_default>
+        <menu_settings_background_solid>Задать цвет...</menu_settings_background_solid>
+        <menu_settings_background_load>Загрузить картинку...</menu_settings_background_load>
+      <menu_settings_tileset>&amp;Набор фишек</menu_settings_tileset>
+        <menu_settings_tileset_default>Набор фишек по умолчанию</menu_settings_tileset_default>
+        <menu_settings_tileset_load>Загрузить набор фишек...</menu_settings_tileset_load>
+      <menu_settings_layout>&amp;Раскладка</menu_settings_layout>
+        <menu_settings_layout_default>Традиционная раскладка</menu_settings_layout_default>
+        <menu_settings_layout_load>Загрузить раскладку...</menu_settings_layout_load>
+      <menu_settings_options>Настройки...</menu_settings_options>
+      
+      <menu_help>Помощь</menu_help>
+        <menu_help_contents>Содержание</menu_help_contents>
+        <menu_help_about>О программе...\tF1</menu_help_about>
+      
+
+    <!-- dialogs and controls -->
+    <str_ok>OK</str_ok>
+    <str_cancel>Отмена</str_cancel>
+    <str_buy_now>Купить!</str_buy_now>
+    <str_enter_key>Ввести ключ...</str_enter_key>
+    <str_loading>Загружается...</str_loading>
+    <str_new_game>Текущая игра будет закончена и начата новая.\nВы согласны?</str_new_game>
+    <str_trial_left>Незарегистрированная копия Amazing Mahjongg 3D!\nОсталось %d дней из %d-дней.</str_trial_left>
+    <str_version>Amazing Mahjongg 3D\nВерсия %d.%d\n\0xa92000-2002 Thinking Thing Software</str_version>
+    <str_unregistered>Незарегистрированная копия!</str_unregistered>
+    <str_text_hits_for_beginners>Подсказки для начинающих</str_text_hits_for_beginners>
+    <str_right_button_hints>Подсказка по правой кнопке мыши</str_right_button_hints>
+    <str_smart_cursor>Менять форму курсора</str_smart_cursor>
+    <str_auto_save_game>Автоматическое сохранение</str_auto_save_game>
+    <str_generate_solvable_boards>Низкая сложность</str_generate_solvable_boards>
+    <str_blocked_tiles_upside_down>Переворачивать заблокированные фишки</str_blocked_tiles_upside_down>
+    <str_tile_geometry>Детализация фишек</str_tile_geometry>
+    <str_low_quality_tiles>Фишки низкого качества</str_low_quality_tiles>
+    <str_medium_quality_tiles>Фишки среднего качества</str_medium_quality_tiles>
+    <str_high_quality_tiles>Фишки выского качества</str_high_quality_tiles>
+    <str_high_quality_tile_textures>Высокое качество текстур</str_high_quality_tile_textures>
+    <str_textured_tile_sides>Текстуры на боковых поверхностях</str_textured_tile_sides>
+    <str_high_quality_background>Фон высокго качества</str_high_quality_background>
+    <str_smooth_tiles>Сглаживать фишки</str_smooth_tiles>
+    <str_textures>Текстуры</str_textures>
+    <str_sound>Звук</str_sound>
+    <str_select_language>Выберите язык интерфейса</str_select_language>
+
+    <caption_options>Настройки</caption_options>
+    <str_layout_filter>Раскладки (*.mjl, *.lay)\n*.mjl;*.lay\nРаскладки Amazing Mahjongg 3D (*.mjl)\n*.mjl\nРаскладки Kyodai (*.lay)\n*.lay\nВсе файлы (*.*)\n*.*\n</str_layout_filter>
+    <str_description>Описание</str_description>
+    <caption_layouts>Раскладки</caption_layouts>
+    <str_browse>Выбрать...</str_browse>
+    <str_tileset_filter>Наборы фишек (*.mjt, *.jpg)\n*.mjt;*.jpg\nНаборы фишек Amazing Mahjongg 3D (*.mjt)\n*.mjt\nНаборы фишек Kyodai (*.jpg)\n*.jpg\nВсе файлы (*.*)\n*.*\n</str_tileset_filter>
+    <str_tileset_default>Традиционный</str_tileset_default>
+    <str_author>Автор</str_author>
+    <caption_tile_sets>Наборы фишек</caption_tile_sets>
+    <str_image_filter>Графические файлы (*.jpg)\n*.jpg\nФайлы JPEG (*.jpg)\n*.jpg\nВсе файлы (*.*)\n*.*\n</str_image_filter>
+    <caption_scores>Таблица рекордов</caption_scores>
+    <str_close>Закрыть</str_close>
+    <str_replay>Повторить</str_replay>
+    <str_played>Время игры</str_played>
+    <str_started>Начата</str_started>
+    <str_player>Игрок</str_player>
+    <str_save_game_filter>Сохранённые игры (*.mjs)\n*.mjs\nВсе файлы (*.*)\n*.*\n</str_save_game_filter>
+
+    <!-- various strings -->
+    <str_default>По умолчанию</str_default>
+    <str_tiles_left_template>Фишек: 0000</str_tiles_left_template>
+    <str_game_time_days_template>Время: 00 дней 00:00:00</str_game_time_days_template>
+    <str_game_options>Игра</str_game_options>
+    <str_video_options>Видео</str_video_options>
+    <str_sound_options>Звук</str_sound_options>
+    <str_language_options>Языки</str_language_options>
+    <str_tiles_not_equal>Эти фишки не могут быть удалены, так как они не совпадают!</str_tiles_not_equal>
+    <str_tile_blocked>Эта фишка заблокирована и не может быть выбрана!</str_tile_blocked>
+    <caption_about>О программе</caption_about>
+    <caption_player_name>Имя игрока</caption_player_name>
+    <str_enter_name>Пожалуйста, введите имя игрока</str_enter_name>
+    <caption_hint>Подсказка!</caption_hint>
+    <str_do_not_show_hints>Не показывать подсказки</str_do_not_show_hints>
+
+    <caption_error>Ошибка!</caption_error>
+    <error_no_driver>Ошибка OpenGL!\nПожалуйста переустановите Amazing Mahjongg 3D</error_no_driver>
+    <error_256colors>Amazing Mahjongg 3D не работает в 256-цветном режиме!</error_256colors>
+    <error_16colors>Amazing Mahjongg 3D не работает в 16-цветном режиме!</error_16colors>
+    <error_mono>Amazing Mahjongg 3D не работает в монохромном режиме!</error_mono>
+    
+    <caption_tile_sets>Наборы фишек</caption_tile_sets>
+    
+    <str_tiles_left>Фишек: %3d</str_tiles_left>
+
+    <str_game_time_days>Время: %ld дней %02d:%02d:%02d</str_game_time_days>   
+    <str_game_time_hours>Время: %02d:%02d:%02d</str_game_time_hours>
+    <str_game_time>Время: %02d:%02d</str_game_time>
+    
+    <str_status>Набор фишек: %s. Раскладка: %s.</str_status>
+
+    <str_interface_options>Интерфейс</str_interface_options>
+
+    <str_select_skin>Поддержка скинов</str_select_skin>
+    <str_skin_enabled>Использовать скины</str_skin_enabled>
+
+    <str_tile_is_blocked>Фишка заблокирована</str_tile_is_blocked>
+    <str_no_matching_tiles>Нет парных фишек</str_no_matching_tiles>
+    <str_1_matching_tile>Одна парная фишка</str_1_matching_tile>
+    <str_n_matching_tiles>%d парных фишек</str_n_matching_tiles>
+
+    <str_email>E-mail</str_email>
+    <str_e-mail_addr>info@mahjongg4u.com</str_e-mail_addr>
+    <str_www>WWW</str_www>
+    <str_www_addr>http://www.mahjongg4u.com</str_www_addr>
+
+    <str_distributed_by>Distributed by</str_distributed_by>
+    
+    <str_tile_1>Единица дотов</str_tile_1>
+    <str_tile_2>Двойка дотов</str_tile_2>
+    <str_tile_3>Тройка дотов</str_tile_3>
+    <str_tile_4>Четвёрка дотов</str_tile_4>
+    <str_tile_5>Пятёрка дотов</str_tile_5>
+    <str_tile_6>Шестёрка дотов</str_tile_6>
+    <str_tile_7>Семёрка дотов</str_tile_7>
+    <str_tile_8>Восьмёрка дотов</str_tile_8>
+    <str_tile_9>Девятка дотов</str_tile_9>
+    <str_tile_10>Белый дракон</str_tile_10>
+    <str_tile_11>Единица бамбуков</str_tile_11>
+    <str_tile_12>Двойка бамбуков</str_tile_12>
+    <str_tile_13>Тройка бамбуков</str_tile_13>
+    <str_tile_14>Четвёрка бамбуков</str_tile_14>
+    <str_tile_15>Пятёрка бамбуков</str_tile_15>
+    <str_tile_16>Шестёрка бамбуков</str_tile_16>
+    <str_tile_17>Семёрка бамбуков</str_tile_17>
+    <str_tile_18>Восьмёрка бамбуков</str_tile_18>
+    <str_tile_19>Девятка бамбуков</str_tile_19>
+    <str_tile_20>Зелёный дракон</str_tile_20>
+    <str_tile_21>Единица символов</str_tile_21>
+    <str_tile_22>Двойка символов</str_tile_22>
+    <str_tile_23>Тройка символов</str_tile_23>
+    <str_tile_24>Четвёрка символов</str_tile_24>
+    <str_tile_25>Пятёрка символов</str_tile_25>
+    <str_tile_26>Шестёрка символов</str_tile_26>
+    <str_tile_27>Семёрка символов</str_tile_27>
+    <str_tile_28>Восьмёрка символов</str_tile_28>
+    <str_tile_29>Девятка символов</str_tile_29>
+    <str_tile_30>Красный дракон</str_tile_30>
+    <str_tile_31>Северный ветер</str_tile_31>
+    <str_tile_32>Южный ветер</str_tile_32>
+    <str_tile_33>Восточный ветер</str_tile_33>
+    <str_tile_34>Западный ветер</str_tile_34>
+    <str_tile_35>Весна</str_tile_35>
+    <str_tile_36>Лето</str_tile_36>
+    <str_tile_37>Осень</str_tile_37>
+    <str_tile_38>Зима</str_tile_38>
+    <str_tile_39>Слива</str_tile_39>
+    <str_tile_40>Хризантема</str_tile_40>
+    <str_tile_41>Орхидея</str_tile_41>
+    <str_tile_42>Бамбук</str_tile_42>
+
+  </strings>  
+</language>

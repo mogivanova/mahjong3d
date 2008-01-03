@@ -1,0 +1,204 @@
+<?xml version="1.0"?>
+<language>
+  <version>2.0.0</version>
+  <language_name>Dutch</language_name>
+  <language_local_name>Nederlands</language_local_name>
+  <author>Thinking Thing Software</author>
+  <codepage>Default</codepage>
+  <strings>
+    <!-- menu description -->
+    <!-- game menu -->
+    <menu_game>&amp;Spel</menu_game>
+      <menu_game_new>Nieuw\tF3</menu_game_new>
+      <menu_game_repeat>Herhaal huidig\tCtrl+R</menu_game_repeat>
+      <menu_game_save>Opslaan...\tCtrl+S</menu_game_save>
+      <menu_game_load>Laden...\tCtrl+L</menu_game_load>
+      <menu_game_exit>Sluiten\tAlt+X</menu_game_exit>
+    <!-- play menu -->        
+    <menu_play>Spelen</menu_play>
+      <menu_play_undo>Ongedaan maken</menu_play_undo>
+      <menu_play_player_name>Spelernaam...</menu_play_player_name>
+      <menu_play_scores>Scores</menu_play_scores>
+      <menu_play_default_view>Standaard weergave</menu_play_default_view>
+    <!-- settings menu -->    
+    <menu_settings>Instellingen</menu_settings>
+      <menu_settings_background>&amp;Achtergrond</menu_settings_background>
+        <menu_settings_background_default>Standaard plaatje</menu_settings_background_default>
+        <menu_settings_background_solid>Gevulde kleur...</menu_settings_background_solid>
+        <menu_settings_background_load>Laad Plaatje...</menu_settings_background_load>
+      <menu_settings_tileset>&amp;Gelijk verdelen</menu_settings_tileset>
+        <menu_settings_tileset_default>Standaard verdeling set</menu_settings_tileset_default>
+        <menu_settings_tileset_load>Laad verdeling set</menu_settings_tileset_load>
+      <menu_settings_layout>&amp;Layout</menu_settings_layout>
+        <menu_settings_layout_default>Traditionele layout</menu_settings_layout_default>
+        <menu_settings_layout_load>Laad layout...</menu_settings_layout_load>
+      <menu_settings_music>Music</menu_settings_music>
+        <menu_settings_music_default>Default music</menu_settings_music_default>
+        <menu_settings_music_nomusic>No music</menu_settings_music_nomusic>
+        <menu_settings_music_load>Load music</menu_settings_music_load>        
+      <menu_settings_options>Opties...</menu_settings_options>
+      <!-- more games -->
+      <menu_moregames>More games</menu_moregames>
+        <menu_moregames_seaguard>Sea Guard</menu_moregames_seaguard>
+        <menu_moregames_marsrescue>Mars Rescue</menu_moregames_marsrescue>
+        <menu_moregames_paradisetrouble>Paradise In Trouble</menu_moregames_paradisetrouble>
+        <menu_moregames_needforwaves>Need For Waves</menu_moregames_needforwaves>
+        <menu_moregames_barmanslife>Barman's Life</menu_moregames_barmanslife>
+        <menu_moregames_borntobebig>Born To Be Big</menu_moregames_borntobebig>
+        <menu_moregames_bombthreat>Bomb Threat</menu_moregames_bombthreat>
+        <menu_moregames_outofworld>Out Of The World</menu_moregames_outofworld>
+        <menu_moregames_fightterror>Fight Terror</menu_moregames_fightterror>
+        <menu_moregames_airinvasion>Air Invasion</menu_moregames_airinvasion>
+        <menu_moregames_needextreme>Need For Extreme</menu_moregames_needextreme>
+        <menu_moregames_crazyfishing>Crazy Fishing</menu_moregames_crazyfishing>
+        <menu_moregames_advancedlines>Advanced Lines</menu_moregames_advancedlines>      
+    <!-- help menu -->      
+    <menu_help>Help</menu_help>
+      <menu_help_contents>Inhoud</menu_help_contents>
+      <menu_help_www>Web site</menu_help_www>
+      <menu_help_about>Over My Free Mahjong...</menu_help_about>
+
+    <!-- dialogs and controls -->
+    <str_ok>OK</str_ok>
+    <str_cancel>Annuleren</str_cancel>
+    <str_buy_now>Koop nu!</str_buy_now>
+    <str_enter_key>Enter Toets...</str_enter_key>
+    <str_loading>Bezig met laden...</str_loading>
+    <str_new_game>Deze actie zal het huidige spel afsluiten en een nieuwe starten.\nWilt u doorgaan?</str_new_game>
+    <str_trial_left>U bent een ongeregistreerde gebruiker van de versie My Free Mahjong!\n%d dagen over van de %d-dagen probeer periode.</str_trial_left>
+    <str_version>My Free Mahjong\nVersion %d.%d\n\0xa9 2006 MyPlayCity.com\nand\nThinking Thing Software</str_version>
+    <str_unregistered>Ongeregistreerde versie!</str_unregistered>
+    <str_text_hits_for_beginners>Tekst hints voor beginners</str_text_hits_for_beginners>
+    <str_right_button_hints>Rechtermuisknop geeft de overeenkomstige stenen</str_right_button_hints>
+    <str_smart_cursor>Handige cursor</str_smart_cursor>
+    <str_auto_save_game>Automatisch opslaan spel</str_auto_save_game>
+    <str_generate_solvable_boards>Genereer oplosbaar bord</str_generate_solvable_boards>
+    <str_blocked_tiles_upside_down>Plaat geblokkeerde stenen omgekeerd</str_blocked_tiles_upside_down>
+    <str_low_quality_tiles>Lage kwaliteit stenen</str_low_quality_tiles>
+    <str_medium_quality_tiles>Gemiddelde kwaliteit stenen</str_medium_quality_tiles>
+    <str_high_quality_tiles>Hoge kwaliteit stenen</str_high_quality_tiles>
+    <str_high_quality_tile_textures>Hoge kwaliteit textuur</str_high_quality_tile_textures>
+    <str_textured_tile_sides>Textured tile sides</str_textured_tile_sides>
+    <str_high_quality_background>Hoge kwaliteit achtergrond</str_high_quality_background>
+    <str_smooth_tiles>Mooie stenen</str_smooth_tiles>
+    <str_tile_geometry>Steen vormgeving</str_tile_geometry>
+    <str_textures>Textuur</str_textures>
+
+    <caption_options>Spel opties</caption_options>
+    <str_description>Omschrijving</str_description>
+    <caption_layouts>Layouts</caption_layouts>
+    
+    <str_browse>Bladeren...</str_browse>
+    <str_tileset_default>Traditioneel</str_tileset_default>
+    <str_author>Schrijver</str_author>
+    <caption_tile_sets>Stenen sets</caption_tile_sets>
+    <caption_scores>Scores</caption_scores>
+    <str_close>Sluiten</str_close>
+    <str_replay>Opnieuw spelen</str_replay>
+    <str_played>Gespeelde tijd</str_played>
+    <str_started>Gestart</str_started>
+    <str_player>Speler</str_player>
+
+    <str_layout_filter>Layout bestanden (*.mjl, *.lay)\n*.mjl;*.lay\nMy Free Mahjong layouts (*.mjl)\n*.mjl\nKyodai layouts (*.lay)\n*.lay\nAll Files (*.*)\n*.*\n</str_layout_filter>
+    <str_tileset_filter>Stenen sets (*.mjt, *.jpg)\n*.mjt;*.jpg\nMy Free Mahjong tile sets (*.mjt)\n*.mjt\nKyodai tile sets (*.jpg)\n*.jpg\nAll Files (*.*)\n*.*\n</str_tileset_filter>
+    <str_image_filter>Plaatjes bestanden (*.jpg)\n*.jpg\nJPEG Files (*.jpg)\n*.jpg\nAll Files (*.*)\n*.*\n</str_image_filter>
+    <str_save_game_filter>Mahjong saved games (*.mjs)\n*.mjs\nAll Files (*.*)\n*.*\n</str_save_game_filter>
+
+    <str_default>Standaard</str_default>
+    <str_tiles_left_template>Stenen over: 0000</str_tiles_left_template>
+    <str_game_time_days_template>Speeltijd: 00 dagen 00:00:00</str_game_time_days_template>
+    <str_game_options>Spel opties</str_game_options>
+    <str_video_options>Beeldscherm opties</str_video_options>
+    <str_sound_options>Geluid opties</str_sound_options>
+    <str_language_options>Taal opties</str_language_options>
+    <str_tiles_not_equal>Deze stenen kunnen niet worden verwijderd, omdat ze niet overeenkomen!</str_tiles_not_equal>
+    <str_tile_blocked>Deze steen kan niet worden geselecteerd, omdat deze is geblokkeerd!</str_tile_blocked>
+    <caption_about>Info</caption_about>
+    <str_sound>Geluid</str_sound>
+    <caption_player_name>Spelernaam</caption_player_name>
+    <str_enter_name>Geeft u uw spelersnaam AUB</str_enter_name>
+    <caption_hint>Hint!</caption_hint>
+    <str_do_not_show_hints>Geen hint meldingen weergeven</str_do_not_show_hints>
+    <str_select_language>Selecteer scherm taal</str_select_language>
+
+    <str_unknown>Onbekend</str_unknown>
+
+    <caption_error>Fout!</caption_error>
+
+    <error_no_driver>Onmogelijk op de OpenGL stuur-programma te initialiseren.\nInstalleer My Free Mahjong opnieuw AUB</error_no_driver>
+    <error_256colors>My Free Mahjong draait niet in 256 kleuren-modus!</error_256colors>
+    <error_16colors>My Free Mahjong draait niet in 16 kleuren-modus!</error_16colors>
+    <error_mono>My Free Mahjong draait niet in zwart/wit-modus</error_mono>
+    
+    <caption_tile_sets>stenen sets</caption_tile_sets>
+
+    <str_tiles_left>Stenen over: %3d</str_tiles_left>
+
+    <str_game_time_days>Speeldagen: %ld dagen %02d:%02d:%02d</str_game_time_days>   
+    <str_game_time_hours>Speeluren: %02d:%02d:%02d</str_game_time_hours>
+    <str_game_time>speeltijd: %02d:%02d</str_game_time>
+    
+    <str_status>Stenen set: %s. Layout: %s.</str_status>
+
+    <str_interface_options>Interface</str_interface_options>
+
+    <str_select_skin>Custom interface</str_select_skin>
+    <str_skin_enabled>Enable skinned interface</str_skin_enabled>
+    
+    <str_tile_is_blocked>This tile is blocked</str_tile_is_blocked>
+    <str_no_matching_tiles>No matching tiles</str_no_matching_tiles>
+    <str_1_matching_tile>1 matching tile</str_1_matching_tile>
+    <str_n_matching_tiles>%d matching tiles</str_n_matching_tiles>
+
+    <str_email>E-mail</str_email>
+    <str_e-mail_addr>info@Mahjong4u.com</str_e-mail_addr>
+    <str_www>WWW</str_www>
+    <str_www_addr>http://www.myplaycity.com</str_www_addr>
+
+    <str_distributed_by>Distributed by</str_distributed_by>
+    
+    <str_tile_1>One of dots</str_tile_1>
+    <str_tile_2>Two of dots</str_tile_2>
+    <str_tile_3>Three of dots</str_tile_3>
+    <str_tile_4>Four of dots</str_tile_4>
+    <str_tile_5>Five of dots</str_tile_5>
+    <str_tile_6>Six of dots</str_tile_6>
+    <str_tile_7>Seven of dots</str_tile_7>
+    <str_tile_8>Eight of dots</str_tile_8>
+    <str_tile_9>Nine of dots</str_tile_9>
+    <str_tile_10>White dragon</str_tile_10>
+    <str_tile_11>One of bamboo</str_tile_11>
+    <str_tile_12>Two of bamboo</str_tile_12>
+    <str_tile_13>Three of bamboo</str_tile_13>
+    <str_tile_14>Four of bamboo</str_tile_14>
+    <str_tile_15>Five of bamboo</str_tile_15>
+    <str_tile_16>Six of bamboo</str_tile_16>
+    <str_tile_17>Seven of bamboo</str_tile_17>
+    <str_tile_18>Nine of bamboo</str_tile_18>
+    <str_tile_19>Eight of bamboo</str_tile_19>
+    <str_tile_20>Green dragon</str_tile_20>
+    <str_tile_21>One of characters</str_tile_21>
+    <str_tile_22>Two of characters</str_tile_22>
+    <str_tile_23>Three of characters</str_tile_23>
+    <str_tile_24>Four of characters</str_tile_24>
+    <str_tile_25>Five of characters</str_tile_25>
+    <str_tile_26>Six of characters</str_tile_26>
+    <str_tile_27>Seven of characters</str_tile_27>
+    <str_tile_28>Eight of characters</str_tile_28>
+    <str_tile_29>Nine of characters</str_tile_29>
+    <str_tile_30>Red dragon</str_tile_30>
+    <str_tile_31>North wind</str_tile_31>
+    <str_tile_32>South wind</str_tile_32>
+    <str_tile_33>East wind</str_tile_33>
+    <str_tile_34>West wind</str_tile_34>
+    <str_tile_35>Spring</str_tile_35>
+    <str_tile_36>Summer</str_tile_36>
+    <str_tile_37>Autumn</str_tile_37>
+    <str_tile_38>Winter</str_tile_38>
+    <str_tile_39>Mum</str_tile_39>
+    <str_tile_40>Plum</str_tile_40>
+    <str_tile_41>Orchid</str_tile_41>
+    <str_tile_42>Bamboo</str_tile_42>
+
+  </strings>  
+</language>

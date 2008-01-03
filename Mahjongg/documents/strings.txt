@@ -1,0 +1,111 @@
+Amazing Mahjongg 3D
+Error!
+Version %d.%d
+Credits:
+Layout Files
+Amazing Mahjongg 3D layouts
+Kyodai layouts
+All Files
+Tileset:  
+Layout: 
+Tile sets
+Amazing Mahjongg 3D tile sets
+Kyodai tile sets
+Image Files
+JPEG Files
+This action will close current game and start a new one.
+Do you want to continue?
+Mahjongg saved games
+Tiles left: 
+Registered to:.
+You are using unregistered version of Amazing Mahjongg 3D!
+XX days left from XX-day trial period.
+Play time: XX days XX:XX:XX
+
+Game started
+Time played
+Player
+
+Thank you for registration!
+This key will be checked next time you start Amazing Mahjongg 3D
+Hint!
+These tiles couldn't be removed, since they do not match!
+This tile couldn't be selected, since it is blocked!
+You are switching to expert mode
+Not available
+Description
+Author
+Description
+<Default>
+
+Do not show hint messages
+
+Player name
+Please enter name of current player
+
+Loading...
+
+Close
+Replay
+
+Tile sets
+OK
+Cancel
+Browse
+
+Layouts
+
+Game Options
+Sound 
+Graphics quality
+Low
+Medium
+High
+Sound
+Game
+Auto save game 
+Hints
+
+Low quality tiles
+Medium quality tiles
+High quality tiles
+High quality tile textures
+Textured tile sides
+High quality background
+Smooth tiles
+Tile geometry
+Textures
+
+Text hints for beginners
+Right button shows matching tiles
+Smart cursor
+Auto save game
+Generate solvable boards
+Place blocked tiles upside down
+
+&Game
+New
+Repeat Current
+Save...
+Load...
+E&xit
+&Play
+Undo
+Player Name...
+Scores...
+Default View
+Settings
+&Background
+Default Picture
+Solid color...
+Load Picture...
+&Tile set
+Default tile set
+Load tile set...
+&Layout
+Traditional layout
+Load layout...
+Options...
+Help
+Contents
+About Mahjongg 3D...

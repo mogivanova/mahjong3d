@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="windows-1250"?>
+<language>
+  <version>1.1.11</version>
+  <language_name>German</language_name>
+  <language_local_name>Deutsch</language_local_name>
+  <codepage>Default</codepage>
+  <author></author>
+  <strings>
+    <!-- menu description -->
+    <menu_game>&amp;Spiel</menu_game>
+    <menu_game_new>Neu\tF3</menu_game_new>
+    <menu_game_repeat>Wiederholen\tCtrl+R</menu_game_repeat>
+    <menu_game_save>Speichern...\tCtrl+S</menu_game_save>
+    <menu_game_load>Laden...\tCtrl+L</menu_game_load>
+    <menu_game_exit>&amp;Beenden\tAlt+X</menu_game_exit>
+    
+    <menu_play>S&amp;tart</menu_play>
+    <menu_play_undo>Zurück\tRücktaste</menu_play_undo>
+    <menu_play_player_name>Spielername...</menu_play_player_name>
+    <menu_play_scores>Punkte</menu_play_scores>
+    <menu_play_default_view>Standard Ansicht\tC</menu_play_default_view>
+    
+    <menu_settings>Einstellungen</menu_settings>
+      <menu_settings_background>&amp;Hintergrund</menu_settings_background>
+        <menu_settings_background_default>Standardbild</menu_settings_background_default>
+        <menu_settings_background_solid>Einfarbig...</menu_settings_background_solid>
+        <menu_settings_background_load>Bild laden...</menu_settings_background_load>
+      <menu_settings_tileset>Spie&amp;lSteine</menu_settings_tileset>
+        <menu_settings_tileset_default>Standard Steine-Typ</menu_settings_tileset_default>
+        <menu_settings_tileset_load>Steine-Typ laden...</menu_settings_tileset_load>
+      <menu_settings_layout>&amp;Aufbau</menu_settings_layout>
+        <menu_settings_layout_default>Traditioneller Aufbau</menu_settings_layout_default>
+        <menu_settings_layout_load>Aufbau Laden...</menu_settings_layout_load>
+      <menu_settings_language>Sprache</menu_settings_language>
+        <menu_settings_language_german>Deutsch</menu_settings_language_german>
+        <menu_settings_language_french>French</menu_settings_language_french>
+        <menu_settings_language_english>English</menu_settings_language_english>
+      <menu_settings_options>Optionen...</menu_settings_options>
+      
+      <menu_help>Hilfe</menu_help>
+        <menu_help_contents>Inhalt</menu_help_contents>
+        <menu_help_about>Über Mahjongg 3D...\tF1</menu_help_about>
+      
+
+    <!-- dialogs and controls -->
+    <str_ok>OK</str_ok>
+    <str_cancel>Abbrechen</str_cancel>
+    <str_buy_now>Buy Now!</str_buy_now>
+    <str_enter_key>Enter Key...</str_enter_key>
+    <str_loading>Laden...</str_loading>
+
+    <str_layout_filter>Aufbau-Dateien (*.mjl, *.lay)\n*.mjl;*.lay\nAmazing Mahjongg 3D aufbau (*.mjl)\n*.mjl\nKyodai aufbau (*.lay)\n*.lay\nAlle Dateien (*.*)\n*.*\n</str_layout_filter>
+    <str_tileset_filter>Texturdateien (*.mjt, *.jpg)\n*.mjt;*.jpg\nAmazing Mahjongg 3D Steintexturen (*.mjt)\n*.mjt\nKyodai Steintexturen (*.jpg)\n*.jpg\nAlle Dateien (*.*)\n*.*\n</str_tileset_filter>
+    <str_image_filter>Bilddateien (*.jpg)\n*.jpg\nJPEG-Dateien (*.jpg)\n*.jpg\nAlle Dateien (*.*)\n*.*\n</str_image_filter>
+    <str_save_game_filter>Gespeicherte Mahjongg-Spiele (*.mjs)\n*.mjs\nAlle Dateien (*.*)\n*.*\n</str_save_game_filter>
+
+    <caption_tile_sets>Tile sets</caption_tile_sets>
+
+    <str_new_game>Diese Aktion wird das Spiel beenden und ein neues starten.\nMöchten Sie fortfahren?</str_new_game>
+    <str_trial_left>You are using unregistered version of Amazing Mahjongg 3D!\n%d days left from %d-day trial period.</str_trial_left>
+    <str_version>Amazing Mahjongg 3D\nVersion %d.%d\n\0xa92000-2002 Thinking Thing Software</str_version>
+    <str_unregistered>Unregistered version!</str_unregistered>
+
+    <caption_options>Einstellungen</caption_options>
+
+    <str_game_options>Spiel-Einstellungen</str_game_options>
+    <str_text_hits_for_beginners>Tipps für Anfänger</str_text_hits_for_beginners>
+    <str_right_button_hints>Der rechte Maus-Button zeigt passende Steine</str_right_button_hints>
+    <str_smart_cursor>Smart Cursor</str_smart_cursor>
+    <str_auto_save_game>Spiel automatisch speichern</str_auto_save_game>
+    <str_generate_solvable_boards>Lösbares Spiel generieren</str_generate_solvable_boards>
+    <str_blocked_tiles_upside_down>Blockierte Steine verdecken</str_blocked_tiles_upside_down>
+
+    <str_video_options>Darstellung</str_video_options>
+    <str_tile_geometry>Spielstein-Geometrie</str_tile_geometry>
+    <str_low_quality_tiles>Steine in einfacher Darstellung</str_low_quality_tiles>
+    <str_medium_quality_tiles>Steine in mittlerer Darstellung</str_medium_quality_tiles>
+    <str_high_quality_tiles>Steine in hochauflösender Darstellung</str_high_quality_tiles>
+
+    <str_textures>Texturen</str_textures>
+    <str_high_quality_tile_textures>Hochauflösende Steine-Texturen</str_high_quality_tile_textures>
+    <str_textured_tile_sides>Texturen auch auf den Seiten</str_textured_tile_sides>
+
+    <str_high_quality_background>Hochauflösender Hintergrund</str_high_quality_background>
+    <str_smooth_tiles>Glatte Spielsteine</str_smooth_tiles>
+
+    <str_sound_options>Sound Optionen</str_sound_options>
+    <str_sound>Sound</str_sound>
+
+    <str_language_options>Language Options</str_language_options>
+    <str_select_language>Bevorzugte Sprache auswählen</str_select_language>
+
+    <str_description>Description</str_description>
+
+    <caption_layouts>Aufbau</caption_layouts>
+    <str_browse>Ansehen...</str_browse>
+    <str_tileset_default>Traditionell</str_tileset_default>
+    <str_author>Author</str_author>
+
+    <caption_tile_sets>Tile sets</caption_tile_sets>
+
+    <caption_scores>Punkte</caption_scores>
+
+    <str_close>Schliessen</str_close>
+    <str_replay>Wiederholen</str_replay>
+    <str_played>Gespielte Zeit</str_played>
+    <str_started>Spiel gestartet</str_started>
+    <str_player>Spieler</str_player>
+
+    <!-- various strings -->
+    <str_default>Default</str_default>
+
+    <str_status>Spielsteine: %s. Aufbau: %s.</str_status>
+
+    <str_tiles_left_template>Steine: 0000</str_tiles_left_template>
+    <str_tiles_left>Steine: %3d</str_tiles_left>
+
+    <str_game_time_days_template>Spielzeit: 00 Tag(e) 00:00:00</str_game_time_days_template>
+    <str_game_time_days>Spielzeit: %2d Tag(e) %02d:%02d:%02d</str_game_time_days>   
+    <str_game_time_hours>Spielzeit: %02d:%02d:%02d</str_game_time_hours>
+    <str_game_time>Spielzeit: %02d:%02d</str_game_time>
+
+    <str_tiles_not_equal>Diese Steine konnten nicht entfernt werden, da sie nicht zusammen passen!</str_tiles_not_equal>
+    <str_tile_blocked>Dieser Stein konnte nicht ausgewählt werden, da er blockiert ist!</str_tile_blocked>
+
+    <caption_about>Über Mahjongg 3D</caption_about>
+
+    <caption_player_name>Spielername</caption_player_name>
+    <str_enter_name>Bitte geben Sie den Namen des Spielers ein</str_enter_name>
+
+    <caption_hint>Tip!</caption_hint>
+    <str_do_not_show_hints>Tips nicht anzeigen</str_do_not_show_hints>
+
+    <caption_error>FEHLER!</caption_error>
+    <error_no_driver>Unable to initnialize OpenGL driver.\nPlease reinstall Amazing Mahjongg 3D</error_no_driver>
+    <error_256colors>Amazing Mahjongg 3D does not run in 256-color mode!</error_256colors>
+    <error_16colors>Amazing Mahjongg 3D does not run in 16-color mode!</error_16colors>
+    <error_mono>Amazing Mahjongg 3D does not run in monochrome mode!</error_mono>
+    
+    <str_interface_options>Oberfläche</str_interface_options>
+
+    <str_select_skin>Benutzerdefinierte Oberfläche</str_select_skin>
+    <str_skin_enabled>Änderbare Oberfläche aktivieren</str_skin_enabled>
+   
+    <str_tile_is_blocked>Dieser Stein ist blockiert</str_tile_is_blocked>
+    <str_no_matching_tiles>Keine passende Steine</str_no_matching_tiles>
+    <str_1_matching_tile>1 passender Stein</str_1_matching_tile>
+    <str_n_matching_tiles>%d passende Steine</str_n_matching_tiles>
+
+    <str_email>E-mail</str_email>
+    <str_e-mail_addr>info@mahjongg4u.com</str_e-mail_addr>
+    <str_www>WWW</str_www>
+    <str_www_addr>http://www.mahjongg4u.com</str_www_addr>
+    
+    <str_tile_1>One of dots</str_tile_1>
+    <str_tile_2>Two of dots</str_tile_2>
+    <str_tile_3>Three of dots</str_tile_3>
+    <str_tile_4>Four of dots</str_tile_4>
+    <str_tile_5>Five of dots</str_tile_5>
+    <str_tile_6>Six of dots</str_tile_6>
+    <str_tile_7>Seven of dots</str_tile_7>
+    <str_tile_8>Eight of dots</str_tile_8>
+    <str_tile_9>Nine of dots</str_tile_9>
+    <str_tile_10>White dragon</str_tile_10>
+    <str_tile_11>One of bamboo</str_tile_11>
+    <str_tile_12>Two of bamboo</str_tile_12>
+    <str_tile_13>Three of bamboo</str_tile_13>
+    <str_tile_14>Four of bamboo</str_tile_14>
+    <str_tile_15>Five of bamboo</str_tile_15>
+    <str_tile_16>Six of bamboo</str_tile_16>
+    <str_tile_17>Seven of bamboo</str_tile_17>
+    <str_tile_18>Nine of bamboo</str_tile_18>
+    <str_tile_19>Eight of bamboo</str_tile_19>
+    <str_tile_20>Green dragon</str_tile_20>
+    <str_tile_21>One of characters</str_tile_21>
+    <str_tile_22>Two of characters</str_tile_22>
+    <str_tile_23>Three of characters</str_tile_23>
+    <str_tile_24>Four of characters</str_tile_24>
+    <str_tile_25>Five of characters</str_tile_25>
+    <str_tile_26>Six of characters</str_tile_26>
+    <str_tile_27>Seven of characters</str_tile_27>
+    <str_tile_28>Eight of characters</str_tile_28>
+    <str_tile_29>Nine of characters</str_tile_29>
+    <str_tile_30>Red dragon</str_tile_30>
+    <str_tile_31>North wind</str_tile_31>
+    <str_tile_32>South wind</str_tile_32>
+    <str_tile_33>East wind</str_tile_33>
+    <str_tile_34>West wind</str_tile_34>
+    <str_tile_35>Spring</str_tile_35>
+    <str_tile_36>Summer</str_tile_36>
+    <str_tile_37>Autumn</str_tile_37>
+    <str_tile_38>Winter</str_tile_38>
+    <str_tile_39>Mum</str_tile_39>
+    <str_tile_40>Plum</str_tile_40>
+    <str_tile_41>Orchid</str_tile_41>
+    <str_tile_42>Bamboo</str_tile_42>
+
+  </strings>  
+</language>

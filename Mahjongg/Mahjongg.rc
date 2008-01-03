@@ -1,0 +1,873 @@
+// Microsoft Visual C++ generated resource script.
+//
+#include "resource.h"
+
+#define APSTUDIO_READONLY_SYMBOLS
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 2 resource.
+//
+#include "atlres.h"
+
+/////////////////////////////////////////////////////////////////////////////
+#undef APSTUDIO_READONLY_SYMBOLS
+
+/////////////////////////////////////////////////////////////////////////////
+// Neutral resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_NEU)
+#ifdef _WIN32
+LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
+#pragma code_page(1251)
+#endif //_WIN32
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Accelerator
+//
+
+IDR_MAINFRAME ACCELERATORS 
+BEGIN
+    "C",            ID_VIEW_DEFAULT,        VIRTKEY, NOINVERT
+    "L",            ID_GAME_LOAD,           VIRTKEY, CONTROL, NOINVERT
+    "R",            ID_GAME_REPEAT,         VIRTKEY, CONTROL, NOINVERT
+    "S",            ID_GAME_SAVE,           VIRTKEY, CONTROL, NOINVERT
+    VK_ADD,         ID_VIEW_ZOOMIN,         VIRTKEY, NOINVERT
+    VK_BACK,        ID_PLAY_UNDO,           VIRTKEY, NOINVERT
+    VK_DOWN,        ID_VIEW_ROTATE_DOWN,    VIRTKEY, NOINVERT
+    VK_F1,          ID_APP_ABOUT,           VIRTKEY, NOINVERT
+    VK_F3,          ID_GAME_NEW,            VIRTKEY, NOINVERT
+    VK_LEFT,        ID_VIEW_ROTATE_LEFT,    VIRTKEY, NOINVERT
+    VK_RIGHT,       ID_VIEW_ROTATE_RIGHT,   VIRTKEY, NOINVERT
+    VK_SUBTRACT,    ID_VIEW_ZOOMOUT,        VIRTKEY, NOINVERT
+    VK_UP,          ID_VIEW_ROTATE_UP,      VIRTKEY, NOINVERT
+    "X",            ID_APP_EXIT,            VIRTKEY, ALT, NOINVERT
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Bitmap
+//
+
+IDB_LOGO                BITMAP                  "res\\logo.bmp"
+IDB_TILESET_ICON        BITMAP                  "res\\tileicon.bmp"
+IDB_SCORE_PLACE         BITMAP                  "res\\score_pl.bmp"
+IDB_LAYOUT_ICON         BITMAP                  "res\\layout_i.bmp"
+IDB_SETUP               BITMAP                  "res\\setup.bmp"
+IDB_TILE_SMALL          BITMAP                  "res\\TileSmall.bmp"
+IDB_GAME_ICONS          BITMAP                  "res\\game_icons.bmp"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// WAVE
+//
+
+IDR_WOW                 WAVE                    "res\\WOW.WAV"
+IDR_DRAGON              WAVE                    "res\\DRAGON.WAV"
+IDR_FIRE                WAVE                    "res\\Fw1.wav"
+IDR_EXPLODE             WAVE                    "res\\Fw2.wav"
+IDR_NOMOVES             WAVE                    "res\\NOMOVES.WAV"
+IDR_REMOVE              WAVE                    "res\\REMOVE.WAV"
+IDR_SELECT2             WAVE                    "res\\SELECT2.WAV"
+IDR_SELECT              WAVE                    "res\\SELECT.WAV"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// LAYOUT
+//
+
+IDRL_TRADITIONAL        LAYOUT                  "res\\Layouts\\Traditional.mjl"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// LANGUAGE
+//
+
+IDR_LANG_DEFAULT        LANGUAGE                "Languages\\Default.xml"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Icon
+//
+
+// Icon with lowest ID value placed first to ensure application icon
+// remains consistent on all systems.
+IDR_MAINFRAME           ICON                    "res\\Mahjongg.ico"
+IDI_TILESET             ICON                    "res\\ico_tileset.ico"
+IDI_SKIN                ICON                    "res\\ico_skin.ico"
+IDI_LAYOUT              ICON                    "res\\ico_layout.ico"
+IDI_SAVE_GAME           ICON                    "res\\ico_savegame.ico"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Version
+//
+
+VS_VERSION_INFO VERSIONINFO
+ FILEVERSION 1,3,0,0
+ PRODUCTVERSION 1,3,0,0
+ FILEFLAGSMASK 0x3fL
+#ifdef _DEBUG
+ FILEFLAGS 0x1L
+#else
+ FILEFLAGS 0x0L
+#endif
+ FILEOS 0x4L
+ FILETYPE 0x2L
+ FILESUBTYPE 0x0L
+BEGIN
+    BLOCK "StringFileInfo"
+    BEGIN
+        BLOCK "000004b0"
+        BEGIN
+            VALUE "CompanyName", "Thinking Thing Software"
+            VALUE "FileDescription", "Amazing Mahjongg 3D"
+            VALUE "FileVersion", "1, 3, 0, 0"
+            VALUE "InternalName", "Amazing Mahjongg 3D"
+            VALUE "LegalCopyright", "Copyright 1998-2006 Thinking Thing Software"
+            VALUE "OriginalFilename", "Mahjongg.exe"
+            VALUE "ProductName", "Amazing Mahjongg 3D"
+            VALUE "ProductVersion", "1, 3, 0, 0"
+        END
+    END
+    BLOCK "VarFileInfo"
+    BEGIN
+        VALUE "Translation", 0x0, 1200
+    END
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// JPEG
+//
+
+TILE37                  JPEG                    "res\\TileSet\\37.JPG"
+TILE38                  JPEG                    "res\\TileSet\\38.JPG"
+TILE39                  JPEG                    "res\\TileSet\\39.JPG"
+TILE40                  JPEG                    "res\\TileSet\\40.JPG"
+TILE41                  JPEG                    "res\\TileSet\\41.JPG"
+TILE42                  JPEG                    "res\\TileSet\\42.JPG"
+TILE36                  JPEG                    "res\\TileSet\\36.JPG"
+BOTTOM_SIDE             JPEG                    "res\\TileSet\\bottom.jpg"
+LEFT_SIDE               JPEG                    "res\\TileSet\\left.jpg"
+TILE00                  JPEG                    "res\\TileSet\\00.JPG"
+TILE01                  JPEG                    "res\\TileSet\\01.JPG"
+TILE02                  JPEG                    "res\\TileSet\\02.JPG"
+TILE03                  JPEG                    "res\\TileSet\\03.JPG"
+TILE04                  JPEG                    "res\\TileSet\\04.JPG"
+TILE05                  JPEG                    "res\\TileSet\\05.JPG"
+TILE06                  JPEG                    "res\\TileSet\\06.JPG"
+TILE07                  JPEG                    "res\\TileSet\\07.JPG"
+TILE08                  JPEG                    "res\\TileSet\\08.JPG"
+TILE09                  JPEG                    "res\\TileSet\\09.JPG"
+TILE10                  JPEG                    "res\\TileSet\\10.JPG"
+TILE11                  JPEG                    "res\\TileSet\\11.JPG"
+TILE12                  JPEG                    "res\\TileSet\\12.JPG"
+TILE13                  JPEG                    "res\\TileSet\\13.JPG"
+TILE14                  JPEG                    "res\\TileSet\\14.JPG"
+TILE15                  JPEG                    "res\\TileSet\\15.JPG"
+TILE16                  JPEG                    "res\\TileSet\\16.JPG"
+TILE17                  JPEG                    "res\\TileSet\\17.JPG"
+TILE18                  JPEG                    "res\\TileSet\\18.JPG"
+TILE19                  JPEG                    "res\\TileSet\\19.JPG"
+TILE20                  JPEG                    "res\\TileSet\\20.JPG"
+TILE21                  JPEG                    "res\\TileSet\\21.JPG"
+TILE22                  JPEG                    "res\\TileSet\\22.JPG"
+TILE23                  JPEG                    "res\\TileSet\\23.JPG"
+TILE24                  JPEG                    "res\\TileSet\\24.JPG"
+TILE25                  JPEG                    "res\\TileSet\\25.JPG"
+TILE26                  JPEG                    "res\\TileSet\\26.JPG"
+TILE27                  JPEG                    "res\\TileSet\\27.JPG"
+TILE28                  JPEG                    "res\\TileSet\\28.JPG"
+TILE29                  JPEG                    "res\\TileSet\\29.JPG"
+TILE30                  JPEG                    "res\\TileSet\\30.JPG"
+TILE31                  JPEG                    "res\\TileSet\\31.JPG"
+TILE32                  JPEG                    "res\\TileSet\\32.JPG"
+TILE33                  JPEG                    "res\\TileSet\\33.JPG"
+TILE34                  JPEG                    "res\\TileSet\\34.JPG"
+TILE35                  JPEG                    "res\\TileSet\\35.JPG"
+IDR_GAME_OVER_EN        JPEG                    "res\\game_over_en.jpg"
+IDR_GAME_WON            JPEG                    "res\\Game Won.jpg"
+IDR_BACKGROUND          JPEG                    "res\\Background.jpg"
+IDR_GAME_OVER_DE        JPEG                    "res\\game_over_de.jpg"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Cursor
+//
+
+IDC_TILE                CURSOR                  "res\\tile.cur"
+IDC_ROTATING            CURSOR                  "res\\rotating.cur"
+IDC_HANDCUR             CURSOR                  "res\\handcur.cur"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// OBJECT3D
+//
+
+IDR_TILE_LOW            OBJECT3D                "res\\3dobjects\\tile_simple.3ds"
+IDR_TILE_HIGH           OBJECT3D                "res\\3dobjects\\tile_high.3ds"
+IDR_TILE_MEDIUM         OBJECT3D                "res\\3dobjects\\tile_medium.3ds"
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog
+//
+
+IDD_BEGINNER_HINT DIALOG  0, 0, 202, 82
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "caption_hint"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "str_ok",IDOK,72,66,50,14
+    LTEXT           "",IDC_STATIC,6,60,192,1,SS_SUNKEN
+    CTEXT           "",IDC_MESSAGE,6,6,192,42
+    CONTROL         "str_do_not_show_hints",IDC_SHOW_HINTS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,48,192,10
+END
+
+IDD_ABOUTBOX DIALOGEX 0, 0, 220, 119
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "caption_about"
+FONT 8, "MS Sans Serif", 0, 0, 0x1
+BEGIN
+    DEFPUSHBUTTON   "str_ok",IDOK,83,99,54,14
+    PUSHBUTTON      "str_buy_now",IDC_BUY_NOW,151,99,54,14
+    PUSHBUTTON      "str_enter_key",IDC_REGISTER,15,99,54,14
+    CTEXT           "Amazing Mahjongg 3D",IDC_ABOUT_GAME,6,6,210,30,0,WS_EX_STATICEDGE
+    LTEXT           "str_email",IDC_STATIC,6,78,34,8
+    LTEXT           "str_www",IDC_STATIC,6,67,34,8
+    CONTROL         "str_e-mail_addr",IDC_EMAIL,"Static",SS_LEFTNOWORDWRAP | SS_NOTIFY | WS_GROUP,40,78,176,8
+    LTEXT           "str_www_addr",IDC_WWW,40,67,176,8,SS_NOTIFY
+    CTEXT           "str_unregistered",IDC_REGISTERED,6,43,210,18,0,WS_EX_STATICEDGE
+END
+
+IDD_PLAYER_NAME DIALOGEX 0, 0, 184, 47
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "caption_player_name"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    EDITTEXT        IDC_PLAYER_NAME,6,12,174,14,ES_AUTOHSCROLL
+    DEFPUSHBUTTON   "str_ok",IDOK,66,30,50,14
+    LTEXT           "str_enter_name",IDC_STATIC,6,0,174,8
+END
+
+IDD_PROGRESS DIALOGEX 100, 60, 187, 37
+STYLE DS_SETFONT | DS_SETFOREGROUND | DS_3DLOOK | DS_CENTER | WS_CHILD | WS_VISIBLE | WS_BORDER
+FONT 8, "Helv", 0, 0, 0x0
+BEGIN
+    CONTROL         "",IDC_PROGRESS,"msctls_progress32",WS_TABSTOP,6,18,174,12
+    LTEXT           "str_loading",IDC_STATIC,6,6,162,8
+END
+
+IDD_SCORES DIALOGEX 0, 0, 256, 221
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "caption_scores"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "List1",IDC_SCORES,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,6,24,240,156
+    PUSHBUTTON      "str_close",IDC_CLOSE,136,200,50,14
+    PUSHBUTTON      "str_upload",IDC_SCORES_UPLOAD,70,200,50,14
+    COMBOBOX        IDC_LAYOUTS,42,6,204,103,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "str_layout",IDC_LABEL_LAYOUT,6,6,31,8
+    CONTROL         "",IDC_UPLOAD_PROGRESS,"msctls_progress32",NOT WS_VISIBLE | WS_BORDER | 0x1,6,186,240,6
+END
+
+IDD_NAG DIALOG  0, 0, 220, 106
+STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_3DLOOK | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "caption_unregistered"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "str_ok",IDOK,52,86,50,14
+    PUSHBUTTON      "str_buy_now",IDC_BUY_NOW,118,86,50,14
+    CONTROL         221,IDC_STATIC,"Static",SS_BITMAP,6,6,207,43
+    CTEXT           "Static",IDC_REGISTERED,6,54,210,18
+    LTEXT           "",IDC_STATIC,6,78,210,1,SS_SUNKEN | NOT WS_GROUP
+END
+
+IDD_REGISTER DIALOG  0, 0, 238, 113
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "Registration"
+FONT 8, "MS Sans Serif"
+BEGIN
+    DEFPUSHBUTTON   "OK",IDOK,28,92,50,14
+    PUSHBUTTON      "Cancel",IDCANCEL,94,92,50,14
+    LTEXT           "Please enter registration key in the box below",IDC_STATIC,6,6,143,8
+    LTEXT           "Since registration key is long and complex use Copy+Paste",IDC_STATIC,6,18,186,8
+    EDITTEXT        IDC_REGKEY,6,30,228,48,ES_MULTILINE | ES_AUTOVSCROLL | WS_VSCROLL
+    PUSHBUTTON      "Paste",IDC_PASTE,160,92,50,14
+    LTEXT           "",IDC_STATIC,6,84,228,1,SS_SUNKEN
+END
+
+IDD_TILESETS DIALOGEX 0, 0, 274, 154
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "caption_tile_sets"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "List1",IDC_TILESET_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_SORTASCENDING | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,6,6,168,120
+    DEFPUSHBUTTON   "str_ok",IDOK,46,133,50,14
+    PUSHBUTTON      "str_cancel",IDCANCEL,112,133,50,14
+    PUSHBUTTON      "str_browse",IDC_BROWSE,178,133,50,14
+    GROUPBOX        "",IDC_TILESET,180,6,90,120,NOT WS_VISIBLE
+END
+
+IDD_LAYOUTS DIALOGEX 0, 0, 340, 154
+STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "caption_layouts"
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "List1",IDC_LAYOUTS_LIST,"SysListView32",LVS_REPORT | LVS_SINGLESEL | LVS_SHOWSELALWAYS | LVS_SORTASCENDING | LVS_NOSORTHEADER | WS_BORDER | WS_TABSTOP,6,6,168,120
+    DEFPUSHBUTTON   "str_ok",IDOK,79,133,50,14
+    PUSHBUTTON      "str_cancel",IDCANCEL,145,133,50,14
+    PUSHBUTTON      "str_browse",IDC_BROWSE,211,133,50,14
+    GROUPBOX        "",IDC_LAYOUT,180,6,152,120,NOT WS_VISIBLE
+END
+
+IDD_TRIAL DIALOG  0, 0, 220, 101
+STYLE DS_ABSALIGN | DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
+CAPTION "Trial Expired!"
+FONT 8, "MS Sans Serif"
+BEGIN
+    PUSHBUTTON      "&Exit",IDC_EXIT,19,80,50,14
+    DEFPUSHBUTTON   "&Buy Now!",IDC_BUY_NOW,85,80,50,14
+    PUSHBUTTON      "Enter Key...",IDC_REGISTER,151,80,50,14
+    CTEXT           "Sorry, but your 30-day trial has expired !",IDC_STATIC,6,54,204,8
+    CONTROL         221,IDC_STATIC,"Static",SS_BITMAP,6,6,207,43
+    LTEXT           "",IDC_STATIC,6,72,204,1,SS_SUNKEN | NOT WS_GROUP
+END
+
+IDD_SETUP_EXPERT DIALOGEX 0, 0, 328, 161
+STYLE DS_SETFONT | DS_MODALFRAME | DS_FIXEDSYS | WS_POPUP | WS_CAPTION | WS_SYSMENU
+CAPTION "caption_options"
+FONT 8, "MS Shell Dlg", 0, 0, 0x0
+BEGIN
+    DEFPUSHBUTTON   "str_ok",IDOK,93,140,58,14
+    PUSHBUTTON      "str_cancel",IDCANCEL,167,140,60,14
+    CONTROL         "List2",IDC_SELECTOR,"SysListView32",LVS_SINGLESEL | LVS_SHOWSELALWAYS | WS_BORDER | WS_TABSTOP,4,4,76,128
+    GROUPBOX        "",IDC_FRAME,84,4,240,128,NOT WS_VISIBLE
+END
+
+IDD_SETUP_GRAPHICS DIALOGEX 0, 0, 240, 128
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "str_low_quality_tiles",IDC_GRAPHICS,"Button",BS_AUTORADIOBUTTON | WS_GROUP,12,18,228,10
+    CONTROL         "str_medium_quality_tiles",IDC_RADIO2,"Button",BS_AUTORADIOBUTTON,12,30,228,10
+    CONTROL         "str_high_quality_tiles",IDC_RADIO3,"Button",BS_AUTORADIOBUTTON,12,42,228,10
+    CONTROL         "str_high_quality_tile_textures",IDC_HQ_TILE_TEX,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,66,228,10
+    CONTROL         "str_textured_tile_sides",IDC_TEXTURED_SIDES,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,78,228,10
+    CONTROL         "str_high_quality_background",IDC_HQ_BACKGROUND,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,90,228,10
+    CONTROL         "str_smooth_tiles",IDC_SMOOTH_TILES,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,102,228,10
+    LTEXT           "str_tile_geometry",IDC_STATIC,6,6,234,8
+    LTEXT           "str_textures",IDC_STATIC,6,54,234,8
+    CONTROL         "str_colored_layers",IDC_COLORED_LAYERS,"Button",BS_AUTOCHECKBOX | NOT WS_VISIBLE | WS_TABSTOP,12,114,224,10
+END
+
+IDD_SETUP_GAME DIALOGEX 0, 0, 240, 128
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "str_smart_cursor",IDC_SMART_CURSOR,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,6,234,10
+    CONTROL         "str_right_button_hints",IDC_RB_HINTS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,18,234,10
+    CONTROL         "str_generate_solvable_boards",IDC_SOLVABLE_BOARDS,
+                    "Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,30,234,10
+    CONTROL         "str_auto_save_game",IDC_AUTO_SAVE,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,42,234,10
+    CONTROL         "str_text_hits_for_beginners",IDC_TEXT_HINTS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,54,234,10
+    CONTROL         "str_blocked_tiles_upside_down",IDC_HIDE_CLOSED,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,66,234,10
+END
+
+IDD_SETUP_SOUND DIALOGEX 0, 0, 240, 128
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    CONTROL         "str_sound",IDC_SOUND,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,6,234,10
+END
+
+IDD_SETUP_INTERFACE DIALOGEX 0, 0, 240, 128
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "str_select_language",IDC_STATIC,6,6,234,8
+    COMBOBOX        IDC_LANGUAGE,12,18,180,72,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+    LTEXT           "str_select_skin",IDC_STATIC,6,36,234,8
+    CONTROL         "str_skin_enabled",IDC_SKIN_ENABLED,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,12,48,228,10
+    COMBOBOX        IDC_SKIN,12,60,180,30,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
+END
+
+IDD_SETUP_INTERNET DIALOGEX 0, 0, 240, 128
+STYLE DS_SETFONT | DS_CONTROL | WS_CHILD
+FONT 8, "MS Sans Serif", 0, 0, 0x0
+BEGIN
+    LTEXT           "str_account_login",IDC_STATIC,6,6,57,8
+    EDITTEXT        IDC_LOGIN,12,18,114,12,ES_AUTOHSCROLL
+    LTEXT           "str_account_password",IDC_STATIC,6,36,72,8
+    EDITTEXT        IDC_PASSWORD,12,48,114,12,ES_PASSWORD | ES_AUTOHSCROLL
+    LTEXT           "str_register_for_free",IDC_STATIC,6,72,228,8
+    LTEXT           "str_register_for_free_www",IDC_REGISTER_LINK,6,84,228,8,SS_NOTIFY
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// DESIGNINFO
+//
+
+#ifdef APSTUDIO_INVOKED
+GUIDELINES DESIGNINFO 
+BEGIN
+    IDD_BEGINNER_HINT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 195
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 75
+    END
+
+    IDD_ABOUTBOX, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 213
+        VERTGUIDE, 215
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 111
+        HORZGUIDE, 49
+        HORZGUIDE, 58
+        HORZGUIDE, 78
+        HORZGUIDE, 84
+    END
+
+    IDD_PLAYER_NAME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 177
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 40
+    END
+
+    IDD_PROGRESS, DIALOG
+    BEGIN
+        RIGHTMARGIN, 168
+        BOTTOMMARGIN, 30
+    END
+
+    IDD_SCORES, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 249
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 214
+    END
+
+    IDD_NAG, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 213
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 99
+    END
+
+    IDD_REGISTER, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 231
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 106
+    END
+
+    IDD_TILESETS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 267
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 147
+    END
+
+    IDD_LAYOUTS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 333
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 147
+    END
+
+    IDD_TRIAL, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 213
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 94
+    END
+
+    IDD_SETUP_EXPERT, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        RIGHTMARGIN, 321
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 154
+    END
+
+    IDD_SETUP_GRAPHICS, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+
+    IDD_SETUP_GAME, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+
+    IDD_SETUP_SOUND, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+
+    IDD_SETUP_INTERFACE, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+
+    IDD_SETUP_INTERNET, DIALOG
+    BEGIN
+        LEFTMARGIN, 7
+        TOPMARGIN, 7
+        BOTTOMMARGIN, 109
+    END
+END
+#endif    // APSTUDIO_INVOKED
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Menu
+//
+
+IDR_MAINFRAME MENU 
+BEGIN
+    POPUP "menu_game"
+    BEGIN
+        MENUITEM "menu_game_exit",              ID_APP_EXIT
+    END
+    POPUP "menu_help"
+    BEGIN
+        MENUITEM "menu_help_contents",          ID_HELP_CONTENTS
+        MENUITEM SEPARATOR
+        MENUITEM "menu_help_about",             ID_APP_ABOUT
+    END
+END
+
+#if defined(APSTUDIO_INVOKED) || !defined(_DEBUG)
+IDR_MJ_EXPERT MENU 
+BEGIN
+    POPUP "menu_game"
+    BEGIN
+        MENUITEM "menu_game_new",               ID_GAME_NEW
+        MENUITEM "menu_game_repeat",            ID_GAME_REPEAT
+        MENUITEM SEPARATOR
+        MENUITEM "menu_game_save",              ID_GAME_SAVE
+        MENUITEM "menu_game_load",              ID_GAME_LOAD
+        MENUITEM SEPARATOR
+        MENUITEM "menu_game_exit",              ID_APP_EXIT
+    END
+    POPUP "menu_play"
+    BEGIN
+        MENUITEM "menu_play_undo",              ID_PLAY_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "menu_play_player_name",       ID_GAME_PLAYERNAME
+        MENUITEM "menu_play_scores",            ID_PLAY_SCORES
+        MENUITEM SEPARATOR
+        MENUITEM "menu_play_default_view",      ID_VIEW_DEFAULT
+    END
+    POPUP "menu_settings"
+    BEGIN
+        POPUP "menu_settings_background"
+        BEGIN
+            MENUITEM "menu_settings_background_default", ID_BACKGROUND_DEFAULT
+            MENUITEM "menu_settings_background_solid", ID_BACKGROUND_COLOR
+            MENUITEM SEPARATOR
+            MENUITEM "menu_settings_background_load", ID_BACKGROUND_LOAD
+        END
+        POPUP "menu_settings_tileset"
+        BEGIN
+            MENUITEM "menu_settings_tileset_default", ID_TILESET_DEFAULT
+            MENUITEM SEPARATOR
+            MENUITEM "menu_settings_tileset_load",  ID_TILESET_LOAD
+        END
+        POPUP "menu_settings_layout"
+        BEGIN
+            MENUITEM "menu_settings_layout_default", ID_LAYOUT_DEFAULT
+            MENUITEM SEPARATOR
+            MENUITEM "menu_settings_layout_load",   ID_LAYOUT_LOAD
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "menu_settings_options",       ID_GAME_OPTIONS
+    END
+    POPUP "menu_help"
+    BEGIN
+        MENUITEM "menu_help_contents",          ID_HELP_CONTENTS
+        MENUITEM SEPARATOR
+        MENUITEM "menu_help_about",             ID_APP_ABOUT
+    END
+END
+#endif
+
+IDR_MJ_FIREWORKS MENU 
+BEGIN
+    POPUP "menu_game"
+    BEGIN
+        MENUITEM "menu_play_player_name",       IDC_STOP_FIREWORKS
+        MENUITEM SEPARATOR
+        MENUITEM "menu_game_exit",              ID_APP_EXIT
+    END
+    POPUP "menu_help"
+    BEGIN
+        MENUITEM "menu_help_contents",          ID_HELP_CONTENTS
+        MENUITEM SEPARATOR
+        MENUITEM "menu_help_about",             ID_APP_ABOUT
+    END
+END
+
+#if defined(APSTUDIO_INVOKED) || defined(_DEBUG)
+#if defined(APSTUDIO_INVOKED)
+IDR_MJ_EXPERT$(_DEBUG) MENU 
+#else
+IDR_MJ_EXPERT MENU 
+#endif
+BEGIN
+    POPUP "menu_game"
+    BEGIN
+        MENUITEM "menu_game_new",               ID_GAME_NEW
+        MENUITEM "menu_game_repeat",            ID_GAME_REPEAT
+        MENUITEM SEPARATOR
+        MENUITEM "menu_game_save",              ID_GAME_SAVE
+        MENUITEM "menu_game_load",              ID_GAME_LOAD
+        MENUITEM SEPARATOR
+        MENUITEM "menu_game_exit",              ID_APP_EXIT
+    END
+    POPUP "menu_play"
+    BEGIN
+        MENUITEM "menu_play_undo",              ID_PLAY_UNDO
+        MENUITEM SEPARATOR
+        MENUITEM "menu_play_player_name",       ID_GAME_PLAYERNAME
+        MENUITEM "menu_play_scores",            ID_PLAY_SCORES
+        MENUITEM SEPARATOR
+        MENUITEM "menu_play_default_view",      ID_VIEW_DEFAULT
+    END
+    POPUP "menu_settings"
+    BEGIN
+        POPUP "menu_settings_background"
+        BEGIN
+            MENUITEM "menu_settings_background_default", ID_BACKGROUND_DEFAULT
+            MENUITEM "menu_settings_background_solid", ID_BACKGROUND_COLOR
+            MENUITEM SEPARATOR
+            MENUITEM "menu_settings_background_load", ID_BACKGROUND_LOAD
+        END
+        POPUP "menu_settings_tileset"
+        BEGIN
+            MENUITEM "menu_settings_tileset_default", ID_TILESET_DEFAULT
+            MENUITEM SEPARATOR
+            MENUITEM "menu_settings_tileset_load",  ID_TILESET_LOAD
+        END
+        POPUP "menu_settings_layout"
+        BEGIN
+            MENUITEM "menu_settings_layout_default", ID_LAYOUT_DEFAULT
+            MENUITEM SEPARATOR
+            MENUITEM "menu_settings_layout_load",   ID_LAYOUT_LOAD
+        END
+        MENUITEM SEPARATOR
+        MENUITEM "menu_settings_options",       ID_GAME_OPTIONS
+    END
+    POPUP "menu_help"
+    BEGIN
+        MENUITEM "menu_help_contents",          ID_HELP_CONTENTS
+        MENUITEM SEPARATOR
+        MENUITEM "menu_help_about",             ID_APP_ABOUT
+    END
+    POPUP "debug"
+    BEGIN
+        MENUITEM "debug_game_over",             IDC_DEBUG_GAME_OVER
+        MENUITEM "debug_game_won",              IDC_DEBUG_GAME_WON
+    END
+END
+#endif
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// Dialog Info
+//
+
+IDD_SCORES DLGINIT
+BEGIN
+    IDC_LAYOUTS, 0x403, 7, 0
+0x6664, 0x6461, 0x6673, "\000" 
+    0
+END
+
+
+/////////////////////////////////////////////////////////////////////////////
+//
+// String Table
+//
+
+STRINGTABLE 
+BEGIN
+    IDR_MAINFRAME           "Amazing Mahjongg 3D"
+    IDS_ERROR_CAPTION       "Error!"
+    IDS_VERSION_FORMAT      "Amazing Mahjongg 3D\nVersion %d.%d\n©2000-2005 Thinking Thing Software"
+    IDS_ABOUT               "Credits:\r\nIJG JPEG library ©1994-1998, Thomas G. Lane"
+    IDS_LAYOUT_FILTER       "Layout Files (*.mjl, *.lay)\n*.mjl;*.lay\nAmazing Mahjongg 3D layouts (*.mjl)\n*.mjl\nKyodai layouts (*.lay)\n*.lay\nAll Files (*.*)\n*.*\n"
+    IDS_STATUS              "Tileset: %s. Layout: %s."
+    IDS_TILESET_FILTER      "Tile sets (*.mjt, *.jpg)\n*.mjt;*.jpg\nAmazing Mahjongg 3D tile sets (*.mjt)\n*.mjt\nKyodai tile sets (*.jpg)\n*.jpg\nAll Files (*.*)\n*.*\n"
+    IDS_IMAGE_FILTER        "Image Files (*.jpg)\n*.jpg\nJPEG Files (*.jpg)\n*.jpg\nAll Files (*.*)\n*.*\n"
+    IDS_NEW_GAME            "This action will close current game and start a new one.\nDo you want to continue?"
+    IDS_SAVE_GAME_FILTER    "Mahjongg saved games (*.mjs)\n*.mjs\nAll Files (*.*)\n*.*\n"
+    IDS_TILES_LEFT          "Tiles left: %ld"
+    IDS_REGISTERED          "Registered to:\n%s."
+    IDS_UNREGISTERED        "You are using unregistered version of Amazing Mahjongg 3D!\n%d days left from %d-day trial period."
+    IDS_GAME_TIME_DAYS      "Play time: %ld days %02d:%02d:%02d"
+    IDS_GAME_TIME_HOURS     "Play time: %02d:%02d:%02d"
+    IDS_GAME_TIME           "Play time: %02d:%02d"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_COL_STARTED         "Game started"
+    IDS_COL_PLAYED          "Time played"
+    IDS_COL_PLAYER          "Player"
+    IDS_KEY_ENTERED         "Thank you for registration!\nThis key will be checked next time you start Amazing Mahjongg 3D"
+    IDS_BEGINNER_HINT_CAPTION "Hint!"
+    IDS_TILES_NOT_EQUAL     "These tiles couldn't be removed, since they do not match!"
+    IDS_TILE_BLOCKED        "This tile couldn't be selected, since it is blocked!"
+    IDS_SWITCH_EXPERT_MODE  "You are switching to expert mode\n"
+    IDS_NOT_AVAILABLE       "Not available"
+    IDS_TILESET_LIST_DESCRIPTION "Description"
+    IDS_TILESET_LIST_AUTHOR "Author"
+    IDS_LAYOUT_LIST_DESCRIPTION "Description"
+    IDS_TILESET_DEFAULT     "<Default>"
+    IDS_LAYOUT_DEFAULT      "<Default>"
+    IDS_TILES_LEFT_TPL      "Tiles left: 000 "
+    IDS_GAME_TIME_DAYS_TPL  "Play time: 00 days 00:00:00   "
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_DEFAULT             "Default"
+    IDS_ERR_MONO            "Amazing Mahjongg 3D does not run in monochrome mode!"
+    IDS_ERR_16COL           "Amazing Mahjongg 3D does not run in 16-color mode!"
+    IDS_ERR_256COL          "Amazing Mahjongg 3D does not run in 256-color mode!"
+    IDS_ERR_NO_DRIVER       "Unable to initnialize OpenGL driver.\nPlease reinstall Amazing Mahjongg 3D"
+    IDS_GAME_OPTIONS        "Game Options"
+    IDS_VIDEO_OPTIONS       "Video Options"
+    IDS_SOUND_OPTIONS       "Sound Options"
+    IDS_UNKNOWN             "Unknown"
+    IDS_SAVE_GAME_FOLDER    "Save\\"
+    IDS_LAYOUTS_FOLDER      "Layouts\\"
+    IDS_TILESET_FOLDER      "Tile Sets\\"
+    IDS_BACKGROUND_FOLDER   "Background Images\\"
+    IDS_WWW                 "http://www.mahjongg4u.com"
+    IDS_REGISTRATION        "http://www.mahjongg4u.com/order"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_ACCOUNT_REGISTER    "http://www.mahjongg4u.com/scores/register"
+END
+
+STRINGTABLE 
+BEGIN
+    IDS_MUSIC_FOLDER        "Music\\"
+END
+
+#endif    // Neutral resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// Russian resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_RUS)
+#ifdef _WIN32
+LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
+#pragma code_page(1251)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+3 TEXTINCLUDE 
+BEGIN
+    "#ifdef MY_PLAY_CITY\r\n"
+    "#include ""res/MyPlayCity/MyPlayCity.rc""\r\n"
+    "#endif\r\n"
+    "\r\n"
+    "#ifndef PRIVATE_BUILD\r\n"
+    "#include ""res/Default/Strings.rc""\r\n"
+    "#endif\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // Russian resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+/////////////////////////////////////////////////////////////////////////////
+// English (U.S.) resources
+
+#if !defined(AFX_RESOURCE_DLL) || defined(AFX_TARG_ENU)
+#ifdef _WIN32
+LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
+#pragma code_page(1252)
+#endif //_WIN32
+
+#ifdef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// TEXTINCLUDE
+//
+
+1 TEXTINCLUDE 
+BEGIN
+    "resource.h\0"
+END
+
+2 TEXTINCLUDE 
+BEGIN
+    "#include ""atlres.h""\r\n"
+    "\0"
+END
+
+#endif    // APSTUDIO_INVOKED
+
+#endif    // English (U.S.) resources
+/////////////////////////////////////////////////////////////////////////////
+
+
+
+#ifndef APSTUDIO_INVOKED
+/////////////////////////////////////////////////////////////////////////////
+//
+// Generated from the TEXTINCLUDE 3 resource.
+//
+#ifdef MY_PLAY_CITY
+#include "res/MyPlayCity/MyPlayCity.rc"
+#endif
+
+#ifndef PRIVATE_BUILD
+#include "res/Default/Strings.rc"
+#endif
+/////////////////////////////////////////////////////////////////////////////
+#endif    // not APSTUDIO_INVOKED
+

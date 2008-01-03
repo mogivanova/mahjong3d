@@ -1,0 +1,56 @@
+<html>
+<head>
+<link rel="stylesheet" type="text/css" href="help.css" />
+</head>
+<body>
+<h1>Créer votre porpre jeu de pièces</h1>
+<p>
+Créer un jeu de pièces pour <i>Amazing Mahjongg 3D</i> est très aisé.  En premier lieu,
+vous devez créer des images pour toutes les pièces. Chaque image doit être sauvée dans 
+un fichier différent.  Dans la mesure du possible il est conseillé mais pas obligatoire de
+créer des pièces de même dimension.  Les pièces auront un affichage optimal si la largeur 
+de la pièce est  75% de sa hauteur (par example 75 pixels de largeur pour
+100 pixels de hauteur). Les images doivent être au format <span class="highlight">.JPG</span>.
+</p>
+
+<p>
+Ensuite vous devez préciser le nom de chaque pièce:
+<ul>
+<li>Pièce vide utilisée pour les côtés et l'arrière d'une pièce se nomme <span class="highlight">00.jpg</span></li>
+<li>Pièce de la famille des points (cercles) ont des noms de <span class="highlight">01.jpg</span> à <span class="highlight">09.jpg</span></li>
+<li>Pièces de la famille des bambous (batons) ont des noms de <span class="highlight">11.jpg</span> à <span class="highlight">19.jpg</span></li>
+<li>Pièces de la famille des lettres ont des noms de <span class="highlight">21.jpg</span> à <span class="highlight">29.jpg</span></li>
+<li>Les vents ont des noms de <span class="highlight">31.jpg</span> à <span class="highlight">34.jpg</span> (Nord, Sud, Est, Ouest)</li>
+<li>Les dragons ont les noms <span class="highlight">10.jpg</span> pour le Blanc, <span class="highlight">20.jpg</span> pour le Vert et <span class="highlight">30.jpg</span> pour le Rouge.</li>
+<li>Les pièces des Saisons ont les noms respectifs <span class="highlight">35.jpg</span>, <span class="highlight">36.jpg</span>, <span class="highlight">37.jpg</span>, <span class="highlight">38.jpg</span></li>
+<li>Les pièces des Fleurs ont les noms respectifs <span class="highlight">39.jpg</span>, <span class="highlight">40.jpg</span>, <span class="highlight">41.jpg</span>, <span class="highlight">42.jpg</span></li>
+</ul>
+</p>
+
+<p>
+Ainsi vous devriez avoir 43 fichiers nommés de <span class="highlight">00.jpg</span> à <span class="highlight">42.jpg</span>.
+</p>
+
+<p>
+Si vous souhaitez ajouter des informations supplémentaires au sujet de ce jeu de pièces et votre nom, vous devez créer un fichier texte nommé <span class="highlight">tileset.ini</span> (vous pouvez le créer avec Notepad.exe par exemple).
+</p>
+
+<p>
+Ce fichier doit contenir plusieurs lignes de la forme 'name = value'. Les noms valides sont 'Name' et 'Author'. Par exemple, votre tileset.ini pourrait ressembler à:<br/>
+Name=Mon tout premier jeu de pièces<br/>
+Author=Le Grand Créateur de Jeu de pièces<br/>
+</p>
+
+<p>
+Maintenant vous pouvez compresser votre jeu (<span class="highlight">00.jpg</span> - <span class="highlight">42.jpg</span> et <span class="highlight">tileset.ini</span>) avec
+un compresseur  .ZIP (WinZip, PkZip, etc.).  Vous avez le choix entre préserver l'extension .zip ou de la renommer en <span class="highlight">.mjt</span>.  
+</p>
+
+<p>
+Votre jeu est maintenant prêt.
+Placer le sous le répertoire <span class="highlight">Amazing Mahjongg\Tile sets</span>.
+</p>
+<hr width="80%"/>
+<p class="footer">&#169;&nbsp;1998&nbsp;&#150;&nbsp;2004 <a href="http://www.mahjongg4u.com" target="_blank">Thinking Thing Software</a></p>
+</body>
+<html>

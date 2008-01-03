@@ -1,0 +1,26 @@
+Layout
+- name
+- author
+- version
+- target : Win, PPC
+- format : default / kyodai
+- data
+
+default: 
+<tile i="i" j="j" k="k"/>
+default_old
+<data>
+kyodai
+<data>
+
+Tile set
+- name
+- author
+- version
+- format : default / kyodai
+- target : Win, PPC
+default
+<tile>filename</tile>
+
+kyodai
+<tileset>filename</tileset>

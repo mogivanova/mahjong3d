@@ -1,0 +1,17 @@
+<?xml version="1.0"?>
+<skin>
+  <name>Amazing Mahjongg 3D default skin</name>
+  <author>Thinking Thing Software</author>
+  <version>1.2.0</version>
+
+  <window>
+    <frame border="" iconbox="" buttons=""/>
+    <caption background="" font="light"/>
+    <menubar background="" font="dark"/>
+    <menu background="" font="dark"/>
+  </window>
+
+  <fonts light="" dark=""/>
+  <fonts light="" dark="" codepage="Cyrillic"/>
+
+</skin>

@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<UL>
+  <LI> <OBJECT type="text/sitemap">
+    <param name="Name" value="Einf&uuml;hrung">
+    <param name="Local" value="getting_started.htm">
+    <param name="ImageNumber" value="10">
+    </OBJECT>
+  <LI> <OBJECT type="text/sitemap">
+    <param name="Name" value="Das Spiel Mahjongg">
+    <param name="Local" value="ch_game.htm">
+    </OBJECT>
+  <UL>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Regeln">
+      <param name="Local" value="rules.htm">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Tilesets (Spielsteine)">
+      <param name="Local" value="tileset.htm">
+      </OBJECT>
+  </UL>
+  <LI> <OBJECT type="text/sitemap">
+    <param name="Name" value="Amazing Mahjongg 3D">
+    <param name="Local" value="ch_program.htm">
+    </OBJECT>
+  <UL>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Hauptmen&uuml;">
+      <param name="Local" value="mainmenu.htm">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Spielsteuerung">
+      <param name="Local" value="controls.htm">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Wie man ein eigenes Tileset entwirft">
+      <param name="Local" value="make_tileset.htm">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Versions&uuml;bersicht">
+      <param name="Local" value="whatsnew.htm">
+      </OBJECT>
+  </UL>
+  <LI> <OBJECT type="text/sitemap">
+    <param name="Name" value="Homepage und Unterst&uuml;tzung">
+    <param name="Local" value="ch_support.htm">
+    </OBJECT>
+  <UL>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Online-Unterst&uuml;tzung und Formular f&uuml;r Anfragen">
+      <param name="Local" value="http://www.thinkingthing.com/mahjongg/support.htm">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Homepage">
+      <param name="Local" value="http://www.thinkingthing.com/mahjongg">
+      </OBJECT>
+  </UL>
+</UL>
+</BODY></HTML>
