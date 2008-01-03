@@ -1,0 +1,136 @@
+<html>
+<head>
+<META HTTP-EQUIV="Content-Type" content="text/html; charset=windows-1251">
+</head>
+<body>
+<pre>
+<table width=100% bgcolor=#CFCFE5><tr> <td> <font face=arial size=+3>
+Build Log
+</font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>
+<h3>------- Build started: Project: Release, Configuration: Release|Win32 -------
+</h3>
+</pre></table><table width=100% bgcolor=#DFDFE5><tr><td><font face=arial size=+2>
+Command Lines
+</font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>Creating temporary file "C:\TEMP\BAT000112.bat" with contents
+[
+@echo off
+"C:\Program Files (x86)\ASProtect 1.35 Release\ASProtect.exe" -process "c:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Dependent\Default\ASProtect\mahjongg.aspr"
+
+xcopy "c:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\*.*" "C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\\_Temp\Setup\" /Y /S /EXCLUDE:copyexclude.txt
+xcopy "C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\\Mahjongg\Languages\*.*" "C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\\_Temp\Setup\Languages\" /Y /S /EXCLUDE:copyexclude.txt
+
+"C:\Program Files (x86)\Inno Setup 5\Compil32.exe" /cc "c:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Dependent\Default\Inno Setup\mahjongg3d.iss"
+
+cd "C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\\_Setup\Default"
+xcopy "C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\\_Temp\Setup\readme.txt" "C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\\_Setup\Default\" /Y
+pkzip mahjongg_3d setup.exe readme.txt
+if errorlevel 1 goto VCReportError
+goto VCEnd
+:VCReportError
+echo Project : error PRJ0019: A tool returned an error code from "Performing Makefile project actions"
+exit 1
+:VCEnd
+]
+Creating command line "C:\TEMP\BAT000112.bat"
+</pre></table><table width=100% bgcolor=#DFDFE5><tr><td><font face=arial size=+2>
+Output Window
+</font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>Performing Makefile project actions
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\glu.dll
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\opengl.dll
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\readme.txt
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\help\mahjongg.chm
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\help\mahjongg_de.chm
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\help\mahjongg_fr.chm
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\3D Pyramid.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Arena.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Beatle.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Big Hole.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Bizarre.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Boat.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Bridging.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Castle.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Cat and Mouse.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Ceremonial.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Crown.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Cupola.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Deep Well.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Dude.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\F-15 Eagle.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Farandole.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Fish.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Five Pyramids 2.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Five Pyramids.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Full Vision 2.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Full Vision.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Gayle.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\H for Haga Traditional.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\H for Haga.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\High and Low.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Hourglass.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Inca.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Joker.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Kujaku.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Labyrinth.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Lion.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Lost.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Modern Art.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Naoki Haga Traditional.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Phoenix.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Portal.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Pyramid.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Scorpion.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Screw Up.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Seven Pyramids.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Seven.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Siam.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Space Ship.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Square.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Step Pyramid.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Stonehenge.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\SunMoon.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Temple.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Teotihucan.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\The Great Wall.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Theater.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Tile Fighter.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Tilepiles.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Tower and Walls.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Traditional Reviewed.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Traditional.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Tree of Life.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Twin Temples.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Victory Arrow.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Wavelets.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\layouts\Yummy.mjl
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\pictures\building2.jpg
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\pictures\mountain.jpg
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\pictures\statue2.jpg
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\pictures\torii_japan.jpg
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\skins\blue.mji
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\skins\brown.mji
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\tilesets\black.mjt
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\tilesets\egyptian.mjt
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\tilesets\steel.mjt
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\tilesets\white.mjt
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\\Common\tilesets\wood.mjt
+78 File(s) copied
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\\Mahjongg\Languages\Default.xml
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\\Mahjongg\Languages\Dutch.xml
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\\Mahjongg\Languages\French.xml
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\\Mahjongg\Languages\German.xml
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\\Mahjongg\Languages\Russian.xml
+5 File(s) copied
+C:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\\_Temp\Setup\readme.txt
+1 File(s) copied
+PKZIP(R)  Version 4.00  FAST! Compression Utility for Windows 
+Copyright 1989-2000 PKWARE Inc.  All Rights Reserved. Shareware Version 
+PKZIP Reg. U.S. Pat. and Tm. Off.  Patent No. 5,051,745
+Updating .ZIP: mahjongg_3d.zip
+Updating File: readme.txt   Deflating         0%( 9.5%), done.
+Updating File: setup.exe    Deflating         0% 3% 5% 8%10%13%15%18%20%23%25%28%30%33%35%38%40%43%45%48%50%53%55%58%60%63%65%68%70%73%75%78%80%82%85%87%90%92%95%97%( 1.0%), done.
+</pre></table><table width=100% bgcolor=#DFDFE5><tr><td><font face=arial size=+2>
+Results
+</font></table><table width=* cellspacing=0 cellpadding=0><tr><td width=0 bgcolor=#EDEDF5>&nbsp;</td><td width=0 bgcolor=#FFFFFF>&nbsp;</td><td width=*><pre>
+Build log was saved at "file://c:\Work\My Projects\Mahjongg\Sources\Mahjongg3D\Release\Release\BuildLog.htm"
+Release - 0 error(s), 0 warning(s)</pre></table><table   width=100% height=20 bgcolor=#CFCFE5><tr><td><font face=arial size=+2>
+</font></table></body></html>

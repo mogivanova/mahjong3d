@@ -1,0 +1,201 @@
+<?xml version="1.0"?>
+<language>
+  <version>1.3.00</version>
+  <language_name>English</language_name>
+  <language_local_name>English</language_local_name>
+  <author>Thinking Thing Software</author>
+  <codepage>Default</codepage>
+  <strings>
+    <!-- menu description -->
+    <!-- game menu -->
+    <menu_game>&amp;Game</menu_game>
+      <menu_game_new>New\tF3</menu_game_new>
+      <menu_game_repeat>Repeat Current\tCtrl+R</menu_game_repeat>
+      <menu_game_save>Save...\tCtrl+S</menu_game_save>
+      <menu_game_load>Load...\tCtrl+L</menu_game_load>
+      <menu_game_exit>E&amp;xit\tAlt+X</menu_game_exit>
+    <!-- play menu -->        
+    <menu_play>Play</menu_play>
+      <menu_play_undo>Undo\tBackspace</menu_play_undo>
+      <menu_play_player_name>Player Name...</menu_play_player_name>
+      <menu_play_scores>Scores</menu_play_scores>
+      <menu_play_default_view>Default View\tC</menu_play_default_view>
+    <!-- settings menu -->    
+    <menu_settings>Settings</menu_settings>
+      <menu_settings_background>&amp;Background</menu_settings_background>
+        <menu_settings_background_default>Default Picture</menu_settings_background_default>
+        <menu_settings_background_solid>Solid color...</menu_settings_background_solid>
+        <menu_settings_background_load>Load Picture...</menu_settings_background_load>
+      <menu_settings_tileset>&amp;Tile set</menu_settings_tileset>
+        <menu_settings_tileset_default>Default tile set</menu_settings_tileset_default>
+        <menu_settings_tileset_load>Load tile set...</menu_settings_tileset_load>
+      <menu_settings_layout>&amp;Layout</menu_settings_layout>
+        <menu_settings_layout_default>Traditional layout</menu_settings_layout_default>
+        <menu_settings_layout_load>Load layout...</menu_settings_layout_load>
+      <menu_settings_language>Language</menu_settings_language>
+        <menu_settings_language_german>German</menu_settings_language_german>
+        <menu_settings_language_french>French</menu_settings_language_french>
+        <menu_settings_language_english>English</menu_settings_language_english>
+      <menu_settings_music>Music</menu_settings_music>
+        <menu_settings_music_default>Default music</menu_settings_music_default>
+        <menu_settings_music_nomusic>No music</menu_settings_music_nomusic>
+        <menu_settings_music_load>Load music</menu_settings_music_load>        
+      <menu_settings_options>Options...</menu_settings_options>
+    <!-- help menu -->      
+    <menu_help>Help</menu_help>
+      <menu_help_contents>Contents</menu_help_contents>
+      <menu_help_about>About Mahjongg 3D...\tF1</menu_help_about>
+
+    <!-- dialogs and controls -->
+    <str_ok>OK</str_ok>
+    <str_cancel>Cancel</str_cancel>
+    <str_buy_now>Buy Now!</str_buy_now>
+    <str_enter_key>Enter Key...</str_enter_key>
+    <str_loading>Loading...</str_loading>
+    <str_new_game>This action will close current game and start a new one.\nDo you want to continue?</str_new_game>
+    <str_trial_left>You are using unregistered version of Amazing Mahjongg 3D!\n%d days left from %d-day trial period.</str_trial_left>
+    <str_version>Amazing Mahjongg 3D\nVersion %d.%d\n\0xa92000-2002 Thinking Thing Software</str_version>
+    <str_unregistered>Unregistered version!</str_unregistered>
+    <str_text_hits_for_beginners>Text hints for beginners</str_text_hits_for_beginners>
+    <str_right_button_hints>Right button shows matching tiles</str_right_button_hints>
+    <str_smart_cursor>Smart cursor</str_smart_cursor>
+    <str_auto_save_game>Auto save game</str_auto_save_game>
+    <str_generate_solvable_boards>Generate solvable boards</str_generate_solvable_boards>
+    <str_blocked_tiles_upside_down>Place blocked tiles upside down</str_blocked_tiles_upside_down>
+    <str_low_quality_tiles>Low quality tiles</str_low_quality_tiles>
+    <str_medium_quality_tiles>Medium quality tiles</str_medium_quality_tiles>
+    <str_high_quality_tiles>High quality tiles</str_high_quality_tiles>
+    <str_high_quality_tile_textures>High quality tile textures</str_high_quality_tile_textures>
+    <str_textured_tile_sides>Textured tile sides</str_textured_tile_sides>
+    <str_high_quality_background>High quality background</str_high_quality_background>
+    <str_smooth_tiles>Smooth tiles</str_smooth_tiles>
+    <str_tile_geometry>Tile geometry</str_tile_geometry>
+    <str_textures>Textures</str_textures>
+    
+    <str_internet_options>Online Account</str_internet_options>
+    <str_account_login>Account Login</str_account_login>
+    <str_account_password>Password</str_account_password>
+    <str_register_for_free>Don't have Mahjongg4u.com account?</str_register_for_free>
+    <str_register_for_free_www>Click here to register for free!</str_register_for_free_www>
+    
+    <caption_options>Game Options</caption_options>
+    <str_description>Description</str_description>
+    <caption_layouts>Layouts</caption_layouts>
+    
+    <str_browse>Browse...</str_browse>
+    <str_tileset_default>Traditional</str_tileset_default>
+    <str_author>Author</str_author>
+    <caption_tile_sets>Tile sets</caption_tile_sets>
+    
+    <caption_scores>Scores</caption_scores>
+    <str_close>Close</str_close>
+    <str_upload>Upload</str_upload>
+    <str_played>Time played</str_played>
+    <str_started>Started</str_started>
+    <str_player>Player</str_player>
+    <str_layout>Layout</str_layout>
+    <str_upload_failed>Upload failed!\r\nPlease check your Mahjongg4u.com account</str_upload_failed>
+    
+    <str_layout_filter>Layout Files (*.mjl, *.lay)\n*.mjl;*.lay\nAmazing Mahjongg 3D layouts (*.mjl)\n*.mjl\nKyodai layouts (*.lay)\n*.lay\nAll Files (*.*)\n*.*\n</str_layout_filter>
+    <str_tileset_filter>Tile sets (*.mjt, *.jpg)\n*.mjt;*.jpg\nAmazing Mahjongg 3D tile sets (*.mjt)\n*.mjt\nKyodai tile sets (*.jpg)\n*.jpg\nAll Files (*.*)\n*.*\n</str_tileset_filter>
+    <str_image_filter>Image Files (*.jpg)\n*.jpg\nJPEG Files (*.jpg)\n*.jpg\nAll Files (*.*)\n*.*\n</str_image_filter>
+    <str_save_game_filter>Mahjongg saved games (*.mjs)\n*.mjs\nAll Files (*.*)\n*.*\n</str_save_game_filter>
+    <str_music_filter>XM music files (*.xm)\n*.xm\nAll Files (*.*)\n*.*\n</str_music_filter>
+
+    <str_default>Default</str_default>
+    <str_tiles_left_template>Tiles left: 0000</str_tiles_left_template>
+    <str_game_time_days_template>Play time: 00 days 00:00:00</str_game_time_days_template>
+    <str_game_options>Game Options</str_game_options>
+    <str_video_options>Video Options</str_video_options>
+    <str_sound_options>Sound Options</str_sound_options>
+    <str_language_options>Language Options</str_language_options>
+    <str_tiles_not_equal>These tiles couldn't be removed, since they do not match!</str_tiles_not_equal>
+    <str_tile_blocked>This tile couldn't be selected, since it is blocked!</str_tile_blocked>
+    <caption_about>About</caption_about>
+    <str_sound>Sound</str_sound>
+    <caption_player_name>Player's name</caption_player_name>
+    <str_enter_name>Please enter name of current player</str_enter_name>
+    <caption_hint>Hint!</caption_hint>
+    <str_do_not_show_hints>Do not show hint messages</str_do_not_show_hints>
+    <str_select_language>Select interface language</str_select_language>
+
+    <str_unknown>Unknown</str_unknown>
+
+    <caption_error>Error!</caption_error>
+
+    <error_no_driver>Unable to initnialize OpenGL driver.\nPlease reinstall Amazing Mahjongg 3D</error_no_driver>
+    <error_256colors>Amazing Mahjongg 3D does not run in 256-color mode!</error_256colors>
+    <error_16colors>Amazing Mahjongg 3D does not run in 16-color mode!</error_16colors>
+    <error_mono>Amazing Mahjongg 3D does not run in monochrome mode!</error_mono>
+    
+    <str_select_skin>Select skin</str_select_skin>
+
+    <str_tiles_left>Tiles left: %3d</str_tiles_left>
+
+    <str_game_time_days>Play time: %ld days %02d:%02d:%02d</str_game_time_days>   
+    <str_game_time_hours>Play time: %02d:%02d:%02d</str_game_time_hours>
+    <str_game_time>Play time: %02d:%02d</str_game_time>
+    
+    <str_status>Tileset: %s. Layout: %s.</str_status>
+    
+    <str_interface_options>Interface</str_interface_options>
+
+    <str_skin_enabled>Enable skinned interface</str_skin_enabled>
+    
+    <str_tile_is_blocked>This tile is blocked</str_tile_is_blocked>
+    <str_no_matching_tiles>No matching tiles</str_no_matching_tiles>
+    <str_1_matching_tile>1 matching tile</str_1_matching_tile>
+    <str_n_matching_tiles>%d matching tiles</str_n_matching_tiles>
+
+    <str_email>E-mail</str_email>
+    <str_e-mail_addr>info@mahjongg4u.com</str_e-mail_addr>
+    <str_www>WWW</str_www>
+    <str_www_addr>http://www.mahjongg4u.com</str_www_addr>
+    
+    <str_distributed_by>Distributed by</str_distributed_by>
+
+    <str_tile_1>One of dots</str_tile_1>
+    <str_tile_2>Two of dots</str_tile_2>
+    <str_tile_3>Three of dots</str_tile_3>
+    <str_tile_4>Four of dots</str_tile_4>
+    <str_tile_5>Five of dots</str_tile_5>
+    <str_tile_6>Six of dots</str_tile_6>
+    <str_tile_7>Seven of dots</str_tile_7>
+    <str_tile_8>Eight of dots</str_tile_8>
+    <str_tile_9>Nine of dots</str_tile_9>
+    <str_tile_10>White dragon</str_tile_10>
+    <str_tile_11>One of bamboo</str_tile_11>
+    <str_tile_12>Two of bamboo</str_tile_12>
+    <str_tile_13>Three of bamboo</str_tile_13>
+    <str_tile_14>Four of bamboo</str_tile_14>
+    <str_tile_15>Five of bamboo</str_tile_15>
+    <str_tile_16>Six of bamboo</str_tile_16>
+    <str_tile_17>Seven of bamboo</str_tile_17>
+    <str_tile_18>Nine of bamboo</str_tile_18>
+    <str_tile_19>Eight of bamboo</str_tile_19>
+    <str_tile_20>Green dragon</str_tile_20>
+    <str_tile_21>One of characters</str_tile_21>
+    <str_tile_22>Two of characters</str_tile_22>
+    <str_tile_23>Three of characters</str_tile_23>
+    <str_tile_24>Four of characters</str_tile_24>
+    <str_tile_25>Five of characters</str_tile_25>
+    <str_tile_26>Six of characters</str_tile_26>
+    <str_tile_27>Seven of characters</str_tile_27>
+    <str_tile_28>Eight of characters</str_tile_28>
+    <str_tile_29>Nine of characters</str_tile_29>
+    <str_tile_30>Red dragon</str_tile_30>
+    <str_tile_31>North wind</str_tile_31>
+    <str_tile_32>South wind</str_tile_32>
+    <str_tile_33>East wind</str_tile_33>
+    <str_tile_34>West wind</str_tile_34>
+    <str_tile_35>Spring</str_tile_35>
+    <str_tile_36>Summer</str_tile_36>
+    <str_tile_37>Autumn</str_tile_37>
+    <str_tile_38>Winter</str_tile_38>
+    <str_tile_39>Mum</str_tile_39>
+    <str_tile_40>Plum</str_tile_40>
+    <str_tile_41>Orchid</str_tile_41>
+    <str_tile_42>Bamboo</str_tile_42>
+    
+  </strings>  
+</language>

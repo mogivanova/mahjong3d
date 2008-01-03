@@ -1,0 +1,214 @@
+<?xml version="1.0"?>
+<language>
+  <version>2.0.0</version>
+  <language_name>French</language_name>
+  <language_local_name>Franais</language_local_name>
+  <codepage>Default</codepage>
+  <author>KAD-Korvigello� An Drouizig</author>
+  <strings>
+    <!-- menu description -->
+    <menu_game>&amp;Jeu</menu_game>
+    <menu_game_new>Nouveau\tF3</menu_game_new>
+    <menu_game_repeat>Recommencer la partie\tCtrl+R</menu_game_repeat>
+    <menu_game_save>Enregistrer...\tCtrl+S</menu_game_save>
+    <menu_game_load>Charger...\tCtrl+L</menu_game_load>
+    <menu_game_exit>Qui&amp;tter\tAlt+X</menu_game_exit>
+    
+    <menu_play>&amp;Jouer</menu_play>
+    <menu_play_undo>Annuler le dernier coup</menu_play_undo>
+    <menu_play_player_name>Nom du joueur...</menu_play_player_name>
+    <menu_play_scores>Scores</menu_play_scores>
+    <menu_play_default_view>Vue par d�faut</menu_play_default_view>
+    
+    <menu_settings>Param�tres</menu_settings>
+      <menu_settings_background>&amp;Fond d'�cran</menu_settings_background>
+        <menu_settings_background_default>Image par d�faut</menu_settings_background_default>
+        <menu_settings_background_solid>Couleur unie...</menu_settings_background_solid>
+        <menu_settings_background_load>Charger Image...</menu_settings_background_load>
+      <menu_settings_tileset>&amp;Jeu de tuiles</menu_settings_tileset>
+        <menu_settings_tileset_default>Jeu de tuiles par d�faut</menu_settings_tileset_default>
+        <menu_settings_tileset_load>Charger un jeu...</menu_settings_tileset_load>
+      <menu_settings_layout>&amp;Habillage</menu_settings_layout>
+        <menu_settings_layout_default>Habillage traditionnel</menu_settings_layout_default>
+        <menu_settings_layout_load>Charger un habillage...</menu_settings_layout_load>
+      <menu_settings_music>Music</menu_settings_music>
+        <menu_settings_music_default>Default music</menu_settings_music_default>
+        <menu_settings_music_nomusic>No music</menu_settings_music_nomusic>
+        <menu_settings_music_load>Load music</menu_settings_music_load>        
+      <menu_settings_options>Options...</menu_settings_options>
+
+      <!-- more games -->
+      <menu_moregames>More games</menu_moregames>
+        <menu_moregames_seaguard>Sea Guard</menu_moregames_seaguard>
+        <menu_moregames_marsrescue>Mars Rescue</menu_moregames_marsrescue>
+        <menu_moregames_paradisetrouble>Paradise In Trouble</menu_moregames_paradisetrouble>
+        <menu_moregames_needforwaves>Need For Waves</menu_moregames_needforwaves>
+        <menu_moregames_barmanslife>Barman's Life</menu_moregames_barmanslife>
+        <menu_moregames_borntobebig>Born To Be Big</menu_moregames_borntobebig>
+        <menu_moregames_bombthreat>Bomb Threat</menu_moregames_bombthreat>
+        <menu_moregames_outofworld>Out Of The World</menu_moregames_outofworld>
+        <menu_moregames_fightterror>Fight Terror</menu_moregames_fightterror>
+        <menu_moregames_airinvasion>Air Invasion</menu_moregames_airinvasion>
+        <menu_moregames_needextreme>Need For Extreme</menu_moregames_needextreme>
+        <menu_moregames_crazyfishing>Crazy Fishing</menu_moregames_crazyfishing>
+        <menu_moregames_advancedlines>Advanced Lines</menu_moregames_advancedlines>      
+      
+      <menu_help>Aide</menu_help>
+        <menu_help_contents>Sommaire</menu_help_contents>
+        <menu_help_www>Web site</menu_help_www>
+        <menu_help_about>Au sujet de My Free Mahjong...</menu_help_about>
+      
+
+    <!-- dialogs and controls -->
+    <str_ok>OK</str_ok>
+    <str_cancel>Annuler</str_cancel>
+    <str_buy_now>Acheter!</str_buy_now>
+    <str_enter_key>Entrer la clef...</str_enter_key>
+    <str_loading>Chargement en cours...</str_loading>
+    <str_new_game>Cette action mettra fin au jeu courrant et d�butera une nouvelle partie.\nSouhaitez vous continuer ?</str_new_game>
+    <str_trial_left>Vous utilisez une version d'�valuation d'My Free Mahjong!\nIl reste %d jours de la p�riode de %d jours.</str_trial_left>
+    <str_version>My Free Mahjong\nVersion %d.%d\n\0xa9 2006 MyPlayCity.com\nand\nThinking Thing Software</str_version>
+    <str_unregistered>Version d'�valuation!</str_unregistered>
+
+    <str_text_hits_for_beginners>Suggestions �crites pour les d�butants</str_text_hits_for_beginners>
+    <str_right_button_hints>Bouton droit montre les tuiles correspondantes</str_right_button_hints>
+    <str_smart_cursor>Curseur fut�</str_smart_cursor>
+    <str_auto_save_game>Enregistrement automatique</str_auto_save_game>
+    <str_generate_solvable_boards>Cr�e des tableaux solubles</str_generate_solvable_boards>
+    <str_blocked_tiles_upside_down>Mettre les blocs de tuiles � l'envers</str_blocked_tiles_upside_down>
+
+    <str_low_quality_tiles>Jeu de tuiles de basse qualit�</str_low_quality_tiles>
+    <str_medium_quality_tiles>Jeu de tuiles de qualit� interm�diaire</str_medium_quality_tiles>
+    <str_high_quality_tiles>Jeu de tuiles de haute qualit�</str_high_quality_tiles>
+    <str_high_quality_tile_textures>Textures des tuiles de haute qualit�</str_high_quality_tile_textures>
+    <str_textured_tile_sides>Textures sur les c�t�s des tuiles</str_textured_tile_sides>
+    <str_high_quality_background>Fond d'�cran de haute qualit�</str_high_quality_background>
+    <str_smooth_tiles>Jeu de tuiles lisses</str_smooth_tiles>
+    <str_tile_geometry>G�om�trie des tuiles</str_tile_geometry>
+    <str_textures>Textures</str_textures>
+
+    <str_layout_filter>Fichiers d'habillage (*.mjl, *.lay)\n*.mjl;*.lay\nHabillages My Free Mahjong (*.mjl)\n*.mjl\nHabillages Kyodai (*.lay)\n*.lay\nTous les fichiers (*.*)\n*.*\n</str_layout_filter>
+    <str_tileset_filter>Jeux de tuiles (*.mjt, *.jpg)\n*.mjt;*.jpg\nJeux de tuiles My Free Mahjong (*.mjt)\n*.mjt\nJeux de tuiles Kyodai (*.jpg)\n*.jpg\nTous les fichiers (*.*)\n*.*\n</str_tileset_filter>
+    <str_image_filter>Fichiers Image (*.jpg)\n*.jpg\nFichiers JPEG (*.jpg)\n*.jpg\nTous les fichiers (*.*)\n*.*\n</str_image_filter>
+    <str_save_game_filter>Parties de Mahjong sauvegard�es (*.mjs)\n*.mjs\nTous les fichiers (*.*)\n*.*\n</str_save_game_filter>
+
+    <caption_options>Options du jeu</caption_options>
+
+    <str_description>Description</str_description>
+
+    <caption_layouts>Dispositions</caption_layouts>
+
+    <str_browse>Parcourir...</str_browse>
+    <str_tileset_default>Traditionnel</str_tileset_default>
+
+    <str_author>Auteur</str_author>
+
+    <caption_tile_sets>Jeu de tuiles</caption_tile_sets>
+
+    <caption_scores>Scores</caption_scores>
+    <str_close>Fermer</str_close>
+    <str_replay>R�peter</str_replay>
+    <str_played>Temps �coul�</str_played>
+    <str_started>Jeu commenc�</str_started>
+    <str_player>Joueur</str_player>
+
+    <!-- various strings -->
+    <str_default>Par d�faut</str_default>
+    <str_tiles_left_template>Tuiles restantes: 0000</str_tiles_left_template>
+    <str_tiles_left>Tuiles restantes: %3d</str_tiles_left>
+
+    <str_game_time_days_template>Temps �coul�: 00 jour(s) 00:00:00</str_game_time_days_template>
+    <str_game_time_days>Temps �coul�: %ld jour(s) %02d:%02d:%02d</str_game_time_days>   
+    <str_game_time_hours>Temps �coul�: %02d:%02d:%02d</str_game_time_hours>
+    <str_game_time>Temps �coul�: %02d:%02d</str_game_time>
+
+    <str_game_options>G�n�ral</str_game_options>
+    <str_video_options>Affichage</str_video_options>
+    <str_sound_options>Sons</str_sound_options>
+    <str_language_options>Langues</str_language_options>
+    <str_tiles_not_equal>Ces tuiles ne peuvent pas �tre retir�es, puisqu'elles ne correspondent pas !</str_tiles_not_equal>
+    <str_tile_blocked>Cette tuile ne peut pas �tre s�lectionn�e puisqu'elle est bloqu�e!</str_tile_blocked>
+    <caption_about>Au sujet de...</caption_about>
+    <str_sound>Son</str_sound>
+
+    <caption_player_name>Nom du joueur</caption_player_name>
+    <str_enter_name>Entrez le nom du joueur actuel</str_enter_name>
+
+    <caption_hint>Suggestion!</caption_hint>
+    <str_do_not_show_hints>Ne pas afficher les suggestions</str_do_not_show_hints>
+
+    <str_select_language>Choisir la langue de l'interface</str_select_language>
+
+    <caption_error>Erreur!</caption_error>
+    <error_no_driver>Ne peut pas initialiser le gestionnaire OpenGL.\nMerci de r�installer My Free Mahjong</error_no_driver>
+    <error_256colors>My Free Mahjong ne fonctionne pas en mode 256 couleurs!</error_256colors>
+    <error_16colors>My Free Mahjong ne fonctionne pas en mode 16 couleurs!</error_16colors>
+    <error_mono>My Free Mahjong ne fonctionne pas en mode monochrome!</error_mono>
+    
+    <caption_tile_sets>Ensembles de tuiles</caption_tile_sets>
+    
+    <str_status>Jeu de tuiles: %s. Habillage: %s.</str_status>
+
+    <str_interface_options>Interface</str_interface_options>
+
+    <str_select_skin>Custom interface</str_select_skin>
+    <str_skin_enabled>Enable skinned interface</str_skin_enabled>
+
+    <str_tile_is_blocked>This tile is blocked</str_tile_is_blocked>
+    <str_no_matching_tiles>No matching tiles</str_no_matching_tiles>
+    <str_1_matching_tile>1 matching tile</str_1_matching_tile>
+    <str_n_matching_tiles>%d matching tiles</str_n_matching_tiles>
+
+    <str_email>E-mail</str_email>
+    <str_e-mail_addr>info@Mahjong4u.com</str_e-mail_addr>
+    <str_www>WWW</str_www>
+    <str_www_addr>http://www.myplaycity.com</str_www_addr>
+    
+    <str_distributed_by>Distributed by</str_distributed_by>
+
+    <str_tile_1>One of dots</str_tile_1>
+    <str_tile_2>Two of dots</str_tile_2>
+    <str_tile_3>Three of dots</str_tile_3>
+    <str_tile_4>Four of dots</str_tile_4>
+    <str_tile_5>Five of dots</str_tile_5>
+    <str_tile_6>Six of dots</str_tile_6>
+    <str_tile_7>Seven of dots</str_tile_7>
+    <str_tile_8>Eight of dots</str_tile_8>
+    <str_tile_9>Nine of dots</str_tile_9>
+    <str_tile_10>White dragon</str_tile_10>
+    <str_tile_11>One of bamboo</str_tile_11>
+    <str_tile_12>Two of bamboo</str_tile_12>
+    <str_tile_13>Three of bamboo</str_tile_13>
+    <str_tile_14>Four of bamboo</str_tile_14>
+    <str_tile_15>Five of bamboo</str_tile_15>
+    <str_tile_16>Six of bamboo</str_tile_16>
+    <str_tile_17>Seven of bamboo</str_tile_17>
+    <str_tile_18>Nine of bamboo</str_tile_18>
+    <str_tile_19>Eight of bamboo</str_tile_19>
+    <str_tile_20>Green dragon</str_tile_20>
+    <str_tile_21>One of characters</str_tile_21>
+    <str_tile_22>Two of characters</str_tile_22>
+    <str_tile_23>Three of characters</str_tile_23>
+    <str_tile_24>Four of characters</str_tile_24>
+    <str_tile_25>Five of characters</str_tile_25>
+    <str_tile_26>Six of characters</str_tile_26>
+    <str_tile_27>Seven of characters</str_tile_27>
+    <str_tile_28>Eight of characters</str_tile_28>
+    <str_tile_29>Nine of characters</str_tile_29>
+    <str_tile_30>Red dragon</str_tile_30>
+    <str_tile_31>North wind</str_tile_31>
+    <str_tile_32>South wind</str_tile_32>
+    <str_tile_33>East wind</str_tile_33>
+    <str_tile_34>West wind</str_tile_34>
+    <str_tile_35>Spring</str_tile_35>
+    <str_tile_36>Summer</str_tile_36>
+    <str_tile_37>Autumn</str_tile_37>
+    <str_tile_38>Winter</str_tile_38>
+    <str_tile_39>Mum</str_tile_39>
+    <str_tile_40>Plum</str_tile_40>
+    <str_tile_41>Orchid</str_tile_41>
+    <str_tile_42>Bamboo</str_tile_42>
+
+  </strings>  
+</language>
+

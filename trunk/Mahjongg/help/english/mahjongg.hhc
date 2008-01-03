@@ -1,0 +1,64 @@
+<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML//EN">
+<HTML>
+<HEAD>
+<meta name="GENERATOR" content="Microsoft&reg; HTML Help Workshop 4.1">
+<!-- Sitemap 1.0 -->
+</HEAD><BODY>
+<UL>
+  <LI> <OBJECT type="text/sitemap">
+    <param name="Name" value="Getting started">
+    <param name="Local" value="getting_started.htm">
+    <param name="ImageNumber" value="10">
+    </OBJECT>
+  <LI> <OBJECT type="text/sitemap">
+    <param name="Name" value="Mahjongg game">
+    <param name="Local" value="ch_game.htm">
+    </OBJECT>
+  <UL>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Solitaire rules">
+      <param name="Local" value="rules.htm">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Tile set">
+      <param name="Local" value="tileset.htm">
+      </OBJECT>
+  </UL>
+  <LI> <OBJECT type="text/sitemap">
+    <param name="Name" value="Amazing Mahjongg 3D">
+    <param name="Local" value="ch_program.htm">
+    </OBJECT>
+  <UL>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Main menu">
+      <param name="Local" value="mainmenu.htm">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Controls">
+      <param name="Local" value="controls.htm">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="How to make tile set">
+      <param name="Local" value="make_tileset.htm">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Version history">
+      <param name="Local" value="whatsnew.htm">
+      </OBJECT>
+  </UL>
+  <LI> <OBJECT type="text/sitemap">
+    <param name="Name" value="Home page and Support">
+    <param name="Local" value="ch_support.htm">
+    </OBJECT>
+  <UL>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="On-line feedback and support form">
+      <param name="Local" value="http://www.mahjongg4u.com/?p=support">
+      </OBJECT>
+    <LI> <OBJECT type="text/sitemap">
+      <param name="Name" value="Home page">
+      <param name="Local" value="http://www.mahjongg4u.com">
+      </OBJECT>
+  </UL>
+</UL>
+</BODY></HTML>

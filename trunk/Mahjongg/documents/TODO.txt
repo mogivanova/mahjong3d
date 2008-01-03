@@ -1,0 +1,73 @@
++ Timed game
++ Auto tile creation depending on tileset size
++ Layouts library
++ Tilesets library
++ Backgrounds library (My Pictures, if registered)
++ Setup dialog
++ About dialog: all regards, href
++ открывать файлы по умолчанию из папки со всей блинбурдой ;)
++ Sounds
++ Fonts
++ Current game status on screen - time, tiles left, removed tiles?
++ Save/load current game
++ Save/load current state on exit
++ Nag screen
++ registration code
++ Setup
++ Hints
++ 3D Tiles from 3DS
++ select layout dialog
++ select tile set dialog
++ поправить вывод растровой картинки об окончании игры
++ Help
+? сделать правильный формат тайлсетов
+
++ Multilanguage support, user localizable
++ clear score table
++ external skins
+! bug: rename skin to mji on the site
+- PNG support in skins
+- XML help source
+- full build release version
+- layout editor!
+- icons for layouts, tile sets, saved games, skins
+- XP icon for program
+- skinned all controls
+
+- internet - check new version
+  - internet settings page
+    - proxy
+    - check on start
+    - check latest version menu item
+- internet - game data base, hiscores, layouts
+    
+- new formats 
+  - XML based layout
+  - XML saved game,  linked to layout
+  - XML multilanguage descriptions in tile sets
+
+- xp theme mode compatible!
+- menu bar, status bar windows, semitransparent
+
+- tile shadows
+- other visual enchansements
+- Environmental lighting
+
+- unique sounds
+- music
+
+- Unique tilesets
+
+- Demo mode
+- Full screen mode
+
+- выделять уровни 
+
+- Intro screen
+- Scores screen
+- Winning screen
+
+- animations 
+
+- four winds game!!!
+- multiplayer mode
