@@ -517,8 +517,7 @@ void CMahjonggView::CreateTileTexture(GLuint unTextureName, ATL::CImage& objImag
 	//BYTE* pBits = objImage.GetBits();
 	//_ASSERT(pBits != NULL);
 
-	BYTE* pBits;
-
+	BYTE* pBits = NULL;
 	m_pDriver->ScaleImage(GL_RGB, nTexWidth, nTexHeight, GL_UNSIGNED_BYTE, pBits,
 												nW, nH, GL_UNSIGNED_BYTE, pdwPic);
 
