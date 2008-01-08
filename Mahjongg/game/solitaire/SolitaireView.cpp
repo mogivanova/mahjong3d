@@ -1,16 +1,3 @@
-/*=================================================================================================
-*
-*  Copyright (c) 1998-2004 Thinking Thing Software
-*  All rights reserved.
-*
-*  Project: Amazing Mahjongg 3D
-*  $Workfile: SolitaireView.cpp $
-*  $Author: andrey-ovcharov $
-*  $Revision: 1.1 $
-*  $Modtime: 17.01.05 23:52 $
-*
-*================================================================================================*/
-
 #include "stdafx.h"
 
 #include "SolitaireView.h"
