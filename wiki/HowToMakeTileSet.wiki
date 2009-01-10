@@ -1,5 +1,6 @@
 #summary How to make a new tile set
 #labels Featured,Phase-Implementation
+#sidebar Sidebar
 
 It is easy enough to make your own tile set for Mahjong 3D. First, you have to make images for all of tiles. Each image must be in separate file. Better, but not necessary, if all of images have same dimensions. Tiles are shown most correctly when width of tile image is 75% of its height (for example 100 pixels wide and 75 pixels high). Images must be in [http://en.wikipedia.org/wiki/JPEG .JPG] format.
 
