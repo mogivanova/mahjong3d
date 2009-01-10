@@ -169,6 +169,9 @@ HRESULT CMJCryptStream::Read(CString* pstr)
 
 HRESULT CMJCryptStream::Read(void* pBuffer, size_t nLength)
 {
+	if(m_pCurrent == NULL)
+		return E_FAIL;
+
 	memcpy(pBuffer, m_pCurrent, nLength);
 
 	m_pCurrent += nLength;

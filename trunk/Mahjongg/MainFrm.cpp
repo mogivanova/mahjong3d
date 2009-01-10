@@ -84,6 +84,8 @@ LRESULT CMainFrame::OnCreate(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM /*lParam*/
 
 	UIUpdateMenuBar(FALSE, TRUE);
 
+	UpdateMenu(GetMenu());
+
 	//m_wndStatusBar.ShowWindow(SW_SHOW);
 	//m_wndStatusBar.UpdateWindow();
 
@@ -248,27 +250,25 @@ LRESULT CMainFrame::OnPlayerName(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWnd
 	return 0;
 }
 
-/*------------------------------------------------------------------------------->8-- Cut here ----
-*
-*/
+/**
+ * @brief    OnSettingsOptions
+ *
+ * CMainFrame::OnSettingsOptions
+ *
+ * @param WORD wNotifyCode
+ * @param WORD wID
+ * @param HWND hWndCtl
+ * @param BOOL & bHandled
+ * @return LRESULT
+ */
 LRESULT CMainFrame::OnSettingsOptions(WORD wNotifyCode, WORD wID, HWND hWndCtl, BOOL& bHandled)
 {
 	bool bUpdate = false;
 
-	if (g_AppSettings.m_enmInterfaceMode == CAppSettings::eBeginner)
-	{
 		CSetupExpertDlg dlg;
 
 		if (dlg.DoModal() == IDOK)
 			bUpdate = true;
-	}
-	else
-	{
-		CSetupExpertDlg dlg;
-
-		if (dlg.DoModal() == IDOK)
-			bUpdate = true;
-	}
 
 	if (bUpdate)
 	{

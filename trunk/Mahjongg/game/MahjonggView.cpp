@@ -4,7 +4,7 @@
 *  All rights reserved.
 *
 *  Project: Amazing Mahjongg 3D
-*  $Workfile: MahjonggView.cpp $
+*  $Workfile: MahjonggView.cppDst $
 *  $Author: andrey-ovcharov $
 *  $Revision: 1.1 $
 *  $Modtime: 27.03.04 14:35 $
@@ -486,40 +486,72 @@ LRESULT CMahjonggView::OnTilesetLoad(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*
 	return 0;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+/**
+ * @brief    CreateTileTexture
+ *
+ * CMahjonggView::CreateTileTexture
+ *
+ * @param GLuint unTextureName
+ * @param ATL::CImage & objImage
+ * @return void
+ */
 void CMahjonggView::CreateTileTexture(GLuint unTextureName, ATL::CImage& objImage)
 {
-	//if(!objImage.IsValid())
-	// return;
+	LPBYTE pImageBits = (LPBYTE)objImage.GetBits();
+	_ASSERT(pImageBits != NULL);
 
-	int nW = 64;
-	int nH = 64;
+	// get image size
+	int nImageWidth = objImage.GetWidth();
+	int nImageHeight = objImage.GetHeight();
+	bool bUpsideDown = objImage.GetPitch() < 0;
 
-	if (g_AppSettings.m_bHighQualityTextures)
+	_ASSERT(nImageWidth > 0 && nImageHeight > 0);
+
+	COLORREF* pSourceBits = new COLORREF[nImageWidth * nImageHeight];
+	memset(pSourceBits, 0, nImageWidth * nImageHeight * sizeof(COLORREF));
+
+	if(bUpsideDown)
 	{
-		nW = 256;
-		nH = 256;
+		int nDst = 0;
+		for(int y = nImageHeight - 1; y >= 0; y--)
+		{
+			for(int x = 0; x < nImageWidth; x++)
+			{
+				COLORREF rgb = objImage.GetPixel(x, y);
+				pSourceBits[nDst] = objImage.GetPixel(x, y);;
+				nDst++;
+			}
+		}
+	}
+	else
+	{
+		int nDst = 0;
+		for(int y = 0; y < nImageHeight; y++)
+		{
+			for(int x = 0; x < nImageWidth; x++)
+			{
+				COLORREF rgb = objImage.GetPixel(x, y);
+				pSourceBits[nDst] = objImage.GetPixel(x, y);;
+				nDst++;
+			}
+		}
 	}
 
-	LPBYTE pdwPic = new BYTE[nW * nH * 3];
+	int nTexWidth = g_AppSettings.m_bHighQualityTextures ? 256 : 64;
+	int nTexHeight = g_AppSettings.m_bHighQualityTextures ? 256 : 64;
 
-	_ASSERT(pdwPic != NULL);
-	memset(pdwPic, 0, sizeof(BYTE) * nW * nH * 3);
+	LPBYTE pTextureBits = new BYTE[nTexWidth * nTexHeight * 4];
 
+	_ASSERT(pTextureBits != NULL);
+	memset(pTextureBits, 0, sizeof(BYTE) * nTexWidth * nTexHeight * 4);
+
+	// scale texture image
+	m_pDriver->ScaleImage(GL_RGBA, 
+		nImageWidth, nImageHeight, GL_UNSIGNED_BYTE, pSourceBits, 
+		nTexWidth, nTexHeight, GL_UNSIGNED_BYTE, pTextureBits);
+
+	// create texture
 	m_pDriver->BindTexture(GL_TEXTURE_2D, unTextureName);
-
-	unsigned int nTexWidth = objImage.GetWidth();
-	_ASSERT(nTexWidth > 0);
-	unsigned int nTexHeight = objImage.GetHeight();
-	_ASSERT(nTexHeight > 0);
-
-	//BYTE* pBits = objImage.GetBits();
-	//_ASSERT(pBits != NULL);
-
-	BYTE* pBits = NULL;
-	m_pDriver->ScaleImage(GL_RGB, nTexWidth, nTexHeight, GL_UNSIGNED_BYTE, pBits,
-												nW, nH, GL_UNSIGNED_BYTE, pdwPic);
 
 	if (g_AppSettings.m_bHighQualityTextures)
 	{
@@ -536,9 +568,11 @@ void CMahjonggView::CreateTileTexture(GLuint unTextureName, ATL::CImage& objImag
 
 	m_pDriver->TexParameter(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
 
-	m_pDriver->TexImage2D(0, GL_RGB, nW, nH, 0, GL_BGR_EXT, GL_UNSIGNED_BYTE, pdwPic);
+	m_pDriver->TexImage2D(0, GL_RGB, nTexWidth, nTexHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, pTextureBits);
 
-	delete [] pdwPic;
+	// release memory
+	delete [] pTextureBits;
+	delete [] pSourceBits;
 }
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
@@ -616,9 +650,6 @@ void CMahjonggView::OnUpdateOptions()
 	}
 
 	_ASSERT(pModel != NULL);
-
-	//m_pDriver->DeleteLists(eTileNear, 1);
-	//m_pDriver->DeleteLists(eTileBody, 1);
 
 	unsigned int uTriangles = 0;
 

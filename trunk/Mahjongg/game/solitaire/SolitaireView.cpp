@@ -39,9 +39,9 @@ CSolitaireView::CSolitaireView(CMainFrame* pContainer)
 
 	m_enmBackgroundMode = eBGSolid;
 
-	m_vBackground[0] = glCOLOR(GetRValue(g_AppSettings.m_rgbBackground));
-	m_vBackground[1] = glCOLOR(GetGValue(g_AppSettings.m_rgbBackground));
-	m_vBackground[2] = glCOLOR(GetBValue(g_AppSettings.m_rgbBackground));
+	m_vBackground[0] = glCOLOR(getRValue(g_AppSettings.m_rgbBackground));
+	m_vBackground[1] = glCOLOR(getGValue(g_AppSettings.m_rgbBackground));
+	m_vBackground[2] = glCOLOR(getBValue(g_AppSettings.m_rgbBackground));
 	m_vBackground[3] = 1.0f;
 
 	m_bTexturesAreReady = false;
@@ -163,9 +163,9 @@ bool CSolitaireView::Init()
 	}
 	else
 	{
-		m_vBackground[0] = glCOLOR(GetRValue(g_AppSettings.m_rgbBackground));
-		m_vBackground[1] = glCOLOR(GetGValue(g_AppSettings.m_rgbBackground));
-		m_vBackground[2] = glCOLOR(GetBValue(g_AppSettings.m_rgbBackground));
+		m_vBackground[0] = glCOLOR(getRValue(g_AppSettings.m_rgbBackground));
+		m_vBackground[1] = glCOLOR(getGValue(g_AppSettings.m_rgbBackground));
+		m_vBackground[2] = glCOLOR(getBValue(g_AppSettings.m_rgbBackground));
 	}
 
 	m_bTexturesAreReady = true;
