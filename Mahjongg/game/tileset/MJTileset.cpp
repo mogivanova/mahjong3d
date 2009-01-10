@@ -14,7 +14,9 @@
 #include "stdafx.h"
 #include <strstream>
 #include "..\..\resource.h"
+
 #include "MJTileset.h"
+#include "service/ResourceStream.h"
 
 #include "../../Service/ZLib/ZLib.h"
 
@@ -32,26 +34,38 @@ CTileset::~CTileset()
 
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
+/**
+ * @brief    LoadResource
+ *
+ * CTileset::LoadResource
+ *
+ * @return bool
+ */
 bool CTileset::LoadResource()
 {
-	HRSRC hRes;
+	CComPtr<IStream> spStream;
 
 	for (int N = 0; N < 43; N++)
 	{
-		hRes = ::FindResource(_Module.m_hInstResource, MAKEINTRESOURCE(TILE00 + N), _T("JPEG"));
-		_ASSERT(hRes != NULL);
-
-		//bool bRes = m_aImages[N].LoadResource(hRes, ATL::CImage_FORMAT_JPG, _Module.m_hInstResource);
+		if(SUCCEEDED(ResourceStream::Create(_Module.GetResourceInstance(), MAKEINTRESOURCE(TILE00 + N), _T("JPEG"), &spStream)))
+		{
+			m_aImages[N].Load(spStream);
+			spStream.Release();
+		}
 	}
 
-	hRes = ::FindResource(_Module.m_hInstResource, MAKEINTRESOURCE(LEFT_SIDE), _T("JPEG"));
+	if(SUCCEEDED(ResourceStream::Create(_Module.GetResourceInstance(), MAKEINTRESOURCE(LEFT_SIDE), _T("JPEG"), &spStream)))
+	{
+		m_aSideImages[0].Load(spStream);
+		spStream.Release();
+	}
 
-	//m_aSideImages[0].LoadResource(hRes, ATL::CImage_FORMAT_JPG, _Module.m_hInstResource);
-
-	hRes = ::FindResource(_Module.m_hInstResource, MAKEINTRESOURCE(BOTTOM_SIDE), _T("JPEG"));
-	//m_aSideImages[1].LoadResource(hRes, ATL::CImage_FORMAT_JPG, _Module.m_hInstResource);
+	if(SUCCEEDED(ResourceStream::Create(_Module.GetResourceInstance(), MAKEINTRESOURCE(BOTTOM_SIDE), _T("JPEG"), &spStream)))
+	{
+		m_aSideImages[1].Load(spStream);
+		spStream.Release();
+	}
 
 	m_bLoaded = true;
 
@@ -60,8 +74,15 @@ bool CTileset::LoadResource()
 	return m_bLoaded;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
+/**
+ * @brief    Load
+ *
+ * CTileset::Load
+ *
+ * @param LPCTSTR pszFileName
+ * @return bool
+ */
 bool CTileset::Load(LPCTSTR pszFileName)
 {
 	CString strFileName = pszFileName;

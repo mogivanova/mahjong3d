@@ -105,8 +105,8 @@ IDI_SAVE_GAME           ICON                    "res\\ico_savegame.ico"
 //
 
 VS_VERSION_INFO VERSIONINFO
- FILEVERSION 1,3,0,0
- PRODUCTVERSION 1,3,0,0
+ FILEVERSION 1,0,0,0
+ PRODUCTVERSION 1,0,0,0
  FILEFLAGSMASK 0x3fL
 #ifdef _DEBUG
  FILEFLAGS 0x1L
@@ -121,14 +121,13 @@ BEGIN
     BEGIN
         BLOCK "000004b0"
         BEGIN
-            VALUE "CompanyName", "Thinking Thing Software"
-            VALUE "FileDescription", "Amazing Mahjongg 3D"
-            VALUE "FileVersion", "1, 3, 0, 0"
-            VALUE "InternalName", "Amazing Mahjongg 3D"
-            VALUE "LegalCopyright", "Copyright 1998-2006 Thinking Thing Software"
+            VALUE "FileDescription", "Mahjongg 3D"
+            VALUE "FileVersion", "1, 0, 0, 0"
+            VALUE "InternalName", "Mahjongg 3D"
+            VALUE "LegalCopyright", "Copyright 1998-2009 Thinking Thing Software"
             VALUE "OriginalFilename", "Mahjongg.exe"
-            VALUE "ProductName", "Amazing Mahjongg 3D"
-            VALUE "ProductVersion", "1, 3, 0, 0"
+            VALUE "ProductName", "Mahjongg 3D"
+            VALUE "ProductVersion", "1, 0, 0, 0"
         END
     END
     BLOCK "VarFileInfo"
@@ -227,20 +226,17 @@ BEGIN
     CONTROL         "str_do_not_show_hints",IDC_SHOW_HINTS,"Button",BS_AUTOCHECKBOX | WS_TABSTOP,6,48,192,10
 END
 
-IDD_ABOUTBOX DIALOGEX 0, 0, 220, 119
+IDD_ABOUTBOX DIALOGEX 0, 0, 220, 101
 STYLE DS_SETFONT | DS_MODALFRAME | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
 CAPTION "caption_about"
 FONT 8, "MS Sans Serif", 0, 0, 0x1
 BEGIN
-    DEFPUSHBUTTON   "str_ok",IDOK,83,99,54,14
-    PUSHBUTTON      "str_buy_now",IDC_BUY_NOW,151,99,54,14
-    PUSHBUTTON      "str_enter_key",IDC_REGISTER,15,99,54,14
+    DEFPUSHBUTTON   "str_ok",IDOK,83,80,54,14
     CTEXT           "Amazing Mahjongg 3D",IDC_ABOUT_GAME,6,6,210,30,0,WS_EX_STATICEDGE
-    LTEXT           "str_email",IDC_STATIC,6,78,34,8
-    LTEXT           "str_www",IDC_STATIC,6,67,34,8
-    CONTROL         "str_e-mail_addr",IDC_EMAIL,"Static",SS_LEFTNOWORDWRAP | SS_NOTIFY | WS_GROUP,40,78,176,8
-    LTEXT           "str_www_addr",IDC_WWW,40,67,176,8,SS_NOTIFY
-    CTEXT           "str_unregistered",IDC_REGISTERED,6,43,210,18,0,WS_EX_STATICEDGE
+    LTEXT           "str_email",IDC_STATIC,7,62,34,8
+    LTEXT           "str_www",IDC_STATIC,7,49,34,8
+    CONTROL         "str_e-mail_addr",IDC_EMAIL,"Static",SS_LEFTNOWORDWRAP | SS_NOTIFY | WS_GROUP,51,62,162,8
+    LTEXT           "str_www_addr",IDC_WWW,51,49,162,8,SS_NOTIFY
 END
 
 IDD_PLAYER_NAME DIALOGEX 0, 0, 184, 47
@@ -271,7 +267,7 @@ BEGIN
     PUSHBUTTON      "str_upload",IDC_SCORES_UPLOAD,70,200,50,14
     COMBOBOX        IDC_LAYOUTS,42,6,204,103,CBS_DROPDOWNLIST | CBS_SORT | WS_VSCROLL | WS_TABSTOP
     LTEXT           "str_layout",IDC_LABEL_LAYOUT,6,6,31,8
-    CONTROL         "",IDC_UPLOAD_PROGRESS,"msctls_progress32",NOT WS_VISIBLE | WS_BORDER | 0x1,6,186,240,6
+    CONTROL         "",IDC_UPLOAD_PROGRESS,"msctls_progress32",PBS_SMOOTH | NOT WS_VISIBLE | WS_BORDER,6,186,240,6
 END
 
 IDD_NAG DIALOG  0, 0, 220, 106
@@ -322,19 +318,6 @@ BEGIN
     PUSHBUTTON      "str_cancel",IDCANCEL,145,133,50,14
     PUSHBUTTON      "str_browse",IDC_BROWSE,211,133,50,14
     GROUPBOX        "",IDC_LAYOUT,180,6,152,120,NOT WS_VISIBLE
-END
-
-IDD_TRIAL DIALOG  0, 0, 220, 101
-STYLE DS_ABSALIGN | DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_3DLOOK | DS_CENTER | WS_POPUP | WS_VISIBLE | WS_CAPTION | WS_SYSMENU
-CAPTION "Trial Expired!"
-FONT 8, "MS Sans Serif"
-BEGIN
-    PUSHBUTTON      "&Exit",IDC_EXIT,19,80,50,14
-    DEFPUSHBUTTON   "&Buy Now!",IDC_BUY_NOW,85,80,50,14
-    PUSHBUTTON      "Enter Key...",IDC_REGISTER,151,80,50,14
-    CTEXT           "Sorry, but your 30-day trial has expired !",IDC_STATIC,6,54,204,8
-    CONTROL         221,IDC_STATIC,"Static",SS_BITMAP,6,6,207,43
-    LTEXT           "",IDC_STATIC,6,72,204,1,SS_SUNKEN | NOT WS_GROUP
 END
 
 IDD_SETUP_EXPERT DIALOGEX 0, 0, 328, 161
@@ -428,13 +411,13 @@ BEGIN
     BEGIN
         LEFTMARGIN, 7
         RIGHTMARGIN, 213
+        VERTGUIDE, 41
+        VERTGUIDE, 51
         VERTGUIDE, 215
         TOPMARGIN, 7
-        BOTTOMMARGIN, 111
+        BOTTOMMARGIN, 93
         HORZGUIDE, 49
-        HORZGUIDE, 58
-        HORZGUIDE, 78
-        HORZGUIDE, 84
+        HORZGUIDE, 62
     END
 
     IDD_PLAYER_NAME, DIALOG
@@ -489,14 +472,6 @@ BEGIN
         RIGHTMARGIN, 333
         TOPMARGIN, 7
         BOTTOMMARGIN, 147
-    END
-
-    IDD_TRIAL, DIALOG
-    BEGIN
-        LEFTMARGIN, 7
-        RIGHTMARGIN, 213
-        TOPMARGIN, 7
-        BOTTOMMARGIN, 94
     END
 
     IDD_SETUP_EXPERT, DIALOG
@@ -720,9 +695,9 @@ END
 
 STRINGTABLE 
 BEGIN
-    IDR_MAINFRAME           "Amazing Mahjongg 3D"
+    IDR_MAINFRAME           "Mahjongg 3D"
     IDS_ERROR_CAPTION       "Error!"
-    IDS_VERSION_FORMAT      "Amazing Mahjongg 3D\nVersion %d.%d\n©2000-2005 Thinking Thing Software"
+    IDS_VERSION_FORMAT      "Mahjongg 3D\nVersion %d.%d\n©1998-2009 Thinking Thing Software"
     IDS_ABOUT               "Credits:\r\nIJG JPEG library ©1994-1998, Thomas G. Lane"
     IDS_LAYOUT_FILTER       "Layout Files (*.mjl, *.lay)\n*.mjl;*.lay\nAmazing Mahjongg 3D layouts (*.mjl)\n*.mjl\nKyodai layouts (*.lay)\n*.lay\nAll Files (*.*)\n*.*\n"
     IDS_STATUS              "Tileset: %s. Layout: %s."
@@ -773,13 +748,7 @@ BEGIN
     IDS_LAYOUTS_FOLDER      "Layouts\\"
     IDS_TILESET_FOLDER      "Tile Sets\\"
     IDS_BACKGROUND_FOLDER   "Background Images\\"
-    IDS_WWW                 "http://www.mahjongg4u.com"
-    IDS_REGISTRATION        "http://www.mahjongg4u.com/order"
-END
-
-STRINGTABLE 
-BEGIN
-    IDS_ACCOUNT_REGISTER    "http://www.mahjongg4u.com/scores/register"
+    IDS_WWW                 "http://code.google.com/p/mahjong3d/"
 END
 
 STRINGTABLE 

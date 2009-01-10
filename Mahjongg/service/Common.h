@@ -12,7 +12,26 @@
 /*------------------------------------------------------------------------------->8-- Cut here ----
 *
 */
-#define glCOLOR(c) (((float)(c)) / 255.0f)
+inline float glCOLOR(BYTE c)
+{
+	return (float)c / 255.0f;
+}
+
+inline BYTE getRValue(COLORREF rgb)
+{ 
+	return LOBYTE(rgb);
+}
+
+inline BYTE getGValue(COLORREF rgb)
+{
+	return LOBYTE(rgb >> 8);
+}
+
+inline BYTE getBValue(COLORREF rgb)
+{
+	return LOBYTE(rgb >> 16);
+}
+
 #define glRGB(r, g, b) {glCOLOR(r), glCOLOR(g), glCOLOR(b), 1.0f}
 #define glRGBA(r, g, b, a) {glCOLOR(r), glCOLOR(g), glCOLOR(b), a}
 

@@ -219,7 +219,7 @@ HRESULT CAboutDlg::FillControls()
 	m_ctrlWWW.SetFont(m_objFont->m_hFont, FALSE);
 
 	//m_ctrlAboutText = GetDlgItem(IDC_ABOUT_TEXT);
-	m_ctrlRegistered = GetDlgItem(IDC_REGISTERED);
+	//m_ctrlRegistered = GetDlgItem(IDC_REGISTERED);
 
 	//m_ctrlOk.Attach(GetDlgItem(IDC_REGISTER));
 

@@ -111,7 +111,6 @@
 #define IDC_CLOSE                       252
 #define IDC_SCORES_REPLAY               253
 #define IDB_FONT                        254
-#define IDC_EXIT                        254
 #define IDC_SCORES_UPLOAD               254
 #define IDC_PROGRESS                    255
 #define IDD_SCORES                      255
@@ -121,7 +120,6 @@
 #define IDD_TILESETS                    258
 #define IDC_PASTE                       258
 #define IDD_LAYOUTS                     259
-#define IDD_TRIAL                       260
 #define IDC_MESSAGE                     261
 #define BOTTOM_SIDE                     263
 #define LEFT_SIDE                       264
@@ -287,7 +285,7 @@
 // 
 #ifdef APSTUDIO_INVOKED
 #ifndef APSTUDIO_READONLY_SYMBOLS
-#define _APS_NEXT_RESOURCE_VALUE        333
+#define _APS_NEXT_RESOURCE_VALUE        334
 #define _APS_NEXT_COMMAND_VALUE         32868
 #define _APS_NEXT_CONTROL_VALUE         306
 #define _APS_NEXT_SYMED_VALUE           101
