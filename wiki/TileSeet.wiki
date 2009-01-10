@@ -1,4 +1,5 @@
 #summary Tile set description
+#labels Featured
 
 A complete set contains 144 tiles. The tiles fall into four categories: suits, honour tiles, flowers and seasons.
 
@@ -6,15 +7,15 @@ There are three suits:
 
 the dots (also called circles or balls):
 
-1 of dots 2 of dots 3 of dots 4 of dots 5 of dots 6 of dots 7 of dots 8 of dots 9 of dots
+[http://mahjong3d.googlecode.com/svn/trunk/Mahjongg/res/tileset/01.JPG] [http://mahjong3d.googlecode.com/svn/trunk/Mahjongg/res/tileset/02.JPG] [http://mahjong3d.googlecode.com/svn/trunk/Mahjongg/res/tileset/03.JPG] [http://mahjong3d.googlecode.com/svn/trunk/Mahjongg/res/tileset/04.JPG] [http://mahjong3d.googlecode.com/svn/trunk/Mahjongg/res/tileset/05.JPG] [http://mahjong3d.googlecode.com/svn/trunk/Mahjongg/res/tileset/06.JPG] [http://mahjong3d.googlecode.com/svn/trunk/Mahjongg/res/tileset/07.JPG] [http://mahjong3d.googlecode.com/svn/trunk/Mahjongg/res/tileset/08.JPG] [http://mahjong3d.googlecode.com/svn/trunk/Mahjongg/res/tileset/09.JPG] 
 
 the bamboo's (also called bams or sticks):
 
-1 of bamboos 2 of bamboos 3 of bamboos 4 of bamboos 5 of bamboos 6 of bamboos 7 of bamboos 8 of bamboos 9 of bamboos
+[http://mahjong3d.googlecode.com/svn/trunk/Mahjongg/res/tileset/11.JPG] [http://mahjong3d.googlecode.com/svn/trunk/Mahjongg/res/tileset/12.JPG] [http://mahjong3d.googlecode.com/svn/trunk/Mahjongg/res/tileset/13.JPG] [http://mahjong3d.googlecode.com/svn/trunk/Mahjongg/res/tileset/14.JPG] [http://mahjong3d.googlecode.com/svn/trunk/Mahjongg/res/tileset/15.JPG] [http://mahjong3d.googlecode.com/svn/trunk/Mahjongg/res/tileset/16.JPG] [http://mahjong3d.googlecode.com/svn/trunk/Mahjongg/res/tileset/17.JPG] [http://mahjong3d.googlecode.com/svn/trunk/Mahjongg/res/tileset/18.JPG] [http://mahjong3d.googlecode.com/svn/trunk/Mahjongg/res/tileset/19.JPG]
 
 and the characters (also called characks, cracks, or wan):
 
-1 of characters 2 of characters 3 of characters 4 of characters 5 of characters 6 of characters 7 of characters 8 of characters 9 of characters
+[http://mahjong3d.googlecode.com/svn/trunk/Mahjongg/res/tileset/21.JPG] [http://mahjong3d.googlecode.com/svn/trunk/Mahjongg/res/tileset/22.JPG] [http://mahjong3d.googlecode.com/svn/trunk/Mahjongg/res/tileset/23.JPG] [http://mahjong3d.googlecode.com/svn/trunk/Mahjongg/res/tileset/24.JPG] [http://mahjong3d.googlecode.com/svn/trunk/Mahjongg/res/tileset/25.JPG] [http://mahjong3d.googlecode.com/svn/trunk/Mahjongg/res/tileset/26.JPG] [http://mahjong3d.googlecode.com/svn/trunk/Mahjongg/res/tileset/27.JPG] [http://mahjong3d.googlecode.com/svn/trunk/Mahjongg/res/tileset/28.JPG] [http://mahjong3d.googlecode.com/svn/trunk/Mahjongg/res/tileset/29.JPG]
 
 The suit tiles are numbered 1 through 9, and in any given suit, there are four of each number.
 
