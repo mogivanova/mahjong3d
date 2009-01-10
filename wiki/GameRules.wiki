@@ -1,5 +1,6 @@
 #summary Rules of mahjongg solitaire game
 #labels Featured
+#sidebar Sidebar
 
 Rules of this game are simple. Your goal is to remove all tiles from the board.
 
