@@ -1,5 +1,6 @@
 #summary Tile set description
 #labels Featured
+#sidebar Sidebar
 
 A complete set contains 144 tiles. The tiles fall into four categories: suits, honour tiles, flowers and seasons.
 
