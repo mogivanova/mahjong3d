@@ -1,3 +1,5 @@
 #summary Sidebar navigation
 
+* [HowTo How to]
+  * [HowToMakeTileSet ...make a tile set]
 * [FAQ FAQ]
