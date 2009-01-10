@@ -1,3 +1,4 @@
 #summary How To
+#sidebar Sidebar
 
 * [HowToMakeTileSet How to make a tile set]
