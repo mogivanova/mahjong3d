@@ -1,5 +1,8 @@
 #summary Sidebar navigation
 
+* [GameRules Solitaire Rules]
+* [TileSet Tile set description]
 * [HowTo How to]
   * [HowToMakeTileSet ...make a tile set]
 * [FAQ FAQ]
+* [Stats Project stats]
