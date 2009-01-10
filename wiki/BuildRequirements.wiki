@@ -1,0 +1,4 @@
+#summary Tools and libraries required to build the project
+#labels Phase-Implementation
+
+  * [http://sourceforge.net/projects/wtl/ Windows Template Library (WTL)]
