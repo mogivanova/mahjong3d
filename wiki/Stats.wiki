@@ -1,4 +1,5 @@
 #summary Project Stats
+#sidebar Sidebar
 
 = Languages =
 
