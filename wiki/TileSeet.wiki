@@ -1,0 +1,33 @@
+#summary Tile set description
+
+A complete set contains 144 tiles. The tiles fall into four categories: suits, honour tiles, flowers and seasons.
+
+There are three suits:
+
+the dots (also called circles or balls):
+
+1 of dots 2 of dots 3 of dots 4 of dots 5 of dots 6 of dots 7 of dots 8 of dots 9 of dots
+
+the bamboo's (also called bams or sticks):
+
+1 of bamboos 2 of bamboos 3 of bamboos 4 of bamboos 5 of bamboos 6 of bamboos 7 of bamboos 8 of bamboos 9 of bamboos
+
+and the characters (also called characks, cracks, or wan):
+
+1 of characters 2 of characters 3 of characters 4 of characters 5 of characters 6 of characters 7 of characters 8 of characters 9 of characters
+
+The suit tiles are numbered 1 through 9, and in any given suit, there are four of each number.
+
+There are two types of honour tiles. The winds (North, South, East, and West):
+
+North South East West
+
+and the dragons (Red, Green, and White):
+
+The red has the Chinese character (in red) for Cheung - meaning centre of the four directions. The green dragon is not really a dragon, but a green imprinted Chinese character, Fa (or Fa Choy), meaning "commence" or "begin good luck."
+
+Just as there are four each suit number, there are four of each wind and four of each dragon.
+
+The flower and season tiles differ in nature from the suit and honour tiles. There are only 4 flowers (1, 2, 3, and 4):
+
+and only 4 season tiles (1, 2, 3, and 4): 
