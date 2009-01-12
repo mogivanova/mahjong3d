@@ -13,33 +13,46 @@
 
 #include "stdafx.h"
 
-#include "../../../zlib/zlib.h"
-#include "../../../zlib/unzip.h"
+#include "ZLibArchive.h"
 
-#include "ZLib.h"
+#include "unzip.h"
 
-
-/*------------------------------------------------------------------------------>8-- Cut here -----
-*
-*/
+/**
+ * @brief    CZLibArchive
+ *
+ * CZLibArchive::CZLibArchive
+ *
+ * @return 
+ */
 CZLibArchive::CZLibArchive()
 {
 	m_bIsOpen = false;
 	m_zf = NULL;
 }
 
-/*------------------------------------------------------------------------------>8-- Cut here -----
-*
-*/
+
+/**
+ * @brief    ~CZLibArchive
+ *
+ * CZLibArchive::~CZLibArchive
+ *
+ * @return 
+ */
 CZLibArchive::~CZLibArchive()
 {
 	if (IsOpen())
 		Close();
 }
 
-/*------------------------------------------------------------------------------>8-- Cut here -----
-*
-*/
+
+/**
+ * @brief    Open
+ *
+ * CZLibArchive::Open
+ *
+ * @param LPCTSTR pszFileName
+ * @return bool
+ */
 bool CZLibArchive::Open(LPCTSTR pszFileName)
 {
 	if (IsOpen())
@@ -69,9 +82,14 @@ bool CZLibArchive::Open(LPCTSTR pszFileName)
 	return true;
 }
 
-/*------------------------------------------------------------------------------>8-- Cut here -----
-*
-*/
+
+/**
+ * @brief    Close
+ *
+ * CZLibArchive::Close
+ *
+ * @return bool
+ */
 bool CZLibArchive::Close()
 {
 	if (!IsOpen())
@@ -86,9 +104,16 @@ bool CZLibArchive::Close()
 	return true;
 }
 
-/*------------------------------------------------------------------------------->8-- Cut here ----
-*
-*/
+
+/**
+ * @brief    ReadFile
+ *
+ * CZLibArchive::ReadFile
+ *
+ * @param LPCTSTR pszFileName
+ * @param CZLibFile & fileData
+ * @return bool
+ */
 bool CZLibArchive::ReadFile(LPCTSTR pszFileName, CZLibFile& fileData)
 {
 	USES_CONVERSION;

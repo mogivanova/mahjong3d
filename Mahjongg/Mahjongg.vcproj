@@ -923,11 +923,59 @@
 					Name="ZLib"
 					>
 					<File
-						RelativePath=".\Service\ZLib\ZLib.cpp"
+						RelativePath=".\service\zlib\unzip.cpp"
+						>
+						<FileConfiguration
+							Name="Debug|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								UsePrecompiledHeader="0"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="Debug|x64"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								UsePrecompiledHeader="0"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="Release|Win32"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								UsePrecompiledHeader="0"
+							/>
+						</FileConfiguration>
+						<FileConfiguration
+							Name="Release|x64"
+							>
+							<Tool
+								Name="VCCLCompilerTool"
+								UsePrecompiledHeader="0"
+							/>
+						</FileConfiguration>
+					</File>
+					<File
+						RelativePath=".\service\zlib\unzip.h"
 						>
 					</File>
 					<File
-						RelativePath=".\Service\ZLib\ZLib.h"
+						RelativePath=".\service\zlib\ZLibArchive.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\service\zlib\ZLibArchive.h"
+						>
+					</File>
+					<File
+						RelativePath=".\service\zlib\ZLibFile.cpp"
+						>
+					</File>
+					<File
+						RelativePath=".\service\zlib\ZLibFile.h"
 						>
 					</File>
 				</Filter>

@@ -18,7 +18,7 @@
 #include "MJTileset.h"
 #include "service/ResourceStream.h"
 
-#include "../../Service/ZLib/ZLib.h"
+#include "../../Service/ZLib/ZLibArchive.h"
 
 ////////////////////////////////////////////////////////////////////////////////////////////////////
 //

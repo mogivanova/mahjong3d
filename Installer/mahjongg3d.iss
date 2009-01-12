@@ -44,6 +44,7 @@ Name: "{userdocs}\My Games\Mahjongg 3D\Languages"
 [Files]
 ; Main files
 Source: "..\_bin\Win32_Release\Mahjongg.exe"; DestDir: "{app}"
+Source: "Resources\zlib.dll"; DestDir: "{app}"
 Source: "Resources\glu.dll"; DestDir: "{app}"
 Source: "Resources\opengl.dll"; DestDir: "{app}"
 Source: "Resources\readme.txt"; DestDir: "{app}"
