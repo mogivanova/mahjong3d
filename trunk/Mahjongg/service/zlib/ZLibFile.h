@@ -13,10 +13,6 @@
 
 #pragma once
 
-/*------------------------------------------------------------------------------->8-- Cut here ----
-*
-*/
-
 class CZLibFile
 {
 
@@ -58,30 +54,4 @@ protected:
 	DWORD m_dwSize;
 
 	friend class CZLibArchive;
-};
-
-/*------------------------------------------------------------------------------->8-- Cut here ----
-*
-*/
-
-class CZLibArchive
-{
-
-public:
-	CZLibArchive();
-	~CZLibArchive();
-
-	bool Open(LPCTSTR pszFileName);
-	bool IsOpen()
-	{
-		return m_bIsOpen;
-	}
-
-	bool Close();
-
-	bool ReadFile(LPCTSTR pszFileName, CZLibFile& fileData);
-
-protected:
-	void* m_zf;
-	bool m_bIsOpen;
 };

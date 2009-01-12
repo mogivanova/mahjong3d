@@ -50,6 +50,9 @@ extern CAppModule _Module;
 #include "wininet.h"
 #pragma comment(lib, "wininet.lib")
 
+#include "zlib.h"
+#pragma comment(lib, "zlib.lib")
+
 #include <direct.h>
 
 #include "Service\Profile\QProfile.h"

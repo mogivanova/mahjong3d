@@ -180,7 +180,7 @@ HRESULT CScoresDlg::FillScoresForLayout(CString strLayout)
 CString valueOf(int n)
 {
 	TCHAR ch[20 + 1];
-	swprintf(ch, _T("%20d"), n);
+	swprintf(ch, 20, _T("%20d"), n);
 	return ch;
 }
 

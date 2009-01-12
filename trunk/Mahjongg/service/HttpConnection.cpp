@@ -86,8 +86,8 @@ CString GenerateBoundary()
 	int r1 = rand() & 0xffff;
 	int r2 = rand() & 0xffff;
 
-	char temp[13];
-	sprintf(temp, "%04X%04X%04X", r0, r1, r2);
+	char temp[13] = {0};
+	sprintf_s(temp, 13, "%04X%04X%04X", r0, r1, r2);
 
 	return boundaryPrefix + temp;
 }
