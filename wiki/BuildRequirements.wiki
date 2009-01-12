@@ -3,3 +3,4 @@
 
   * [http://sourceforge.net/projects/wtl/ Windows Template Library (WTL)]
   * [http://www.innosetup.com/isinfo.php Inno Setup]
+  * [http://www.zlib.net/ ZLib]
