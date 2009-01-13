@@ -4,6 +4,7 @@
 
 class CMJCryptStream
 {
+
 public:
 	CMJCryptStream();
 

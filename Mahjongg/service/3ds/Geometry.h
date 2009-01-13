@@ -56,9 +56,6 @@ public:
 	friend CVector3 operator *(CVector3& vector1, float value);
 	friend CVector3 operator /(CVector3& vector1, float value);
 };
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
 inline CVector3 Cross(CVector3& vVector1, CVector3& vVector2)
 {
 	CVector3 vCross;                // The vector to hold the cross product
@@ -80,16 +77,14 @@ inline CVector3 operator+(CVector3& vVector1, CVector3& vVector2)
 	return CVector3(vVector2.x + vVector1.x, vVector2.y + vVector1.y, vVector2.z + vVector1.z);
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 inline CVector3 operator/(CVector3& vVector1, float value)
 {
 	// Return the resultant vector
 	return CVector3(vVector1.x / value, vVector1.y / value, vVector1.z / value);
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 inline CVector3 operator*(CVector3& vVector1, float value)
 {
 	// Return the resultant vector

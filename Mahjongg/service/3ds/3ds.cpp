@@ -1,8 +1,7 @@
 #include "stdafx.h"
 #include "3ds.h"
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 CFace::CFace()
 {
 	vertIndex[0] = vertIndex[1] = vertIndex[2] = 0;
@@ -10,8 +9,7 @@ CFace::CFace()
 	bSmooth = false;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 C3DObject::C3DObject()
 {
 	numOfVerts = 0;      // The number of verts in the model
@@ -25,8 +23,7 @@ C3DObject::C3DObject()
 	pFaces = NULL;        // The faces information of the object
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 CMaterialInfo::CMaterialInfo()
 {
 	color[0] = color[1] = color[2] = 0;       // The color of the object (R, G, B)
@@ -37,8 +34,7 @@ CMaterialInfo::CMaterialInfo()
 	vOffset = 0.0f;        // v offset of texture  (Currently not used)
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 C3DModel::C3DModel()
 {
 	numOfObjects = 0;         // The number of objects in the model
@@ -72,8 +68,7 @@ bool CLoad3DS::Load(UINT nResourceID, C3DModel* pModel)
 	return Load(MAKEINTRESOURCE(nResourceID), pModel);
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 bool CLoad3DS::Load(LPCTSTR szResourceName, C3DModel* pModel)
 {
 	HRSRC hRsrc = FindResource(_Module.m_hInstResource, szResourceName, _T("OBJECT3D"));
@@ -630,8 +625,6 @@ void CLoad3DS::ReadObjectMaterial(C3DModel *pModel, C3DObject *pObject, tChunk *
 	// You will notice we subtract the bytes already read in this chunk from the total length.
 	pPreviousChunk->bytesRead += Read(buffer, pPreviousChunk->length - pPreviousChunk->bytesRead);
 }
-
-
 ///////////////////////////////// COMPUTER NORMALS \\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\\*
 /////
 ///// This function computes the normals and vertex normals of the objects
@@ -729,8 +722,7 @@ void CLoad3DS::ComputeNormals(C3DModel *pModel)
 	}
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 unsigned int CLoad3DS::Read(void* pBuffer, unsigned int nLength)
 {
 	memcpy(pBuffer, m_pData, nLength);

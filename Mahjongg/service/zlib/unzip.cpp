@@ -29,8 +29,6 @@ extern int errno;
 #endif
 /* compile with -Dlocal if your debugger can't find static symbols */
 
-
-
 #if !defined(unix) && !defined(CASESENSITIVITYDEFAULT_YES) && \
                       !defined(CASESENSITIVITYDEFAULT_NO)
 #define CASESENSITIVITYDEFAULT_NO
@@ -644,8 +642,6 @@ local int unzlocal_GetCurrentFileInfoInternal(unzFile file,
 	}
 	else
 		lSeek += file_info.size_file_extra;
-
-
 	if ((err == UNZ_OK) && (szComment != NULL))
 	{
 		ULONG uSizeRead ;
@@ -681,8 +677,6 @@ local int unzlocal_GetCurrentFileInfoInternal(unzFile file,
 
 	return err;
 }
-
-
 
 /*
   Write info about the ZipFile in the *pglobal_info structure.
@@ -1048,8 +1042,6 @@ extern int ZEXPORT unzReadCurrentFile(unzFile file, void* buf, unsigned int len)
 
 	if (pfile_in_zip_read_info == NULL)
 		return UNZ_PARAMERROR;
-
-
 	if ((pfile_in_zip_read_info->read_buffer == NULL))
 		return UNZ_END_OF_LIST_OF_FILE;
 
@@ -1218,8 +1210,6 @@ extern int ZEXPORT unzeof(unzFile file)
 	else
 		return 0;
 }
-
-
 
 /*
   Read extra field from the current file (opened by unzOpenCurrentFile)

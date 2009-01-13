@@ -22,7 +22,7 @@
  *
  * CZLibArchive::CZLibArchive
  *
- * @return 
+ * @return
  */
 CZLibArchive::CZLibArchive()
 {
@@ -36,7 +36,7 @@ CZLibArchive::CZLibArchive()
  *
  * CZLibArchive::~CZLibArchive
  *
- * @return 
+ * @return
  */
 CZLibArchive::~CZLibArchive()
 {

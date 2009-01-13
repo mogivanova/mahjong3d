@@ -17,20 +17,17 @@
 #include "Service\MJCrypt.h"
 #include "..\..\Service\XML\XML.h"
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 CSolitaireLayout::CSolitaireLayout(void)
 {
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 CSolitaireLayout::~CSolitaireLayout(void)
 {
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 bool CSolitaireLayout::Load(LPCTSTR pszPathName)
 {
 	CString strPath = pszPathName;
@@ -47,8 +44,7 @@ bool CSolitaireLayout::Load(LPCTSTR pszPathName)
 	return LoadMJ(pszPathName);
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 bool CSolitaireLayout::LoadResource(UINT nResourceID)
 {
 	bool bResult = false;
@@ -104,8 +100,7 @@ bool CSolitaireLayout::LoadResource(UINT nResourceID)
 	return bResult;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 bool CSolitaireLayout::LoadMJ(LPCTSTR pszPathName)
 {
 	if (lstrlen(pszPathName) == 0)
@@ -131,8 +126,7 @@ bool CSolitaireLayout::LoadMJ(LPCTSTR pszPathName)
 	return bResult;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 bool CSolitaireLayout::LoadKyodai(LPCTSTR pszPathName)
 {
 	bool bResult = false;
@@ -325,16 +319,14 @@ bool CSolitaireLayout::LoadFromKyodaiString(TCHAR* pszLayout)
 	return false;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 void CSolitaireLayout::Set(CSolitaireLayout& objLayout)
 {
 	CBoard::Set(objLayout);
 	m_strName = objLayout.m_strName;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 bool CSolitaireLayout::LoadDescription(CString strPathName, CLayoutDescription** pDescription)
 {
 	*pDescription = NULL;

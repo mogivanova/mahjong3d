@@ -1,6 +1,7 @@
 #pragma once
 
 template<class T>
+
 class CBufferT
 {
 
@@ -37,6 +38,7 @@ public:
 
 #ifdef _DEBUG
 		memset(m_pBuffer, 0, dwSize * sizeof(T));
+
 #endif
 
 		return S_OK;

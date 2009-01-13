@@ -18,7 +18,7 @@ inline float glCOLOR(BYTE c)
 }
 
 inline BYTE getRValue(COLORREF rgb)
-{ 
+{
 	return LOBYTE(rgb);
 }
 

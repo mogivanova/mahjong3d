@@ -18,8 +18,7 @@
 
 class CSolitaireLayout;
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 inline bool TileEqual(CTile Tile1, CTile Tile2)
 {
 	// number tiles
@@ -36,9 +35,6 @@ inline bool TileEqual(CTile Tile1, CTile Tile2)
 
 	return false;
 }
-
-/////////////////////////////////////////////////////////////////////////////
-//
 
 class CSolitairePos
 {
@@ -89,9 +85,6 @@ inline int operator !=(CSolitairePos& pos1, CSolitairePos& pos2)
 {
 	return !(pos1 == pos2);
 }
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
 
 class CSolitaireMove
 {
@@ -163,9 +156,6 @@ inline bool CSolitaireMove::Load(CMJCryptStream& stream)
 	return true;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
-
 class CBoard
 {
 
@@ -213,15 +203,13 @@ protected:
 	void SetDimensions(unsigned char width, unsigned char height, unsigned char depth);
 };
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 inline CTile& CBoard::GetTile(CSolitairePos& pos)
 {
 	return GetTile(pos.i, pos.j, pos.k);
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 inline CTile& CBoard::GetTile(unsigned char i, unsigned char j, unsigned char k)
 {
 	_ASSERT( i < m_nWidth && j < m_nHeight && k < m_nDepth);

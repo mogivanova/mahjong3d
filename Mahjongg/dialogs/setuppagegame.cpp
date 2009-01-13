@@ -31,8 +31,7 @@ void CSetupPageGame::Show(UINT nCommand)
 	ShowWindow(nCommand);
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-// 
+
 void CSetupPageGame::Move(CRect &rect)
 {
 	SetWindowPos(m_hWnd, rect.left, rect.top, -1, -1, SWP_NOSIZE | SWP_NOZORDER | SWP_NOACTIVATE);

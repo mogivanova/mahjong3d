@@ -173,25 +173,36 @@ protected:
 
 			switch (c)
 			{
+
 			case _T('.'):
-						case _T(','):
-							case _T(';'):
-								case _T('\"'):
-									case _T('\''):
-										case _T('('):
-											case _T(')'):
-												case _T('['):
-													case _T(']'):
-														case _T('{'):
-															case _T('}'):
-																	sLink = sLink.substr(1, len - 1);
+
+			case _T(','):
+
+			case _T(';'):
+
+			case _T('\"'):
+
+			case _T('\''):
+
+			case _T('('):
+
+			case _T(')'):
+
+			case _T('['):
+
+			case _T(']'):
+
+			case _T('{'):
+
+			case _T('}'):
+				sLink = sLink.substr(1, len - 1);
 				break;
 			}
 		}
 	}
 
 	void PrepareText(const CString& sText)
-{
+	{
 		m_sText = sText;
 		m_Links.clear();
 
@@ -240,13 +251,21 @@ protected:
 
 				switch (c)
 				{
-				case _T('h'): state = http0;
+
+				case _T('h'):
+					state = http0;
 					break;
-				case _T('f'): state = ftp0;
+
+				case _T('f'):
+					state = ftp0;
 					break;
-				case _T('w'): state = www0;
+
+				case _T('w'):
+					state = www0;
 					break;
-				case _T('m'): state = mailto0;
+
+				case _T('m'):
+					state = mailto0;
 					break;
 
 				default:
@@ -702,7 +721,7 @@ protected:
 		}
 	};
 
-class CLineInfo : public CSimpleArray<CLinePartInfo>
+	class CLineInfo : public CSimpleArray<CLinePartInfo>
 	{
 
 	public:
@@ -738,7 +757,7 @@ class CLineInfo : public CSimpleArray<CLinePartInfo>
 		}
 	};
 
-class CVisPart : public CLinePartInfo
+	class CVisPart : public CLinePartInfo
 	{
 
 	public:
@@ -774,7 +793,7 @@ class CVisPart : public CLinePartInfo
 		}
 	};
 
-class CVisLine : public CSimpleArray<CVisPart>
+	class CVisLine : public CSimpleArray<CVisPart>
 		{	};
 
 

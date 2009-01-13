@@ -16,16 +16,14 @@
 #include "TilesetDlg.h"
 #include "..\Game\Tileset\MJTileset.h"
 
-////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 CTilesetDlg::CTilesetDlg(void)
 {
 	m_bUpdating = false;
 	m_pDesc = NULL;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 CTilesetDlg::~CTilesetDlg(void)
 {
 	for (int i = 0; i < m_lstDescriptions.GetSize(); i++)
@@ -34,8 +32,7 @@ CTilesetDlg::~CTilesetDlg(void)
 	}
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CTilesetDlg::OnInitDialog(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
 {
 	CenterWindow(GetParent());
@@ -86,16 +83,14 @@ LRESULT CTilesetDlg::OnInitDialog(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL&
 	return TRUE;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CTilesetDlg::OnCloseCmd(WORD wNotifyCode, WORD wID, HWND hWndCtl, BOOL& bHandled)
 {
 	EndDialog(IDCANCEL);
 	return 0;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CTilesetDlg::OnOk(WORD wNotifyCode, WORD wID, HWND hWndCtl, BOOL& bHandled)
 {
 	int nSelected = m_ctrlList.GetSelectedIndex();
@@ -112,8 +107,7 @@ LRESULT CTilesetDlg::OnOk(WORD wNotifyCode, WORD wID, HWND hWndCtl, BOOL& bHandl
 	return 0;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CTilesetDlg::OnDblclkTilesetList(int idCtrl, LPNMHDR pnmh, BOOL& bHandled)
 {
 	int nSelected = m_ctrlList.GetSelectedIndex();
@@ -130,8 +124,7 @@ LRESULT CTilesetDlg::OnDblclkTilesetList(int idCtrl, LPNMHDR pnmh, BOOL& bHandle
 	return 0;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 CString CTilesetDlg::GetTilesetPath()
 {
 	return m_strTileset;
@@ -209,9 +202,6 @@ void CTilesetDlg::LoadTilesets(CString strPath)
 	}
 	while (FindNextFile(hFind, &fd));
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////
-//
 void CTilesetDlg::UpdateList()
 {
 	m_ctrlList.DeleteAllItems();
@@ -243,8 +233,7 @@ void CTilesetDlg::UpdateList()
 	m_ctrlList.InvalidateRect(NULL);
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CTilesetDlg::OnClickedBrowse(WORD wNotifyCode, WORD wID, HWND hWndCtl, BOOL& bHandled)
 {
 	CString strFilter = g_LangManager.GetString("str_tileset_filter");

@@ -14,8 +14,7 @@ const UINT CSolitaireView::IDT_SECOND = 0x1000;
 const UINT CSolitaireView::IDT_FRAME = 0x1001;
 const UINT CSolitaireView::BUFSIZE = 1024;
 
-////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 /*
 inline float absf(float fval)
 {
@@ -25,8 +24,7 @@ inline float absf(float fval)
 }
 */
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 CSolitaireView::CSolitaireView(CMainFrame* pContainer)
 		: CMahjonggView(pContainer)
 {
@@ -101,14 +99,12 @@ CSolitaireView::CSolitaireView(CMainFrame* pContainer)
 	m_enmMusic = eNoMusic;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 CSolitaireView::~CSolitaireView()
 {
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 bool CSolitaireView::Init()
 {
 	if (!TParent::Init())
@@ -211,9 +207,6 @@ bool CSolitaireView::Init()
 
 	return true;
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
 bool CSolitaireView::UpdateUI()
 {
 	UIEnable(ID_PLAY_UNDO, (m_objGame.GetBoard().CountTiles() != 144), FALSE);
@@ -233,8 +226,7 @@ bool CSolitaireView::UpdateUI()
 	return true;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 bool CSolitaireView::UpdateView()
 {
 	QPROFILE_FUN(_T("CSolitaireView::UpdateView"));
@@ -269,8 +261,7 @@ bool CSolitaireView::UpdateView()
 	return true;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CSolitaireView::OnCreate(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
 {
 	TParent::OnCreate(uMsg, wParam, lParam, bHandled);
@@ -279,9 +270,6 @@ LRESULT CSolitaireView::OnCreate(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& 
 
 	return 0;
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
 LRESULT CSolitaireView::OnDestroy(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
 {
 	TParent::OnDestroy(uMsg, wParam, lParam, bHandled);
@@ -292,8 +280,7 @@ LRESULT CSolitaireView::OnDestroy(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL&
 	return 0;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CSolitaireView::OnRButtonDown(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
 {
 	CSolitairePos posSelected;
@@ -360,9 +347,6 @@ LRESULT CSolitaireView::OnRButtonDown(UINT uMsg, WPARAM wParam, LPARAM lParam, B
 
 	return 0;
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
 LRESULT CSolitaireView::OnRButtonUp(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
 {
 	m_bRButtonDown = false;
@@ -381,8 +365,7 @@ LRESULT CSolitaireView::OnRButtonUp(UINT uMsg, WPARAM wParam, LPARAM lParam, BOO
 	return 0;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CSolitaireView::OnMouseWheel(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
 {
 	short sMove = HIWORD(wParam);
@@ -402,8 +385,7 @@ LRESULT CSolitaireView::OnMouseWheel(UINT uMsg, WPARAM wParam, LPARAM lParam, BO
 	return 0;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CSolitaireView::OnMouseMove(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
 {
 	//QPROFILE_FUN("CSolitaireView::OnMouseMove");
@@ -467,8 +449,7 @@ LRESULT CSolitaireView::OnMouseMove(UINT uMsg, WPARAM wParam, LPARAM lParam, BOO
 	return 0;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CSolitaireView::OnLButtonDown(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
 {
 	//QPROFILE_FUN("CSolitaireView::OnLButtonDown");
@@ -522,8 +503,7 @@ LRESULT CSolitaireView::OnLButtonDown(UINT uMsg, WPARAM wParam, LPARAM lParam, B
 	return 0;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CSolitaireView::OnLButtonUp(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& /*bHandled*/)
 {
 	CPoint pt(GET_X_LPARAM(lParam), GET_Y_LPARAM(lParam));
@@ -627,8 +607,7 @@ LRESULT CSolitaireView::OnLButtonUp(UINT uMsg, WPARAM wParam, LPARAM lParam, BOO
 	return 0;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 inline void CSolitaireView::DrawBoard(float fBoardCx, float fBoardCy)
 {
 	char imin = 0, imax = m_objGame.GetBoard().GetWidth(), istep = 1;
@@ -720,8 +699,7 @@ inline void CSolitaireView::DrawBoard(float fBoardCx, float fBoardCy)
 	}
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 bool CSolitaireView::DrawScene()
 {
 	if (m_bBusy || !m_bInitialized || !m_bTexturesAreReady)
@@ -853,7 +831,7 @@ bool CSolitaireView::DrawScene()
 		glRasterPos2f(0.0f, 0.0f);
 
 		glDrawPixels(m_imgGameOver.GetWidth(), m_imgGameOver.GetHeight(),
-													GL_BGR_EXT, GL_UNSIGNED_BYTE, m_imgGameOver.GetBits());
+								 GL_BGR_EXT, GL_UNSIGNED_BYTE, m_imgGameOver.GetBits());
 
 		glPopMatrix();
 	}
@@ -873,10 +851,6 @@ bool CSolitaireView::DrawScene()
 
 	return true;
 }
-
-
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//
 bool CSolitaireView::PickTile(CPoint point, CSolitairePos& posTile)
 {
 	if (m_bBusy || !m_bInitialized || !m_bTexturesAreReady)
@@ -1047,8 +1021,7 @@ bool CSolitaireView::PickTile(CPoint point, CSolitairePos& posTile)
 	return true;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 bool CSolitaireView::DrawFireWorks()
 {
 	if (m_bBusy || !m_bInitialized || !m_bTexturesAreReady)
@@ -1086,7 +1059,7 @@ bool CSolitaireView::DrawFireWorks()
 	glRasterPos2f(0.0f, 0.0f);
 
 	glDrawPixels(m_imgGameWon.GetWidth(), m_imgGameWon.GetHeight(),
-												GL_BGR_EXT, GL_UNSIGNED_BYTE, m_imgGameWon.GetBits());
+							 GL_BGR_EXT, GL_UNSIGNED_BYTE, m_imgGameWon.GetBits());
 
 
 	glPopMatrix();
@@ -1114,8 +1087,7 @@ bool CSolitaireView::DrawFireWorks()
 	return true;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 bool CSolitaireView::CreateLists(HDC hDC)
 {
 	TParent::CreateLists(hDC);
@@ -1238,8 +1210,7 @@ bool CSolitaireView::CreateLists(HDC hDC)
 	return true;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CSolitaireView::OnTimer(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
 {
 	static SYSTEMTIME tm = {0, 0, 0, 0, 0, 0, 0, 0};
@@ -1330,8 +1301,7 @@ LRESULT CSolitaireView::OnTimer(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& b
 	return 0;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 inline void Gradient(float fPos, float* pfRGB,
 										 float fPos0, float* pfRGB0,
 										 float fPos1, float* pfRGB1)
@@ -1342,8 +1312,7 @@ inline void Gradient(float fPos, float* pfRGB,
 	}
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 #define TM(H) ((H) * 60.0f)
 
 bool CSolitaireView::SetupLights(SYSTEMTIME& tm)
@@ -1420,8 +1389,7 @@ bool CSolitaireView::SetupLights(SYSTEMTIME& tm)
 	return bChanged;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CSolitaireView::OnHelpUndo(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 	if (m_objGame.Undo())
@@ -1434,8 +1402,7 @@ LRESULT CSolitaireView::OnHelpUndo(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hW
 	return 0;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CSolitaireView::OnGameNew(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 	if (m_objGame.GetState() == CSolitaireGame::GS_GAME && m_objGame.GetBoard().CountTiles() != 144)
@@ -1458,8 +1425,7 @@ LRESULT CSolitaireView::OnGameNew(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWn
 	return 0;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CSolitaireView::OnGameRepeat(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 	m_objGame.Replay();
@@ -1472,8 +1438,7 @@ LRESULT CSolitaireView::OnGameRepeat(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*
 	return 0;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CSolitaireView::OnGameSave(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 	CString strFilter = g_LangManager.GetString("str_save_game_filter");
@@ -1508,8 +1473,7 @@ LRESULT CSolitaireView::OnGameSave(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hW
 	return 0;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CSolitaireView::OnGameLoad(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 	CString strFilter = g_LangManager.GetString("str_save_game_filter");
@@ -1546,8 +1510,7 @@ LRESULT CSolitaireView::OnGameLoad(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hW
 	return 0;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CSolitaireView::OnGameDemo(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 	if (m_objGame.GetState() == CSolitaireGame::GS_GAME && m_objGame.GetBoard().CountTiles() != 144)
@@ -1572,8 +1535,7 @@ LRESULT CSolitaireView::OnGameDemo(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hW
 	return 0;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CSolitaireView::OnGameScores(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 	CScoresDlg dlg;
@@ -1593,9 +1555,6 @@ LRESULT CSolitaireView::OnGameScores(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*
 
 	return 0;
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
 LRESULT CSolitaireView::OnHelpHint(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 #ifdef DEMO
@@ -1605,8 +1564,7 @@ LRESULT CSolitaireView::OnHelpHint(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hW
 	return 0;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CSolitaireView::OnHelpShuffle(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 #ifdef DEMO
@@ -1616,8 +1574,7 @@ LRESULT CSolitaireView::OnHelpShuffle(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /
 	return 0;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CSolitaireView::OnLayoutLoad(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 	CLayoutsDlg dlg;
@@ -1649,8 +1606,7 @@ LRESULT CSolitaireView::OnLayoutLoad(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*
 	return 0;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CSolitaireView::OnLayoutDefault(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 	CString strMessage = g_LangManager.GetString("str_new_game");
@@ -1671,8 +1627,7 @@ LRESULT CSolitaireView::OnLayoutDefault(WORD /*wNotifyCode*/, WORD /*wID*/, HWND
 	return 0;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CSolitaireView::OnBackgroundColor(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 	CColorDialog dlg;
@@ -1695,8 +1650,7 @@ LRESULT CSolitaireView::OnBackgroundColor(WORD /*wNotifyCode*/, WORD /*wID*/, HW
 	return 0;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CSolitaireView::OnBackgroundLoad(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 	CString strFilter = g_LangManager.GetString("str_image_filter");
@@ -1735,8 +1689,7 @@ LRESULT CSolitaireView::OnBackgroundLoad(WORD /*wNotifyCode*/, WORD /*wID*/, HWN
 	return 0;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CSolitaireView::OnBackgroundDefault(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 	HRSRC hRes = FindResource(_Module.m_hInstResource, MAKEINTRESOURCE(IDR_BACKGROUND), _T("JPEG"));
@@ -1752,8 +1705,7 @@ LRESULT CSolitaireView::OnBackgroundDefault(WORD /*wNotifyCode*/, WORD /*wID*/, 
 	return 0;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 void CSolitaireView::ShowBackgroundImage()
 {
 	unsigned int nTexWidth = 512;
@@ -1770,8 +1722,8 @@ void CSolitaireView::ShowBackgroundImage()
 	BYTE* pBits = new BYTE[3 * nTexHeight * nTexWidth];
 
 	gluScaleImage(GL_RGB, m_imgBackground.GetWidth(), m_imgBackground.GetHeight(),
-												GL_UNSIGNED_BYTE, m_imgBackground.GetBits(),
-												nTexWidth, nTexHeight, GL_UNSIGNED_BYTE, pBits);
+								GL_UNSIGNED_BYTE, m_imgBackground.GetBits(),
+								nTexWidth, nTexHeight, GL_UNSIGNED_BYTE, pBits);
 
 	if (g_AppSettings.m_bHighQualityBackground)
 	{
@@ -1795,8 +1747,7 @@ void CSolitaireView::ShowBackgroundImage()
 	m_enmBackgroundMode = eBGImage;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 void CSolitaireView::OnTileClick(UINT i, UINT j, UINT k)
 {
 	CSolitaireGame::CLICK_RESULT enmResult = m_objGame.ClickTile(i, j, k);
@@ -1829,9 +1780,6 @@ void CSolitaireView::OnTileClick(UINT i, UINT j, UINT k)
 	{
 	}
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////
-//
 void CSolitaireView::UpdateStatus()
 {
 	if (m_pContainer->m_hWndStatusBar == NULL)
@@ -1923,8 +1871,7 @@ void CSolitaireView::UpdateStatus()
 	::SendMessage(m_pContainer->m_hWndStatusBar, SB_SETTEXT, 2, (LPARAM)(LPCTSTR)strStatus);
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 void CSolitaireView::OnUpdateOptions()
 {
 	TParent::OnUpdateOptions();
@@ -1932,6 +1879,7 @@ void CSolitaireView::OnUpdateOptions()
 	ReloadImages();
 
 	// change detail level
+
 	switch (g_AppSettings.m_nGraphDetail)
 	{
 
@@ -2014,9 +1962,6 @@ void CSolitaireView::OnUpdateOptions()
 	UpdateView();
 }
 
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
 LRESULT CSolitaireView::OnViewZoomIn(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 	m_fRadius -= 0.5f;
@@ -2029,8 +1974,7 @@ LRESULT CSolitaireView::OnViewZoomIn(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*
 	return 0;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CSolitaireView::OnViewZoomOut(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 	m_fRadius += 0.5f;
@@ -2043,8 +1987,7 @@ LRESULT CSolitaireView::OnViewZoomOut(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /
 	return 0;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CSolitaireView::OnViewRotateLeft(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 	m_fAngleZ -= 1.0f;
@@ -2056,8 +1999,7 @@ LRESULT CSolitaireView::OnViewRotateLeft(WORD /*wNotifyCode*/, WORD /*wID*/, HWN
 	return 0;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CSolitaireView::OnViewRotateRight(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 	m_fAngleZ += 1.0f;
@@ -2069,8 +2011,7 @@ LRESULT CSolitaireView::OnViewRotateRight(WORD /*wNotifyCode*/, WORD /*wID*/, HW
 	return 0;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CSolitaireView::OnViewRotateUp(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 	m_fAngleX -= 1.0f;
@@ -2081,9 +2022,6 @@ LRESULT CSolitaireView::OnViewRotateUp(WORD /*wNotifyCode*/, WORD /*wID*/, HWND 
 
 	return 0;
 }
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
 LRESULT CSolitaireView::OnViewRotateDown(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 	m_fAngleX += 1.0f;
@@ -2095,8 +2033,7 @@ LRESULT CSolitaireView::OnViewRotateDown(WORD /*wNotifyCode*/, WORD /*wID*/, HWN
 	return 0;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CSolitaireView::OnViewDefault(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 	m_fAngleX = -20.0f;

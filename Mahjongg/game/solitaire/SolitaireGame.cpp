@@ -24,8 +24,7 @@ const unsigned char CSolitaireGame::SAVEFILE_VERSION = 0x13;
 
 unsigned int CSolitaireGame::m_nGamesPlayed = 0L;
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 CSolitaireGame::CSolitaireGame(void)
 {
 	m_enmState = GS_UNDEFINED;
@@ -36,21 +35,18 @@ CSolitaireGame::CSolitaireGame(void)
 	ZeroMemory(m_vecUndo, 72 * sizeof(CSolitaireMove));
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 CSolitaireGame::~CSolitaireGame(void)
 {
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 void CSolitaireGame::Select(int i, int j, int k)
 {
 	m_posSelected = CSolitairePos(i, j, k);
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 void CSolitaireGame::RemoveTiles(CSolitairePos posTile1, CSolitairePos posTile2)
 {
 	m_vecUndo[m_nMoves] = CSolitaireMove(posTile1, m_objBoard.GetTile(posTile1), posTile2, m_objBoard.GetTile(posTile2));
@@ -60,8 +56,7 @@ void CSolitaireGame::RemoveTiles(CSolitairePos posTile1, CSolitairePos posTile2)
 	m_objBoard.GetTile(posTile2) = NO_TILE;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 CSolitaireGame::CLICK_RESULT CSolitaireGame::ClickTile(int i, int j, int k)
 {
 	if (m_enmState != GS_GAME)
@@ -122,8 +117,7 @@ CSolitaireGame::CLICK_RESULT CSolitaireGame::ClickTile(int i, int j, int k)
 	return CR_TILES_REMOVED;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 bool CSolitaireGame::Undo(void)
 {
 	bool bUndoMade = false;
@@ -146,8 +140,7 @@ bool CSolitaireGame::Undo(void)
 	return bUndoMade;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 bool CSolitaireGame::New()
 {
 	m_objBoard.Set(m_objLayout);
@@ -172,8 +165,7 @@ bool CSolitaireGame::New()
 	return true;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 bool CSolitaireGame::Replay()
 {
 	// restore board
@@ -198,8 +190,7 @@ bool CSolitaireGame::Replay()
 	return true;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 bool CSolitaireGame::Replay(CSolitaireBoard& objBoard)
 {
 	// restore board
@@ -224,8 +215,7 @@ bool CSolitaireGame::Replay(CSolitaireBoard& objBoard)
 	return true;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 bool CSolitaireGame::Demo()
 {
 	m_objBoard.Set(m_objLayout);
@@ -243,8 +233,7 @@ bool CSolitaireGame::Demo()
 	return true;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 bool CSolitaireGame::LoadLayout(CString strPathName)
 {
 	CString strPath = strPathName;
@@ -261,8 +250,7 @@ bool CSolitaireGame::LoadLayout(CString strPathName)
 	return LoadMJLayout(strPath);
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 bool CSolitaireGame::LoadMJLayout(UINT nResourceID)
 {
 	if (!m_objLayout.LoadResource(nResourceID))
@@ -271,8 +259,7 @@ bool CSolitaireGame::LoadMJLayout(UINT nResourceID)
 	return true;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 bool CSolitaireGame::LoadMJLayout(CString strPathName)
 {
 	CSolitaireLayout objLayout;
@@ -285,8 +272,7 @@ bool CSolitaireGame::LoadMJLayout(CString strPathName)
 	return true;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 bool CSolitaireGame::LoadKyodaiLayout(CString strPathName)
 {
 	CSolitaireLayout objLayout;
@@ -297,8 +283,7 @@ bool CSolitaireGame::LoadKyodaiLayout(CString strPathName)
 	return true;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 void CSolitaireGame::TickSecond()
 {
 	if (m_enmState == GS_GAME)
@@ -311,15 +296,11 @@ void CSolitaireGame::TickSecond()
 	}
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 CMJGameTime CSolitaireGame::GetPlayTime()
 {
 	return m_objScores.m_tmPlayed;
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
 HRESULT CSolitaireGame::Save(CString strPathName)
 {
 	try
@@ -377,9 +358,6 @@ HRESULT CSolitaireGame::Save(CString strPathName)
 
 	return S_OK;
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
 HRESULT CSolitaireGame::Load(CString strPathName)
 {
 	try
