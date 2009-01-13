@@ -59,9 +59,14 @@ CString MakeUserPath(CString strPathName)
 	return strUserPath;
 }
 
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+/**
+ * @brief MakeFullPath
+ *
+ * Make full path for a file name
+ * 
+ * @param strFileName
+ * @return CString
+ */
 CString MakeFullPath(CString strFileName)
 {
 	TCHAR pszFullPath[_MAX_PATH] = {0};
@@ -71,9 +76,9 @@ CString MakeFullPath(CString strFileName)
 	GetModuleFileName(_Module.m_hInst, pszFullPath, _MAX_PATH);
 
 #ifdef UNICODE
-	_wsplitpath(pszFullPath, pszDrive, pszDir, NULL, NULL);
+	_wsplitpath_s(pszFullPath, pszDrive, _MAX_DRIVE, pszDir, _MAX_DIR, NULL, 0, NULL, 0);
 #else
-	_splitpath(pszFullPath, pszDrive, pszDir, NULL, NULL);
+	_splitpath_s(pszFullPath, pszDrive, pszDir, NULL, NULL);
 #endif
 
 	CString str = CString(pszDrive) + CString(pszDir) + strFileName;

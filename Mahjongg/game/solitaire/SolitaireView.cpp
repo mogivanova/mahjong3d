@@ -144,7 +144,7 @@ bool CSolitaireView::Init()
 	// create background texture name
 	m_unBackgroundTexName = 0;
 
-	m_pDriver->GenTextures(1, &m_unBackgroundTexName);
+	glGenTextures(1, &m_unBackgroundTexName);
 
 	m_bInitialized = true;
 
@@ -249,8 +249,8 @@ bool CSolitaireView::UpdateView()
 
 		if (DrawScene())
 		{
-			//m_pDriver->Finish();
-			m_pDriver->SwapBuffers(m_hDC);
+			//glFinish();
+			SwapBuffers(m_hDC);
 		}
 
 		break;
@@ -259,8 +259,8 @@ bool CSolitaireView::UpdateView()
 
 		if (DrawFireWorks())
 		{
-			//m_pDriver->Finish();
-			m_pDriver->SwapBuffers(m_hDC);
+			//glFinish();
+			SwapBuffers(m_hDC);
 		}
 
 		break;
@@ -661,9 +661,9 @@ inline void CSolitaireView::DrawBoard(float fBoardCx, float fBoardCy)
 					GLfloat fk = (GLfloat) k * m_fTileDepth;
 
 					// set tile position
-					m_pDriver->PushMatrix();
+					glPushMatrix();
 
-					m_pDriver->Translate(fi, fj, fk);
+					glTranslatef(fi, fj, fk);
 
 					// tile drawing flags
 					DWORD dwFlags = 0L;
@@ -713,7 +713,7 @@ inline void CSolitaireView::DrawBoard(float fBoardCx, float fBoardCy)
 									 vColors[9 - m_objGame.GetBoard().GetDepth() + k]);
 
 					// return to previous state
-					m_pDriver->PopMatrix();
+					glPopMatrix();
 				}
 			}
 		}
@@ -734,21 +734,21 @@ bool CSolitaireView::DrawScene()
 	m_bBusy = true;
 
 	// clear depth buffer & colour buffer
-	m_pDriver->Clear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
+	glClear(GL_DEPTH_BUFFER_BIT | GL_COLOR_BUFFER_BIT);
 
-	if (g_AppSettings.m_bSmoothTiles)
-		m_pDriver->Enable(GL_MULTISAMPLE_ARB);
+	//if (g_AppSettings.m_bSmoothTiles)
+	//	glEnable(GL_MULTISAMPLE_ARB);
 
 	// background colour or image
-	m_pDriver->MatrixMode(GL_PROJECTION);
+	glMatrixMode(GL_PROJECTION);
 
-	m_pDriver->PushMatrix();
+	glPushMatrix();
 
-	m_pDriver->LoadIdentity();
+	glLoadIdentity();
 
-	m_pDriver->Normal(0.0f, 0.0f, -1.0f);
+	glNormal3f(0.0f, 0.0f, -1.0f);
 
-	m_pDriver->Enable(GL_LIGHT0);
+	glEnable(GL_LIGHT0);
 
 
 	// background
@@ -758,12 +758,12 @@ bool CSolitaireView::DrawScene()
 	case eBGSolid:
 	{
 		GLfloat vEmission[] = glRGB(0, 0, 0);
-		m_pDriver->Disable(GL_TEXTURE_2D);
-		m_pDriver->CallList(LIST_BACKGROUND_MATERIAL);
-		m_pDriver->Material(GL_FRONT, GL_AMBIENT, m_vBackground);
-		m_pDriver->Material(GL_FRONT, GL_DIFFUSE, m_vBackground);
-		m_pDriver->Material(GL_FRONT, GL_EMISSION, vEmission);
-		m_pDriver->CallList(LIST_BACKGROUND);
+		glDisable(GL_TEXTURE_2D);
+		glCallList(LIST_BACKGROUND_MATERIAL);
+		glMaterialfv(GL_FRONT, GL_AMBIENT, m_vBackground);
+		glMaterialfv(GL_FRONT, GL_DIFFUSE, m_vBackground);
+		glMaterialfv(GL_FRONT, GL_EMISSION, vEmission);
+		glCallList(LIST_BACKGROUND);
 		break;
 	}
 
@@ -771,27 +771,27 @@ bool CSolitaireView::DrawScene()
 	{
 		GLfloat vEmission[] = glRGB(0, 0, 0);
 
-		m_pDriver->CallList(LIST_BACKGROUND_IMAGE_MATERIAL);
-		m_pDriver->Material(GL_FRONT, GL_EMISSION, vEmission);
-		m_pDriver->Enable(GL_TEXTURE_2D);
-		m_pDriver->BindTexture(GL_TEXTURE_2D, m_unBackgroundTexName);
-		m_pDriver->CallList(LIST_BACKGROUND);
+		glCallList(LIST_BACKGROUND_IMAGE_MATERIAL);
+		glMaterialfv(GL_FRONT, GL_EMISSION, vEmission);
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, m_unBackgroundTexName);
+		glCallList(LIST_BACKGROUND);
 		break;
 	}
 	}
 
-	m_pDriver->PopMatrix();
+	glPopMatrix();
 
-	m_pDriver->MatrixMode(GL_MODELVIEW);
+	glMatrixMode(GL_MODELVIEW);
 
-	m_pDriver->PushMatrix();
+	glPushMatrix();
 
 	// set viewport
-	m_pDriver->Translate(0.0f, 0.0f, -m_fRadius);
+	glTranslatef(0.0f, 0.0f, -m_fRadius);
 
-	m_pDriver->Rotate(m_fAngleX, 1.0f, 0.0f, 0.0f);
-	m_pDriver->Rotate(m_fAngleY, 0.0f, 1.0f, 0.0f);
-	m_pDriver->Rotate(m_fAngleZ, 0.0f, 0.0f, 1.0f);
+	glRotatef(m_fAngleX, 1.0f, 0.0f, 0.0f);
+	glRotatef(m_fAngleY, 0.0f, 1.0f, 0.0f);
+	glRotatef(m_fAngleZ, 0.0f, 0.0f, 1.0f);
 
 	GLfloat fBoardCx = (GLfloat) m_objGame.GetBoard().GetWidth() / 2.0f;
 	GLfloat fBoardCy = (GLfloat) m_objGame.GetBoard().GetHeight() / 2.0f;
@@ -800,11 +800,11 @@ bool CSolitaireView::DrawScene()
 
 	if (m_objGame.GetState() == CSolitaireGame::GS_GAME || m_objGame.GetState() == CSolitaireGame::GS_DEMO)
 	{
-		m_pDriver->Enable(GL_LIGHT0);
+		glEnable(GL_LIGHT0);
 	}
 	else
 	{
-		m_pDriver->Disable(GL_LIGHT0);
+		glDisable(GL_LIGHT0);
 	}
 
 	// enable or disable selection light
@@ -814,58 +814,58 @@ bool CSolitaireView::DrawScene()
 		GLfloat fj = ((GLfloat) m_objGame.GetSelection().j - fBoardCy) * m_fTileHeight / 2.0f;
 		GLfloat fk = ((GLfloat) m_objGame.GetSelection().k + 0.5f) * m_fTileDepth;
 
-		m_pDriver->PushMatrix();
+		glPushMatrix();
 
-		m_pDriver->Translate(fi, fj, fk);
+		glTranslatef(fi, fj, fk);
 
-		m_pDriver->CallList(LIST_LIGHT);
+		glCallList(LIST_LIGHT);
 
-		m_pDriver->Enable(GL_LIGHT1);
+		glEnable(GL_LIGHT1);
 
-		m_pDriver->PopMatrix();
+		glPopMatrix();
 	}
 	else
 	{
 		// we do not have selected tile
-		m_pDriver->Disable(GL_LIGHT1);
+		glDisable(GL_LIGHT1);
 	}
 
 	// draw board tiles
 	DrawBoard(fBoardCx, fBoardCy);
 
-	m_pDriver->PopMatrix();
+	glPopMatrix();
 
 	// no more moves message
 	if (m_objGame.GetState() == CSolitaireGame::GS_GAMEOVER)
 	{
-		m_pDriver->MatrixMode(GL_PROJECTION);
+		glMatrixMode(GL_PROJECTION);
 
-		m_pDriver->PushMatrix();
+		glPushMatrix();
 
-		m_pDriver->LoadIdentity();
+		glLoadIdentity();
 
 		GLfloat fWidth = ((GLfloat)m_objSize.cx - (GLfloat)m_imgGameOver.GetWidth()) / (GLfloat)m_objSize.cx;
 		GLfloat fHeight = ((GLfloat)m_objSize.cy - (GLfloat)m_imgGameOver.GetHeight()) / (GLfloat)m_objSize.cy;
 
-		m_pDriver->Translate(fWidth - 1.0f , fHeight - 1.0f, 0.0f);
-		//m_pDriver->Translate(-fWidth / 2.0f , 0.0f, 0.0f);
+		glTranslatef(fWidth - 1.0f , fHeight - 1.0f, 0.0f);
+		//glTranslate(-fWidth / 2.0f , 0.0f, 0.0f);
 
-		m_pDriver->RasterPos(0.0f, 0.0f);
+		glRasterPos2f(0.0f, 0.0f);
 
-		m_pDriver->DrawPixels(m_imgGameOver.GetWidth(), m_imgGameOver.GetHeight(),
+		glDrawPixels(m_imgGameOver.GetWidth(), m_imgGameOver.GetHeight(),
 													GL_BGR_EXT, GL_UNSIGNED_BYTE, m_imgGameOver.GetBits());
 
-		m_pDriver->PopMatrix();
+		glPopMatrix();
 	}
 
-	if (g_AppSettings.m_bSmoothTiles)
-		m_pDriver->Disable(GL_MULTISAMPLE_ARB);
+	//if (g_AppSettings.m_bSmoothTiles)
+	//	glDisable(GL_MULTISAMPLE_ARB);
 
 	// finish scene description
-	m_pDriver->Finish();
+	glFinish();
 
 	// force execution
-	m_pDriver->Flush();
+	glFlush();
 
 	m_bBusy = false;
 
@@ -886,7 +886,7 @@ bool CSolitaireView::PickTile(CPoint point, CSolitairePos& posTile)
 
 	m_bBusy = true;
 
-	m_pDriver->Clear(GL_DEPTH_BUFFER_BIT);
+	glClear(GL_DEPTH_BUFFER_BIT);
 
 	GLuint selectBuf[BUFSIZE];
 
@@ -896,48 +896,48 @@ bool CSolitaireView::PickTile(CPoint point, CSolitairePos& posTile)
 
 	GLint viewport[4];
 
-	m_pDriver->GetInteger(GL_VIEWPORT, viewport);
+	glGetIntegerv(GL_VIEWPORT, viewport);
 
-	m_pDriver->SelectBuffer(BUFSIZE, selectBuf);
+	glSelectBuffer(BUFSIZE, selectBuf);
 
-	m_pDriver->RenderMode(GL_SELECT);
+	glRenderMode(GL_SELECT);
 
-	m_pDriver->InitNames();
+	glInitNames();
 
-	m_pDriver->PushName((unsigned) - 1);
+	glPushName((unsigned) - 1);
 
 	int nClientW = (m_rectOld.right - m_rectOld.left);
 
 	int nClientH = (m_rectOld.bottom - m_rectOld.top);
 
 	// set pick matrix
-	m_pDriver->MatrixMode(GL_PROJECTION);
+	glMatrixMode(GL_PROJECTION);
 
-	m_pDriver->PushMatrix();
+	glPushMatrix();
 
 	// set new projection matrix
-	m_pDriver->LoadIdentity();
+	glLoadIdentity();
 
-	m_pDriver->PickMatrix((GLdouble) point.x, (GLdouble) (nClientH - point.y), 1.0, 1.0, viewport);
+	gluPickMatrix((GLdouble) point.x, (GLdouble) (nClientH - point.y), 1.0, 1.0, viewport);
 
-	m_pDriver->Perspective(45.0f, (GLfloat)nClientW / (GLfloat)nClientH, 1.0f, 40.0f);
+	gluPerspective(45.0f, (GLfloat)nClientW / (GLfloat)nClientH, 1.0f, 40.0f);
 
 	// enter model mode
-	m_pDriver->MatrixMode(GL_MODELVIEW);
+	glMatrixMode(GL_MODELVIEW);
 
-	m_pDriver->PushMatrix();
+	glPushMatrix();
 
 	// clear depth buffer & colour buffer
-	m_pDriver->LoadIdentity();
+	glLoadIdentity();
 
 	// set viewport
-	m_pDriver->Translate(0.0f, 0.0f, -m_fRadius);
+	glTranslatef(0.0f, 0.0f, -m_fRadius);
 
-	m_pDriver->Rotate(m_fAngleX, 1.0f, 0.0f, 0.0f);
+	glRotatef(m_fAngleX, 1.0f, 0.0f, 0.0f);
 
-	m_pDriver->Rotate(m_fAngleY, 0.0f, 1.0f, 0.0f);
+	glRotatef(m_fAngleY, 0.0f, 1.0f, 0.0f);
 
-	m_pDriver->Rotate(m_fAngleZ, 0.0f, 0.0f, 1.0f);
+	glRotatef(m_fAngleZ, 0.0f, 0.0f, 1.0f);
 
 	GLfloat fBoardCx = (GLfloat) m_objGame.GetBoard().GetWidth() / 2.0f;
 
@@ -946,15 +946,15 @@ bool CSolitaireView::PickTile(CPoint point, CSolitairePos& posTile)
 	// draw board tiles
 	for (unsigned char k = 0; k < m_objGame.GetBoard().GetDepth(); k++)
 	{
-		m_pDriver->LoadName(k);
+		glLoadName(k);
 
 		for (unsigned char i = 0; i < m_objGame.GetBoard().GetWidth(); i++)
 		{
-			m_pDriver->PushName(i);
+			glPushName(i);
 
 			for (unsigned char j = 0; j < m_objGame.GetBoard().GetHeight(); j++)
 			{
-				m_pDriver->PushName(j);
+				glPushName(j);
 
 				if (m_objGame.GetBoard().GetTile(i, j, k) != NO_TILE)
 				{
@@ -963,9 +963,9 @@ bool CSolitaireView::PickTile(CPoint point, CSolitairePos& posTile)
 					GLfloat fk = (GLfloat) k * m_fTileDepth;
 
 					// set tile position
-					m_pDriver->PushMatrix();
+					glPushMatrix();
 
-					m_pDriver->Translate(fi, fj, fk);
+					glTranslatef(fi, fj, fk);
 
 					//
 					DWORD dwFlags = 0L;
@@ -977,35 +977,35 @@ bool CSolitaireView::PickTile(CPoint point, CSolitairePos& posTile)
 					DrawTile(dwFlags);
 
 					// return to previous state
-					m_pDriver->PopMatrix();
+					glPopMatrix();
 				}
 
-				m_pDriver->PopName();
+				glPopName();
 			}
 
-			m_pDriver->PopName();
+			glPopName();
 		}
 	}
 
-	m_pDriver->PopMatrix();
+	glPopMatrix();
 
 	// restore projection matrix
-	m_pDriver->MatrixMode(GL_PROJECTION);
-	m_pDriver->PopMatrix();
+	glMatrixMode(GL_PROJECTION);
+	glPopMatrix();
 
 	// force execution
-	m_pDriver->Flush();
+	glFlush();
 
 	// finish scene description
-	//m_pDriver->Finish();
+	//glFinish();
 
-	m_pDriver->MatrixMode(GL_MODELVIEW);
+	glMatrixMode(GL_MODELVIEW);
 
 	// execute commands
-	//m_pDriver->Flush();
+	//glFlush();
 
 	// set render mode
-	hits = m_pDriver->RenderMode(GL_RENDER);
+	hits = glRenderMode(GL_RENDER);
 
 	posTile.Clear();
 
@@ -1058,56 +1058,56 @@ bool CSolitaireView::DrawFireWorks()
 
 	m_bBusy = true;
 
-	m_pDriver->Clear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+	glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
 
-	m_pDriver->MatrixMode(GL_PROJECTION);
+	glMatrixMode(GL_PROJECTION);
 
-	m_pDriver->PushMatrix();
+	glPushMatrix();
 
-	m_pDriver->LoadIdentity();
+	glLoadIdentity();
 
-	m_pDriver->Normal(0.0f, 0.0f, -1.0f);
+	glNormal3f(0.0f, 0.0f, -1.0f);
 
-	m_pDriver->Color(0, 0, 64);
+	glColor3ub(0, 0, 64);
 
-	m_pDriver->Disable(GL_TEXTURE_2D);
+	glDisable(GL_TEXTURE_2D);
 
-	m_pDriver->CallList(LIST_BACKGROUND);
+	glCallList(LIST_BACKGROUND);
 
-	m_pDriver->LoadIdentity();
+	glLoadIdentity();
 
 
 	GLfloat fWidth = ((GLfloat)m_objSize.cx - (GLfloat)m_imgGameWon.GetWidth()) / (GLfloat)m_objSize.cx;
 
 	GLfloat fHeight = ((GLfloat)m_objSize.cy - (GLfloat)m_imgGameWon.GetHeight()) / (GLfloat)m_objSize.cy;
 
-	m_pDriver->Translate(fWidth - 1.0f , fHeight - 1.0f, 0.0f);
+	glTranslatef(fWidth - 1.0f , fHeight - 1.0f, 0.0f);
 
-	m_pDriver->RasterPos(0.0f, 0.0f);
+	glRasterPos2f(0.0f, 0.0f);
 
-	m_pDriver->DrawPixels(m_imgGameWon.GetWidth(), m_imgGameWon.GetHeight(),
+	glDrawPixels(m_imgGameWon.GetWidth(), m_imgGameWon.GetHeight(),
 												GL_BGR_EXT, GL_UNSIGNED_BYTE, m_imgGameWon.GetBits());
 
 
-	m_pDriver->PopMatrix();
+	glPopMatrix();
 
-	m_pDriver->MatrixMode(GL_MODELVIEW);
+	glMatrixMode(GL_MODELVIEW);
 
-	m_pDriver->PushMatrix();
+	glPushMatrix();
 
-	m_pDriver->Translate(0.0f, 0.0f, -3.0f);
+	glTranslatef(0.0f, 0.0f, -3.0f);
 
-	m_pDriver->PointSize(1.8f);
+	glPointSize(1.8f);
 
-	m_objFireWorks.Draw(m_pDriver);
+	m_objFireWorks.Draw();
 
-	m_pDriver->PopMatrix();
+	glPopMatrix();
 
 	// finish scene description
-	m_pDriver->Finish();
+	glFinish();
 
 	// force execution
-	m_pDriver->Flush();
+	glFlush();
 
 	m_bBusy = false;
 
@@ -1122,40 +1122,40 @@ bool CSolitaireView::CreateLists(HDC hDC)
 
 	///////////////////////////////////////////////////////////////////////////
 	// list of selection light
-	m_pDriver->NewList(LIST_LIGHT, GL_COMPILE);
+	glNewList(LIST_LIGHT, GL_COMPILE);
 	{
 		GLfloat ambient[] = {0.2f, 0.2f, 0.0f, 1.0f};
 		GLfloat diffuse[] = {1.0f, 1.0f, 0.0f, 1.0f};
 		GLfloat position[] = { m_fTileWidth / 2.0f, m_fTileHeight / 2.0f, 0.4f, 1.0f};
 
-		m_pDriver->Light(GL_LIGHT1, GL_AMBIENT, ambient);
-		m_pDriver->Light(GL_LIGHT1, GL_DIFFUSE, diffuse);
-		m_pDriver->Light(GL_LIGHT1, GL_POSITION, position);
+		glLightfv(GL_LIGHT1, GL_AMBIENT, ambient);
+		glLightfv(GL_LIGHT1, GL_DIFFUSE, diffuse);
+		glLightfv(GL_LIGHT1, GL_POSITION, position);
 
-		m_pDriver->Light(GL_LIGHT1, GL_CONSTANT_ATTENUATION, 0.0f);
-		m_pDriver->Light(GL_LIGHT1, GL_LINEAR_ATTENUATION, 0.0f);
-		m_pDriver->Light(GL_LIGHT1, GL_QUADRATIC_ATTENUATION, 0.6f);
+		glLightf(GL_LIGHT1, GL_CONSTANT_ATTENUATION, 0.0f);
+		glLightf(GL_LIGHT1, GL_LINEAR_ATTENUATION, 0.0f);
+		glLightf(GL_LIGHT1, GL_QUADRATIC_ATTENUATION, 0.6f);
 	}
 
-	m_pDriver->EndList();
+	glEndList();
 
 	///////////////////////////////////////////////////////
 	//
-	m_pDriver->NewList(LIST_BACKGROUND_MATERIAL, GL_COMPILE);
+	glNewList(LIST_BACKGROUND_MATERIAL, GL_COMPILE);
 	{
 		GLfloat specular[] = glRGB(0, 0, 64);
 		GLfloat emission[] = {0.0f, 0.0f, 0.0f, 1.0f};
 		GLfloat shininess[] = {0.0f};
 
-		m_pDriver->Material(GL_FRONT, GL_SPECULAR, specular);
-		m_pDriver->Material(GL_FRONT, GL_EMISSION, emission);
-		m_pDriver->Material(GL_FRONT, GL_SHININESS, shininess);
+		glMaterialfv(GL_FRONT, GL_SPECULAR, specular);
+		glMaterialfv(GL_FRONT, GL_EMISSION, emission);
+		glMaterialfv(GL_FRONT, GL_SHININESS, shininess);
 	}
 
-	m_pDriver->EndList();
+	glEndList();
 
 	/////////////////////////////////////////////////
-	m_pDriver->NewList(LIST_BACKGROUND_IMAGE_MATERIAL, GL_COMPILE);
+	glNewList(LIST_BACKGROUND_IMAGE_MATERIAL, GL_COMPILE);
 	{
 		GLfloat ambient[] = glRGB(255, 255, 255);
 		GLfloat diffuse[] = glRGB(255, 255, 255);
@@ -1163,24 +1163,24 @@ bool CSolitaireView::CreateLists(HDC hDC)
 		GLfloat emission[] = {0.0f, 0.0f, 0.0f, 1.0f};
 		GLfloat shininess[] = {0.0f};
 
-		m_pDriver->Material(GL_FRONT, GL_AMBIENT, ambient);
-		m_pDriver->Material(GL_FRONT, GL_DIFFUSE, diffuse);
-		m_pDriver->Material(GL_FRONT, GL_SPECULAR, specular);
-		m_pDriver->Material(GL_FRONT, GL_EMISSION, emission);
-		m_pDriver->Material(GL_FRONT, GL_SHININESS, shininess);
+		glMaterialfv(GL_FRONT, GL_AMBIENT, ambient);
+		glMaterialfv(GL_FRONT, GL_DIFFUSE, diffuse);
+		glMaterialfv(GL_FRONT, GL_SPECULAR, specular);
+		glMaterialfv(GL_FRONT, GL_EMISSION, emission);
+		glMaterialfv(GL_FRONT, GL_SHININESS, shininess);
 	}
 
-	m_pDriver->EndList();
+	glEndList();
 
 	/////////////////////////////////////////////////
-	m_pDriver->NewList(LIST_GAME_OVER_STRING, GL_COMPILE);
+	glNewList(LIST_GAME_OVER_STRING, GL_COMPILE);
 	{
 
 	}
 
-	m_pDriver->EndList();
+	glEndList();
 
-	m_pDriver->NewList(LIST_TEXT_COLOR, GL_COMPILE);
+	glNewList(LIST_TEXT_COLOR, GL_COMPILE);
 	{
 		GLfloat ambient[] = glRGB(255, 255, 255);
 		GLfloat diffuse[] = glRGB(255, 255, 255);
@@ -1188,16 +1188,16 @@ bool CSolitaireView::CreateLists(HDC hDC)
 		GLfloat emission[] = glRGB(0, 0, 0);
 		GLfloat shininess[] = {0.0f};
 
-		m_pDriver->Material(GL_FRONT, GL_AMBIENT, ambient);
-		m_pDriver->Material(GL_FRONT, GL_DIFFUSE, diffuse);
-		m_pDriver->Material(GL_FRONT, GL_SPECULAR, specular);
-		m_pDriver->Material(GL_FRONT, GL_EMISSION, emission);
-		m_pDriver->Material(GL_FRONT, GL_SHININESS, shininess);
+		glMaterialfv(GL_FRONT, GL_AMBIENT, ambient);
+		glMaterialfv(GL_FRONT, GL_DIFFUSE, diffuse);
+		glMaterialfv(GL_FRONT, GL_SPECULAR, specular);
+		glMaterialfv(GL_FRONT, GL_EMISSION, emission);
+		glMaterialfv(GL_FRONT, GL_SHININESS, shininess);
 	}
 
-	m_pDriver->EndList();
+	glEndList();
 
-	m_pDriver->NewList(LIST_TEXT_BACKGROUND, GL_COMPILE);
+	glNewList(LIST_TEXT_BACKGROUND, GL_COMPILE);
 	{
 		GLfloat ambient[] = glRGB(0, 0, 0);
 		GLfloat diffuse[] = glRGB(0, 0, 0);
@@ -1205,14 +1205,14 @@ bool CSolitaireView::CreateLists(HDC hDC)
 		GLfloat emission[] = glRGB(0, 0, 0);
 		GLfloat shininess[] = {0.0f};
 
-		m_pDriver->Material(GL_FRONT, GL_AMBIENT, ambient);
-		m_pDriver->Material(GL_FRONT, GL_DIFFUSE, diffuse);
-		m_pDriver->Material(GL_FRONT, GL_SPECULAR, specular);
-		m_pDriver->Material(GL_FRONT, GL_EMISSION, emission);
-		m_pDriver->Material(GL_FRONT, GL_SHININESS, shininess);
+		glMaterialfv(GL_FRONT, GL_AMBIENT, ambient);
+		glMaterialfv(GL_FRONT, GL_DIFFUSE, diffuse);
+		glMaterialfv(GL_FRONT, GL_SPECULAR, specular);
+		glMaterialfv(GL_FRONT, GL_EMISSION, emission);
+		glMaterialfv(GL_FRONT, GL_SHININESS, shininess);
 	}
 
-	m_pDriver->EndList();
+	glEndList();
 
 	/////////////////////////////////////////////////
 	// font
@@ -1228,7 +1228,7 @@ bool CSolitaireView::CreateLists(HDC hDC)
 		HFONT hOldFont = (HFONT)SelectObject(hDC, pFont->m_hFont);
 
 		GLYPHMETRICSFLOAT agmf[256];
-		BOOL bResult = m_pDriver->UseFontOutlines(hDC, 0, 255, 1000, 0.0f, 0.1f, WGL_FONT_POLYGONS, &agmf[0]);
+		BOOL bResult = wglUseFontOutlines(hDC, 0, 255, 1000, 0.0f, 0.1f, WGL_FONT_POLYGONS, &agmf[0]);
 
 		SelectObject(hDC, hOldFont);
 		delete pFont;
@@ -1411,9 +1411,9 @@ bool CSolitaireView::SetupLights(SYSTEMTIME& tm)
 	REG_CRYPT_END;
 	*/
 
-	m_pDriver->LightModel(GL_LIGHT_MODEL_AMBIENT, ambient);
-	m_pDriver->Light(GL_LIGHT0, GL_DIFFUSE, diffuse);
-	m_pDriver->Light(GL_LIGHT0, GL_POSITION, pos);
+	glLightModelfv(GL_LIGHT_MODEL_AMBIENT, ambient);
+	glLightfv(GL_LIGHT0, GL_DIFFUSE, diffuse);
+	glLightfv(GL_LIGHT0, GL_POSITION, pos);
 
 	//UpdateView();
 
@@ -1765,30 +1765,30 @@ void CSolitaireView::ShowBackgroundImage()
 		nTexHeight = 1024;
 	}
 
-	m_pDriver->BindTexture(GL_TEXTURE_2D, m_unBackgroundTexName);
+	glBindTexture(GL_TEXTURE_2D, m_unBackgroundTexName);
 
 	BYTE* pBits = new BYTE[3 * nTexHeight * nTexWidth];
 
-	m_pDriver->ScaleImage(GL_RGB, m_imgBackground.GetWidth(), m_imgBackground.GetHeight(),
+	gluScaleImage(GL_RGB, m_imgBackground.GetWidth(), m_imgBackground.GetHeight(),
 												GL_UNSIGNED_BYTE, m_imgBackground.GetBits(),
 												nTexWidth, nTexHeight, GL_UNSIGNED_BYTE, pBits);
 
 	if (g_AppSettings.m_bHighQualityBackground)
 	{
-		m_pDriver->TexParameter(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-		m_pDriver->TexParameter(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	}
 	else
 	{
-		m_pDriver->TexParameter(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-		m_pDriver->TexParameter(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 	}
 
-	m_pDriver->TexParameter(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
 
-	m_pDriver->TexParameter(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
 
-	m_pDriver->TexImage2D(0, GL_RGB, nTexWidth, nTexHeight, 0, GL_BGR_EXT, GL_UNSIGNED_BYTE, pBits);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, nTexWidth, nTexHeight, 0, GL_BGR_EXT, GL_UNSIGNED_BYTE, pBits);
 
 	delete pBits;
 
@@ -1938,17 +1938,17 @@ void CSolitaireView::OnUpdateOptions()
 	case eDetailLow:
 	{
 		// low details
-		m_pDriver->ShadeModel(GL_FLAT);
+		glShadeModel(GL_FLAT);
 
-		m_pDriver->Light(GL_LIGHT0, GL_CONSTANT_ATTENUATION, 1.0f);
-		m_pDriver->Light(GL_LIGHT0, GL_LINEAR_ATTENUATION, 0.0f);
-		m_pDriver->Light(GL_LIGHT0, GL_QUADRATIC_ATTENUATION, 0.0f);
+		glLightf(GL_LIGHT0, GL_CONSTANT_ATTENUATION, 1.0f);
+		glLightf(GL_LIGHT0, GL_LINEAR_ATTENUATION, 0.0f);
+		glLightf(GL_LIGHT0, GL_QUADRATIC_ATTENUATION, 0.0f);
 
-		m_pDriver->Disable(GL_DITHER);
+		glDisable(GL_DITHER);
 
-		m_pDriver->Disable(GL_POINT_SMOOTH);
-		m_pDriver->Disable(GL_LINE_SMOOTH);
-		m_pDriver->Disable(GL_POLYGON_SMOOTH);
+		glDisable(GL_POINT_SMOOTH);
+		glDisable(GL_LINE_SMOOTH);
+		glDisable(GL_POLYGON_SMOOTH);
 
 		LoadTileTextures();
 
@@ -1960,17 +1960,17 @@ void CSolitaireView::OnUpdateOptions()
 	case eDetailMedium:
 	{
 		// medium details
-		m_pDriver->ShadeModel(GL_SMOOTH);
+		glShadeModel(GL_SMOOTH);
 
-		m_pDriver->Light(GL_LIGHT0, GL_CONSTANT_ATTENUATION, 1.0f);
-		m_pDriver->Light(GL_LIGHT0, GL_LINEAR_ATTENUATION, 0.0f);
-		m_pDriver->Light(GL_LIGHT0, GL_QUADRATIC_ATTENUATION, 0.0f);
+		glLightf(GL_LIGHT0, GL_CONSTANT_ATTENUATION, 1.0f);
+		glLightf(GL_LIGHT0, GL_LINEAR_ATTENUATION, 0.0f);
+		glLightf(GL_LIGHT0, GL_QUADRATIC_ATTENUATION, 0.0f);
 
-		m_pDriver->Disable(GL_DITHER);
+		glDisable(GL_DITHER);
 
-		m_pDriver->Enable(GL_POINT_SMOOTH);
-		m_pDriver->Enable(GL_LINE_SMOOTH);
-		m_pDriver->Disable(GL_POLYGON_SMOOTH);
+		glEnable(GL_POINT_SMOOTH);
+		glEnable(GL_LINE_SMOOTH);
+		glDisable(GL_POLYGON_SMOOTH);
 
 		LoadTileTextures();
 
@@ -1982,17 +1982,17 @@ void CSolitaireView::OnUpdateOptions()
 	case eDetailHigh:
 	{
 		// high details
-		m_pDriver->ShadeModel(GL_SMOOTH);
+		glShadeModel(GL_SMOOTH);
 
-		m_pDriver->Light(GL_LIGHT0, GL_CONSTANT_ATTENUATION, 0.0f);
-		m_pDriver->Light(GL_LIGHT0, GL_LINEAR_ATTENUATION, 0.095f);
-		m_pDriver->Light(GL_LIGHT0, GL_QUADRATIC_ATTENUATION, 0.0f);
+		glLightf(GL_LIGHT0, GL_CONSTANT_ATTENUATION, 0.0f);
+		glLightf(GL_LIGHT0, GL_LINEAR_ATTENUATION, 0.095f);
+		glLightf(GL_LIGHT0, GL_QUADRATIC_ATTENUATION, 0.0f);
 
-		m_pDriver->Enable(GL_DITHER);
+		glEnable(GL_DITHER);
 
-		m_pDriver->Enable(GL_POINT_SMOOTH);
-		m_pDriver->Enable(GL_LINE_SMOOTH);
-		m_pDriver->Enable(GL_POLYGON_SMOOTH);
+		glEnable(GL_POINT_SMOOTH);
+		glEnable(GL_LINE_SMOOTH);
+		glEnable(GL_POLYGON_SMOOTH);
 
 		LoadTileTextures();
 
@@ -2161,7 +2161,7 @@ void CSolitaireView::GameWon()
 
 	Sound(IDR_WOW);
 
-	m_pDriver->Disable(GL_LIGHTING);
+	glDisable(GL_LIGHTING);
 
 	m_enmDrawMode = eFireWorks;
 
@@ -2205,7 +2205,7 @@ LRESULT CSolitaireView::OnStopFireworks(WORD wNotifyCode, WORD wID, HWND hWndCtl
 
 	m_objGame.New();
 
-	m_pDriver->Enable(GL_LIGHTING);
+	glEnable(GL_LIGHTING);
 
 	UpdateView();
 

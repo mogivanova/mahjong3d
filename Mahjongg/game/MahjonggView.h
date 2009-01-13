@@ -14,7 +14,6 @@
 #pragma once
 
 #include "..\resource.h"
-#include "..\Service\OpenGL\OpenGLDriver.h"
 #include "tileset\mjtileset.h"
 #include "..\Service\3DS\3ds.h"
 
@@ -145,11 +144,15 @@ protected:
 	BOOL UIUpdateMenuBar(BOOL bForceUpdate = FALSE, BOOL bMainMenu = FALSE);
 
 public:
-	// set opengl driver
-	void SetDriver(COpenGLDriver* pDriver);
-
 	//
 	virtual bool Init();
+
+	/// Create OpenGL context
+	HGLRC CreateGLContext(HDC hDC);
+	///
+	bool InitExtensions(HDC hDC);
+	///
+	CString GetGLString(GLenum enName);
 	//
 	virtual void OnUpdateOptions();
 	//
@@ -192,9 +195,6 @@ protected:
 	void CalculateFrameRate();
 
 protected:
-	// OpenGL driver
-	COpenGLDriver* m_pDriver;
-
 	// is initialized
 	bool m_bInitialized;
 	// is busy

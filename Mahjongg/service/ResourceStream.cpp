@@ -76,7 +76,7 @@ ULONG STDMETHODCALLTYPE ResourceStream::Release( void )
  */
 HRESULT STDMETHODCALLTYPE ResourceStream::Read( void* pv, ULONG cb, ULONG* pcbRead )
 {
-	DWORD dwCopy = min(m_dwSize.QuadPart - m_dwPos.QuadPart, cb);
+	LONGLONG dwCopy = min(m_dwSize.QuadPart - m_dwPos.QuadPart, cb);
 
 	// copy data
 	memcpy(pv, m_pData + m_dwPos.QuadPart, dwCopy);

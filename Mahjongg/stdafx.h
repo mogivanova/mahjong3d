@@ -44,6 +44,11 @@ extern CAppModule _Module;
 
 #include <math.h>
 
+#include <gl/GL.h>
+
+#include <gl/GLU.h>
+#pragma comment(lib, "glu32.lib")
+
 #include <htmlhelp.h>
 #pragma comment(lib, "htmlhelp.lib")
 

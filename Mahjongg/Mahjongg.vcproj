@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="windows-1251"?>
 <VisualStudioProject
 	ProjectType="Visual C++"
-	Version="9.00"
+	Version="9,00"
 	Name="Mahjongg"
 	ProjectGUID="{6C62C0B6-CCEE-4E14-99B3-58A33778A6B7}"
 	RootNamespace="Mahjongg"
@@ -160,7 +160,6 @@
 				PrecompiledHeaderThrough="stdafx.h"
 				WarningLevel="3"
 				SuppressStartupBanner="true"
-				Detect64BitPortabilityProblems="true"
 				DebugInformationFormat="3"
 			/>
 			<Tool
@@ -839,30 +838,6 @@
 					RelativePath=".\service\SortedList.h"
 					>
 				</File>
-				<Filter
-					Name="OpenGL"
-					>
-					<File
-						RelativePath=".\service\opengl\gl.h"
-						>
-					</File>
-					<File
-						RelativePath=".\service\opengl\gl_ext.h"
-						>
-					</File>
-					<File
-						RelativePath=".\service\opengl\glu.h"
-						>
-					</File>
-					<File
-						RelativePath=".\Service\OpenGL\OpenGLDriver.cpp"
-						>
-					</File>
-					<File
-						RelativePath=".\Service\OpenGL\OpenGLDriver.h"
-						>
-					</File>
-				</Filter>
 				<Filter
 					Name="Settings"
 					>

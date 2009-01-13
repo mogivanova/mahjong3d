@@ -107,7 +107,7 @@ LRESULT CSetupExpertDlg::OnOk(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl
 
 	m_dlgInterface.DoDataExchange(TRUE);
 
-	int iLangIndex = m_dlgInterface.m_ctlLanguages.GetItemData(m_dlgInterface.m_ctlLanguages.GetCurSel());
+	DWORD_PTR iLangIndex = m_dlgInterface.m_ctlLanguages.GetItemData(m_dlgInterface.m_ctlLanguages.GetCurSel());
 
 	if (iLangIndex < 0 || iLangIndex >= m_dlgInterface.m_arrNames.GetSize())
 		iLangIndex = 0;

@@ -13,8 +13,6 @@
 
 #pragma once
 
-#include "Service\OpenGL\OpenGLDriver.h"
-
 #include "Game\Solitaire\SolitaireView.h"
 
 #define CHAIN_VIEW_MSG_MAP(pView) \
@@ -34,8 +32,6 @@ class CMainFrame :
 {
 
 protected:
-	COpenGLDriver m_objDriver;
-
 	CMahjonggView* m_pCurrentView;
 
 	CSolitaireView m_objSolitaireView;

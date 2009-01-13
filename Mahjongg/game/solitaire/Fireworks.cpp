@@ -23,12 +23,12 @@ CRect scrRect;
 
 /////////////////////////////////////////////////////////////////////////
 //
-void CFireWorks::CFWSpark::Draw(COpenGLDriver* pDriver)
+void CFireWorks::CFWSpark::Draw()
 {
 	GLfloat sx = x / 150.0f;
 	GLfloat sy = y / 150.0f - 2.1f;
 
-	pDriver->Vertex(sx, sy, 0);
+	glVertex3f(sx, sy, 0);
 }
 
 /////////////////////////////////////////////////////////////////////////
@@ -116,16 +116,15 @@ void CFireWorks::CFWBullet::MoveExploded()
 }
 
 
-void CFireWorks::CFWBullet::Draw(COpenGLDriver* pDriver)
+void CFireWorks::CFWBullet::Draw()
 {
 	for (int i = 0; i < SPARKS; i++)
 	{
 		switch (state)
 		{
-
 		case FW_FIRED:
-			pDriver->Color(255, 255, 255);
-			Spark[i].Draw(pDriver);
+			glColor3ub(255, 255, 255);
+			Spark[i].Draw();
 			break;
 
 		case FW_EXPLODED:
@@ -134,23 +133,23 @@ void CFireWorks::CFWBullet::Draw(COpenGLDriver* pDriver)
 			{
 
 			case 0:
-				pDriver->Color((GLubyte)Spark[i].time << 3, (GLubyte)Spark[i].time << 3, (GLubyte)Spark[i].time << 3);
-				Spark[i].Draw(pDriver);
+				glColor3ub((GLubyte)Spark[i].time << 3, (GLubyte)Spark[i].time << 3, (GLubyte)Spark[i].time << 3);
+				Spark[i].Draw();
 				break;
 
 			case 1:
-				pDriver->Color(0, (GLubyte)Spark[i].time << 3, 0);
-				Spark[i].Draw(pDriver);
+				glColor3ub(0, (GLubyte)Spark[i].time << 3, 0);
+				Spark[i].Draw();
 				break;
 
 			case 2:
-				pDriver->Color((GLubyte)Spark[i].time << 3, 0, 0);
-				Spark[i].Draw(pDriver);
+				glColor3ub((GLubyte)Spark[i].time << 3, 0, 0);
+				Spark[i].Draw();
 				break;
 
 			case 3:
-				pDriver->Color((GLubyte)Spark[i].time << 3, (GLubyte)Spark[i].time << 3, 0);
-				Spark[i].Draw(pDriver);
+				glColor3ub((GLubyte)Spark[i].time << 3, (GLubyte)Spark[i].time << 3, 0);
+				Spark[i].Draw();
 				break;
 			}
 
@@ -225,24 +224,24 @@ void CFireWorks::Step()
 	}
 }
 
-void CFireWorks::Draw(COpenGLDriver* pDriver)
+void CFireWorks::Draw()
 {
 	QPROFILE_FUN(_T("CFireWorks::Draw"));
 	/*
 	*/
-	pDriver->NewList(800, GL_COMPILE);
-	pDriver->Begin(GL_POINTS);
+	glNewList(800, GL_COMPILE);
+	glBegin(GL_POINTS);
 	{
 		for (int i = 0; i < BULLETS; i++)
 		{
-			Bullet[i].Draw(pDriver);
+			Bullet[i].Draw();
 		}
 	}
 
-	pDriver->End();
-	pDriver->EndList();
+	glEnd();
+	glEndList();
 
-	pDriver->CallList(800);
+	glCallList(800);
 }
 
 /*
