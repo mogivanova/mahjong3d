@@ -15,8 +15,7 @@
 #include "Board.h"
 #include "SolitaireLayout.h"
 
-/////////////////////////////////////////////////////////////////////////////
-//
+
 CBoard::CBoard()
 {
 	m_pBoard = NULL;
@@ -25,16 +24,14 @@ CBoard::CBoard()
 	m_nHeight = 0;
 }
 
-/////////////////////////////////////////////////////////////////////////////
-//
+
 CBoard::~CBoard()
 {
 	if (m_pBoard != NULL)
 		delete [] m_pBoard;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 void CBoard::Set(CSolitaireLayout& objLayout)
 {
 	SetDimensions(objLayout.GetWidth(), objLayout.GetHeight(), objLayout.GetDepth());
@@ -45,8 +42,7 @@ void CBoard::Set(CSolitaireLayout& objLayout)
 	}
 }
 
-/////////////////////////////////////////////////////////////////////////////
-//
+
 void CBoard::Clear()
 {
 	if (m_pBoard == NULL)
@@ -55,9 +51,6 @@ void CBoard::Clear()
 	for (UINT i = 0; i < Size(); i++)
 		m_pBoard[i] = NO_TILE;
 }
-
-/////////////////////////////////////////////////////////////////////////////
-//
 void CBoard::SetDimensions(unsigned char width, unsigned char height, unsigned char depth)
 {
 	_ASSERT(width > 0 && height > 0 && depth > 0);
@@ -74,8 +67,7 @@ void CBoard::SetDimensions(unsigned char width, unsigned char height, unsigned c
 	Clear();
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 CBoard& CBoard::operator=(const CBoard & brd)
 {
 	SetDimensions(brd.m_nWidth, brd.m_nHeight, brd.m_nDepth);
@@ -88,8 +80,7 @@ CBoard& CBoard::operator=(const CBoard & brd)
 	return *this;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 bool CBoard::Save(CMJCryptStream& strOut)
 {
 	strOut.Write(m_nWidth);
@@ -104,8 +95,7 @@ bool CBoard::Save(CMJCryptStream& strOut)
 	return true;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 bool CBoard::Load(CMJCryptStream& strIn)
 {
 	unsigned char w, h, d;

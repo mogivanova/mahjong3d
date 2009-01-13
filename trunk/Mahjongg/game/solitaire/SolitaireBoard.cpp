@@ -15,20 +15,17 @@
 #include "SolitaireBoard.h"
 #include "..\..\Service\random.h"
 
-////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 CSolitaireBoard::CSolitaireBoard()
 {
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 CSolitaireBoard::~CSolitaireBoard()
 {
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 void CSolitaireBoard::PlaceTiles()
 {
 	if (g_AppSettings.m_bSolvableBoards)
@@ -37,15 +34,13 @@ void CSolitaireBoard::PlaceTiles()
 		PlaceTilesSimple();
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 void CSolitaireBoard::PlaceTilesForDemo(CSimpleArray<CSolitairePos>& vecRemove)
 {
 	PlaceTilesSolvable(&vecRemove);
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 void CSolitaireBoard::PlaceTilesSolvable(CSimpleArray<CSolitairePos>* pvecRemove)
 {
 	QPROFILE_FUN(_T("CSolitaireBoard::PlaceTilesSolvable"));
@@ -78,8 +73,7 @@ void CSolitaireBoard::PlaceTilesSolvable(CSimpleArray<CSolitairePos>* pvecRemove
 	}
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 unsigned int CSolitaireBoard::CollectPos(CSimpleArray<CSolitairePos>& vecPos)
 {
 	vecPos.RemoveAll();
@@ -105,9 +99,6 @@ unsigned int CSolitaireBoard::CollectPos(CSimpleArray<CSolitairePos>& vecPos)
 }
 
 
-
-/////////////////////////////////////////////////////////////////////////////
-//
 bool CSolitaireBoard::FindPlaceable(CTile* pTiles, CSimpleArray<CSolitairePos>* pvecRemove, int nPlaced)
 {
 	if (nPlaced == 144)
@@ -196,8 +187,7 @@ bool CSolitaireBoard::FindPlaceable(CTile* pTiles, CSimpleArray<CSolitairePos>* 
 	return true;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 bool CSolitaireBoard::CheckBlockLeft(CSolitairePos pos, bool bHasEmpty)
 {
 	// left most tile does not block anything
@@ -227,9 +217,6 @@ bool CSolitaireBoard::CheckBlockLeft(CSolitairePos pos, bool bHasEmpty)
 
 	return false;
 }
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
 bool CSolitaireBoard::CheckBlockRight(CSolitairePos pos, bool bHasEmpty)
 {
 	// right most tile does not block anything
@@ -259,9 +246,6 @@ bool CSolitaireBoard::CheckBlockRight(CSolitairePos pos, bool bHasEmpty)
 
 	return false;
 }
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
 bool CSolitaireBoard::CheckBlockDown(CSolitairePos pos, bool bHasEmpty)
 {
 	// tiles from lowest level do not block
@@ -283,8 +267,7 @@ bool CSolitaireBoard::CheckBlockDown(CSolitairePos pos, bool bHasEmpty)
 	return false;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 void CSolitaireBoard::PlaceTilesSimple()
 {
 	QPROFILE_FUN(_T("CSolitaireBoard::PlaceTilesSimple"));
@@ -341,15 +324,11 @@ void CSolitaireBoard::PlaceTilesSimple()
 	}
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 bool CSolitaireBoard::IsFree(CSolitairePos pos)
 {
 	return IsFree(pos.i, pos.j, pos.k);
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
 bool CSolitaireBoard::IsFree(unsigned char i, unsigned char j, unsigned char k)
 {
 	if (GetTile(i, j, k) == NO_TILE)
@@ -397,8 +376,7 @@ bool CSolitaireBoard::IsFree(unsigned char i, unsigned char j, unsigned char k)
 	return true;
 }
 
-/////////////////////////////////////////////////////////////////////////////
-//
+
 unsigned char CSolitaireBoard::CountTiles()
 {
 	unsigned char nReturn = 0;
@@ -418,8 +396,7 @@ unsigned char CSolitaireBoard::CountTiles()
 	return nReturn;
 }
 
-/////////////////////////////////////////////////////////////////////////////
-//
+
 bool CSolitaireBoard::HaveMoreMoves()
 {
 	for (UINT i1 = 0; i1 < m_nWidth; i1++)
@@ -434,8 +411,6 @@ bool CSolitaireBoard::HaveMoreMoves()
 
 				if (!IsFree(i1, j1, k1))
 					continue;
-
-
 				// find a pair
 				for (UINT i2 = 0; i2 < m_nWidth; i2++)
 				{

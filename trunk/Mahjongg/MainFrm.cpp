@@ -23,8 +23,7 @@
 #include "Dialogs\Solitaire\BeginnerHintDlg.h"
 #include "Service\Random.h"
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 CMainFrame::CMainFrame() :
 		m_objSolitaireView(this)
 {
@@ -33,14 +32,12 @@ CMainFrame::CMainFrame() :
 	m_hWndClient = NULL;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 CMainFrame::~CMainFrame()
 {
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 BOOL CMainFrame::PreTranslateMessage(MSG* pMsg)
 {
 	if (CFrameWindowImpl<CMainFrame>::PreTranslateMessage(pMsg))
@@ -52,15 +49,13 @@ BOOL CMainFrame::PreTranslateMessage(MSG* pMsg)
 	return FALSE;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 BOOL CMainFrame::OnIdle()
 {
 	return TRUE;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CMainFrame::OnCreate(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM /*lParam*/, BOOL& /*bHandled*/)
 {
 	HMENU hMenu = GetMenu();
@@ -144,7 +139,7 @@ LRESULT CMainFrame::OnSettingChange(UINT uMsg, WPARAM wParam, LPARAM lParam, BOO
  * @brief FinalConstruct
  *
  *
- * 
+ *
  * @return void
  */
 void CMainFrame::FinalConstruct()
@@ -174,25 +169,25 @@ void CMainFrame::FinalConstruct()
 		return;
 	}
 
-		BOOL bHandled = FALSE;
+	BOOL bHandled = FALSE;
 
-		switch (g_AppSettings.m_enmGameMode)
-		{
+	switch (g_AppSettings.m_enmGameMode)
+	{
 
-		case CAppSettings::eSolitaire:
-			OnNewSolitaireGame(0, 0, 0, bHandled);
-			break;
+	case CAppSettings::eSolitaire:
+		OnNewSolitaireGame(0, 0, 0, bHandled);
+		break;
 
-		default:
-			break;
-		}
+	default:
+		break;
+	}
 }
 
 /**
  * @brief OnDestroy
  *
  *
- * 
+ *
  * @param UINT uMsg
  * @param WPARAM wParam
  * @param LPARAM lParam
@@ -205,8 +200,7 @@ LRESULT CMainFrame::OnDestroy(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHa
 	return 1;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CMainFrame::OnSizing(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
 {
 	LPRECT pRect = (LPRECT)lParam;
@@ -214,8 +208,7 @@ LRESULT CMainFrame::OnSizing(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHan
 	return TRUE;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CMainFrame::OnGetMinMaxInfo(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
 {
 	LPMINMAXINFO pInfo = (LPMINMAXINFO)lParam;
@@ -226,16 +219,14 @@ LRESULT CMainFrame::OnGetMinMaxInfo(UINT uMsg, WPARAM wParam, LPARAM lParam, BOO
 	return 0;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CMainFrame::OnFileExit(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 	PostMessage(WM_CLOSE);
 	return 0;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CMainFrame::OnAppAbout(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 	CAboutDlg dlg;
@@ -243,8 +234,7 @@ LRESULT CMainFrame::OnAppAbout(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCt
 	return 0;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CMainFrame::OnPlayerName(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 	CPlayerNameDlg dlgPlayer;
@@ -267,10 +257,10 @@ LRESULT CMainFrame::OnSettingsOptions(WORD wNotifyCode, WORD wID, HWND hWndCtl, 
 {
 	bool bUpdate = false;
 
-		CSetupExpertDlg dlg;
+	CSetupExpertDlg dlg;
 
-		if (dlg.DoModal() == IDOK)
-			bUpdate = true;
+	if (dlg.DoModal() == IDOK)
+		bUpdate = true;
 
 	if (bUpdate)
 	{
@@ -301,8 +291,7 @@ LRESULT CMainFrame::OnSettingsOptions(WORD wNotifyCode, WORD wID, HWND hWndCtl, 
 	return 0;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CMainFrame::OnMoveSize(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
 {
 	CRect rect;
@@ -340,8 +329,7 @@ LRESULT CMainFrame::OnMoveSize(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bH
 	return 1;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CMainFrame::OnHelpContents(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 	CString strHelpFile = _T("Mahjongg.chm");
@@ -369,8 +357,7 @@ LRESULT CMainFrame::OnHelpContents(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hW
 	return 0;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CMainFrame::OnHelpIndex(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 	CString strHelpFile = _T("Mahjongg.chm");
@@ -390,8 +377,7 @@ LRESULT CMainFrame::OnHelpIndex(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndC
 	return 0;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CMainFrame::OnModeExpert(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 	if (g_AppSettings.m_bTextHints)
@@ -413,8 +399,7 @@ LRESULT CMainFrame::OnModeExpert(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWnd
 	return 0;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CMainFrame::OnModeBeginner(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 	/*
@@ -430,8 +415,7 @@ LRESULT CMainFrame::OnModeBeginner(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hW
 	return 0;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CMainFrame::OnNewSolitaireGame(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 	// calculate client rectangle

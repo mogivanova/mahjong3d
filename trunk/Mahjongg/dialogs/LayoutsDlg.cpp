@@ -16,16 +16,14 @@
 #include "LayoutsDlg.h"
 #include ".\layoutsdlg.h"
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 CLayoutsDlg::CLayoutsDlg()
 {
 	m_bLayoutLoaded = false;
 	m_bUpdating = false;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 CLayoutsDlg::~CLayoutsDlg()
 {
 	for (int i = 0; i < m_lstDescriptions.GetSize(); i++)
@@ -34,8 +32,7 @@ CLayoutsDlg::~CLayoutsDlg()
 	}
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CLayoutsDlg::OnInitDialog(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
 {
 	CenterWindow(GetParent());
@@ -73,16 +70,14 @@ LRESULT CLayoutsDlg::OnInitDialog(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL&
 	return TRUE;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CLayoutsDlg::OnCloseCmd(WORD wNotifyCode, WORD wID, HWND hWndCtl, BOOL& bHandled)
 {
 	EndDialog(IDCANCEL);
 	return 0;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CLayoutsDlg::OnOk(WORD wNotifyCode, WORD wID, HWND hWndCtl, BOOL& bHandled)
 {
 	int nSelected = m_ctrlList.GetSelectedIndex();
@@ -99,8 +94,7 @@ LRESULT CLayoutsDlg::OnOk(WORD wNotifyCode, WORD wID, HWND hWndCtl, BOOL& bHandl
 	return 0;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CLayoutsDlg::OnClickedBrowse(WORD wNotifyCode, WORD wID, HWND hWndCtl, BOOL& bHandled)
 {
 	CString strFilter = g_LangManager.GetString("str_layout_filter");
@@ -131,8 +125,7 @@ LRESULT CLayoutsDlg::OnClickedBrowse(WORD wNotifyCode, WORD wID, HWND hWndCtl, B
 	return 0;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CLayoutsDlg::OnDblclkTilesetList(int idCtrl, LPNMHDR pnmh, BOOL& bHandled)
 {
 	int nSelected = m_ctrlList.GetSelectedIndex();
@@ -149,8 +142,7 @@ LRESULT CLayoutsDlg::OnDblclkTilesetList(int idCtrl, LPNMHDR pnmh, BOOL& bHandle
 	return 0;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 CString CLayoutsDlg::GetLayoutPath()
 {
 	return m_strLayoutPath;
@@ -229,8 +221,7 @@ void CLayoutsDlg::LoadLayouts(CString strPath)
 	while (FindNextFile(hFind, &fd));
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 void CLayoutsDlg::UpdateList()
 {
 	m_ctrlList.DeleteAllItems();

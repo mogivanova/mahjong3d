@@ -25,13 +25,14 @@ ResourceStream::~ResourceStream()
 HRESULT STDMETHODCALLTYPE ResourceStream::QueryInterface( REFIID iid, void ** ppvObject )
 {
 	if (iid == __uuidof(IUnknown)
-		|| iid == __uuidof(IStream)
-		|| iid == __uuidof(ISequentialStream))
+			|| iid == __uuidof(IStream)
+			|| iid == __uuidof(ISequentialStream))
 	{
 		*ppvObject = static_cast<IStream*>(this);
 		AddRef();
 		return S_OK;
-	} else
+	}
+	else
 		return E_NOINTERFACE;
 }
 
@@ -59,8 +60,10 @@ ULONG STDMETHODCALLTYPE ResourceStream::AddRef( void )
 ULONG STDMETHODCALLTYPE ResourceStream::Release( void )
 {
 	ULONG res = (ULONG) InterlockedDecrement(&_refcount);
-	if (res == 0) 
+
+	if (res == 0)
 		delete this;
+
 	return res;
 }
 
@@ -83,8 +86,8 @@ HRESULT STDMETHODCALLTYPE ResourceStream::Read( void* pv, ULONG cb, ULONG* pcbRe
 
 	// move pointer
 	m_dwPos.QuadPart += dwCopy;
-	
-	if(pcbRead != NULL)
+
+	if (pcbRead != NULL)
 		*pcbRead = dwCopy;
 
 	return S_OK;
@@ -142,23 +145,27 @@ HRESULT STDMETHODCALLTYPE ResourceStream::Clone( IStream ** )
  */
 HRESULT STDMETHODCALLTYPE ResourceStream::Seek( LARGE_INTEGER liDistanceToMove, DWORD dwOrigin, ULARGE_INTEGER* lpNewFilePointer )
 {
-	switch(dwOrigin)
+	switch (dwOrigin)
 	{
+
 	case STREAM_SEEK_SET:
 		m_dwPos.QuadPart = liDistanceToMove.QuadPart;
 		break;
+
 	case STREAM_SEEK_CUR:
 		m_dwPos.QuadPart += liDistanceToMove.QuadPart;
 		break;
+
 	case STREAM_SEEK_END:
 		m_dwPos.QuadPart = m_dwSize.QuadPart - liDistanceToMove.QuadPart;
 		break;
-	default:   
+
+	default:
 		return STG_E_INVALIDFUNCTION;
 		break;
 	}
 
-	if(lpNewFilePointer != NULL)
+	if (lpNewFilePointer != NULL)
 		lpNewFilePointer->QuadPart = m_dwPos.QuadPart;
 
 	return S_OK;
@@ -184,17 +191,20 @@ HRESULT STDMETHODCALLTYPE ResourceStream::Stat( STATSTG* pStatstg, DWORD grfStat
 HRESULT ResourceStream::Create(HMODULE hModule, LPCWSTR lpName, LPCWSTR lpType, IStream ** ppStream)
 {
 	HRSRC hRsrc = ::FindResource(hModule, lpName, lpType);
-	if(hRsrc == NULL)
+
+	if (hRsrc == NULL)
 		return E_FAIL;
 
 	DWORD dwSize = ::SizeofResource(hModule, hRsrc);
 
 	HGLOBAL hGlob = ::LoadResource(hModule, hRsrc);
-	if(hGlob == NULL)
+
+	if (hGlob == NULL)
 		return E_FAIL;
 
 	LPVOID pData = ::LockResource(hGlob);
-	if(pData == NULL)
+
+	if (pData == NULL)
 		return E_FAIL;
 
 	*ppStream = new ResourceStream((LPBYTE)pData, dwSize);

@@ -2,6 +2,7 @@
 
 class ResourceStream : public IStream
 {
+
 private:
 	ResourceStream(LPBYTE pData, DWORD dwSize);
 

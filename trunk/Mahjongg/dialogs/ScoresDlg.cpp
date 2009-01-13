@@ -116,8 +116,6 @@ LRESULT CScoresDlg::OnClickedUpload(WORD wNotifyCode, WORD wID, HWND hWndCtl, BO
 
 	m_hUploadThread = ::CreateThread(NULL, 0, UploadThread, this, 0, &m_dwThreadID);
 
-
-
 	return 0;
 }
 

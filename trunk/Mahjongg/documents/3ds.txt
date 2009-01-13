@@ -1,6 +1,5 @@
 
-/////////////////////////////////////////////////////////////////////////////////
-//
+
 * QUICK NOTES * 
 //
 This was a HUGE amount of knowledge and probably the largest tutorial yet!
@@ -40,8 +39,7 @@ a .3DS file.
 Below is a list of the order that you will find the chunks and all the know chunks.
 If you go to www.wosit.org you can find a few documents on the 3DS file format.
 You can also take a look at the 3DS Format.rtf that is included with this tutorial.
-//
-//
+
 //
      MAIN3DS  (0x4D4D)
     |
@@ -168,5 +166,4 @@ Ben Humphrey (DigiBen)
 Game Programmer
 DigiBen@GameTutorials.com
 Co-Web Host of www.GameTutorials.com
-//
-//
+

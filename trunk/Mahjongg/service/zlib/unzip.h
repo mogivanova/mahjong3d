@@ -235,8 +235,6 @@ extern "C"
 	  Close the file in zip opened with unzOpenCurrentFile
 	  Return UNZ_CRCERROR if all the file was read but the CRC is not good
 	*/
-
-
 	extern int ZEXPORT unzReadCurrentFile OF((unzFile file,
 				voidp buf,
 				unsigned len));

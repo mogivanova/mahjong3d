@@ -55,8 +55,7 @@ int QProfile::Output = QProfile_Out_All | QProfile_Out_File_Append | QProfile_Ou
 // This is the main object to measure total time
 QProfile QProfile_Program(_T("Mahjongg3D Total time"));
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 QProfile::QProfile(LPCTSTR name, bool delete_after_report, LPCTSTR file_name, int line_num)
 {
 	if (name != NULL)
@@ -103,8 +102,7 @@ QProfile::QProfile(LPCTSTR name, bool delete_after_report, LPCTSTR file_name, in
 	LineNumber = line_num;
 };
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 void QProfile::Reset()
 {
 	Elapsed = 0;
@@ -116,9 +114,6 @@ void QProfile::Reset()
 	MinTime = 0x7FFFFFFFFFFFFFFF;
 #endif
 };
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
 void QProfile::PrintSummary()
 {
 	//Summary should be printed only once
@@ -377,8 +372,7 @@ TCHAR* QProfile::PrintBar(double val, double max, int length)
 	return buff;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 bool QProfile::Out(LPCTSTR string, bool last, LPCTSTR debug_only)
 {
 	if (Output & QProfile_Out_DebugWindow)
@@ -430,8 +424,7 @@ bool QProfile::Out(LPCTSTR string, bool last, LPCTSTR debug_only)
 	return true;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 QProfile* QProfile::FindNextChild(QProfile * find_after)
 {
 	QProfile* cur = m_pChainHead;
@@ -450,8 +443,7 @@ QProfile* QProfile::FindNextChild(QProfile * find_after)
 	return NULL;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 bool QProfile::operator>(QProfile& to_compare)
 {
 	if (to_compare.ReportPrinted)

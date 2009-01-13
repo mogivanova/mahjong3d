@@ -25,8 +25,7 @@ CDemoDlg::~CDemoDlg(void)
 {
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CDemoDlg::OnInitDialog(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM /*lParam*/, BOOL& /*bHandled*/)
 {
 	CenterWindow(GetParent());
@@ -36,8 +35,7 @@ LRESULT CDemoDlg::OnInitDialog(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM /*lParam
 	return TRUE;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CDemoDlg::OnCloseCmd(WORD /*wNotifyCode*/, WORD wID, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 	EndDialog(wID);

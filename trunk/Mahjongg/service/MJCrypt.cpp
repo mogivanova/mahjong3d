@@ -7,8 +7,8 @@
  * @brief CMJCryptStream
  *
  *
- * 
- * @return 
+ *
+ * @return
  */
 CMJCryptStream::CMJCryptStream()
 {
@@ -20,7 +20,7 @@ CMJCryptStream::CMJCryptStream()
  * @brief GetBuffer
  *
  *
- * 
+ *
  * @return void*
  */
 void* CMJCryptStream::GetBuffer()
@@ -32,7 +32,7 @@ void* CMJCryptStream::GetBuffer()
  * @brief GetSize
  *
  *
- * 
+ *
  * @return DWORD
  */
 DWORD CMJCryptStream::GetSize()
@@ -44,7 +44,7 @@ DWORD CMJCryptStream::GetSize()
  * @brief SetBuffer
  *
  *
- * 
+ *
  * @param void * pBuffer
  * @param size_t nSize
  * @return HRESULT
@@ -62,7 +62,7 @@ HRESULT CMJCryptStream::SetBuffer(void* pBuffer, size_t nSize)
  * @brief Write
  *
  *
- * 
+ *
  * @param char val
  * @return HRESULT
  */
@@ -75,7 +75,7 @@ HRESULT CMJCryptStream::Write(char val)
  * @brief Write
  *
  *
- * 
+ *
  * @param unsigned char val
  * @return HRESULT
  */
@@ -88,7 +88,7 @@ HRESULT CMJCryptStream::Write(unsigned char val)
  * @brief Write
  *
  *
- * 
+ *
  * @param short val
  * @return HRESULT
  */
@@ -101,7 +101,7 @@ HRESULT CMJCryptStream::Write(short val)
  * @brief Write
  *
  *
- * 
+ *
  * @param unsigned short val
  * @return HRESULT
  */
@@ -114,7 +114,7 @@ HRESULT CMJCryptStream::Write(unsigned short val)
  * @brief Write
  *
  *
- * 
+ *
  * @param int val
  * @return HRESULT
  */
@@ -127,7 +127,7 @@ HRESULT CMJCryptStream::Write(int val)
  * @brief Write
  *
  *
- * 
+ *
  * @param unsigned int val
  * @return HRESULT
  */
@@ -140,7 +140,7 @@ HRESULT CMJCryptStream::Write(unsigned int val)
  * @brief Write
  *
  *
- * 
+ *
  * @param long val
  * @return HRESULT
  */
@@ -153,7 +153,7 @@ HRESULT CMJCryptStream::Write(long val)
  * @brief Write
  *
  *
- * 
+ *
  * @param unsigned long val
  * @return HRESULT
  */
@@ -166,7 +166,7 @@ HRESULT CMJCryptStream::Write(unsigned long val)
  * @brief Write
  *
  *
- * 
+ *
  * @param __int64 val
  * @return HRESULT
  */
@@ -179,7 +179,7 @@ HRESULT CMJCryptStream::Write(__int64 val)
  * @brief Write
  *
  *
- * 
+ *
  * @param unsigned __int64 val
  * @return HRESULT
  */
@@ -192,7 +192,7 @@ HRESULT CMJCryptStream::Write(unsigned __int64 val)
  * @brief Write
  *
  *
- * 
+ *
  * @param CString str
  * @return HRESULT
  */
@@ -208,7 +208,7 @@ HRESULT CMJCryptStream::Write(CString str)
  * @brief Write
  *
  *
- * 
+ *
  * @param void * pBuffer
  * @param size_t nLength
  * @return HRESULT
@@ -233,7 +233,7 @@ HRESULT CMJCryptStream::Write(void* pBuffer, size_t nLength)
  * @brief Read
  *
  *
- * 
+ *
  * @param char * pval
  * @return HRESULT
  */
@@ -246,7 +246,7 @@ HRESULT CMJCryptStream::Read(char* pval)
  * @brief Read
  *
  *
- * 
+ *
  * @param unsigned char * pval
  * @return HRESULT
  */
@@ -259,7 +259,7 @@ HRESULT CMJCryptStream::Read(unsigned char* pval)
  * @brief Read
  *
  *
- * 
+ *
  * @param short * pval
  * @return HRESULT
  */
@@ -320,7 +320,7 @@ HRESULT CMJCryptStream::Read(CString* pstr)
 
 HRESULT CMJCryptStream::Read(void* pBuffer, size_t nLength)
 {
-	if(m_pCurrent == NULL)
+	if (m_pCurrent == NULL)
 		return E_FAIL;
 
 	memcpy(pBuffer, m_pCurrent, nLength);

@@ -21,9 +21,6 @@
 #include "..\Dialogs\ProgressDlg.h"
 #include "..\Dialogs\TilesetDlg.h"
 
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
 CMahjonggView::CMahjonggView(CMainFrame* pContainer)
 {
 	m_pContainer = pContainer;
@@ -52,14 +49,18 @@ CMahjonggView::CMahjonggView(CMainFrame* pContainer)
 	m_bFontIsReady = false;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
 CMahjonggView::~CMahjonggView()
 {
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+/**
+ * @brief PreTranslateMessage
+ *
+ *
+ * 
+ * @param MSG * pMsg
+ * @return BOOL
+ */
 BOOL CMahjonggView::PreTranslateMessage(MSG* pMsg)
 {
 	return FALSE;
@@ -69,7 +70,7 @@ BOOL CMahjonggView::PreTranslateMessage(MSG* pMsg)
  * @brief Init
  *
  * Initialize view
- * 
+ *
  * @param void
  * @return bool
  */
@@ -146,8 +147,7 @@ bool CMahjonggView::Init(void)
 	return true;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 bool CMahjonggView::UpdateView()
 {
 	if (!m_bInitialized)
@@ -158,22 +158,17 @@ bool CMahjonggView::UpdateView()
 	return true;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CMahjonggView::OnCreate(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
 {
 	return 0;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CMahjonggView::OnDestroy(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
 {
 	return 0;
 }
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
 LRESULT CMahjonggView::OnPaint(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
 {
 	PAINTSTRUCT ps = {0};
@@ -186,15 +181,13 @@ LRESULT CMahjonggView::OnPaint(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bH
 	return 0;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CMahjonggView::OnNCPaint(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
 {
 	return 0;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CMahjonggView::OnSize(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
 {
 	QPROFILE_FUN(_T("CMahjonggView::OnSize"));
@@ -223,15 +216,13 @@ LRESULT CMahjonggView::OnSize(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHa
 	return 0;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CMahjonggView::OnDisplayChange(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
 {
 	return 0;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CMahjonggView::OnEraseBackground(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
 {
 	if (m_bInitialized)
@@ -243,8 +234,7 @@ LRESULT CMahjonggView::OnEraseBackground(UINT uMsg, WPARAM wParam, LPARAM lParam
 	return 0;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 BOOL CMahjonggView::UIEnable(int nID, BOOL bEnable, BOOL bForceUpdate /* = FALSE */)
 {
 	return m_pContainer->UIEnable(nID, bEnable, bForceUpdate);
@@ -264,7 +254,7 @@ BOOL CMahjonggView::UISetCheck(int nID, int nCheck, BOOL bForceUpdate /* = FALSE
  * @brief UIUpdateMenuBar
  *
  *
- * 
+ *
  * @param BOOL bForceUpdate
  * @param BOOL bMainMenu
  * @return BOOL
@@ -278,7 +268,7 @@ BOOL CMahjonggView::UIUpdateMenuBar(BOOL bForceUpdate /* = FALSE */, BOOL bMainM
  * @brief SetupLights
  *
  *
- * 
+ *
  * @param SYSTEMTIME & tm
  * @return bool
  */
@@ -292,7 +282,7 @@ bool CMahjonggView::SetupLights(SYSTEMTIME& tm)
  * @brief DrawScene
  *
  *
- * 
+ *
  * @return bool
  */
 bool CMahjonggView::DrawScene()
@@ -304,7 +294,7 @@ bool CMahjonggView::DrawScene()
  * @brief CreateLists
  *
  *
- * 
+ *
  * @param HDC hDC
  * @return bool
  */
@@ -465,13 +455,10 @@ bool CMahjonggView::CreateLists(HDC hDC)
 	}
 
 	glEndList();
-
-
 	return true;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CMahjonggView::OnTilesetDefault(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 	m_objTileset.LoadResource();
@@ -486,8 +473,7 @@ LRESULT CMahjonggView::OnTilesetDefault(WORD /*wNotifyCode*/, WORD /*wID*/, HWND
 	return 0;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CMahjonggView::OnTilesetLoad(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 	CTilesetDlg dlg;
@@ -533,12 +519,13 @@ void CMahjonggView::CreateTileTexture(GLuint unTextureName, ATL::CImage& objImag
 	COLORREF* pSourceBits = new COLORREF[nImageWidth * nImageHeight];
 	memset(pSourceBits, 0, nImageWidth * nImageHeight * sizeof(COLORREF));
 
-	if(bUpsideDown)
+	if (bUpsideDown)
 	{
 		int nDst = 0;
-		for(int y = nImageHeight - 1; y >= 0; y--)
+
+		for (int y = nImageHeight - 1; y >= 0; y--)
 		{
-			for(int x = 0; x < nImageWidth; x++)
+			for (int x = 0; x < nImageWidth; x++)
 			{
 				COLORREF rgb = objImage.GetPixel(x, y);
 				pSourceBits[nDst] = objImage.GetPixel(x, y);;
@@ -549,9 +536,10 @@ void CMahjonggView::CreateTileTexture(GLuint unTextureName, ATL::CImage& objImag
 	else
 	{
 		int nDst = 0;
-		for(int y = 0; y < nImageHeight; y++)
+
+		for (int y = 0; y < nImageHeight; y++)
 		{
-			for(int x = 0; x < nImageWidth; x++)
+			for (int x = 0; x < nImageWidth; x++)
 			{
 				COLORREF rgb = objImage.GetPixel(x, y);
 				pSourceBits[nDst] = objImage.GetPixel(x, y);;
@@ -561,6 +549,7 @@ void CMahjonggView::CreateTileTexture(GLuint unTextureName, ATL::CImage& objImag
 	}
 
 	int nTexWidth = g_AppSettings.m_bHighQualityTextures ? 256 : 64;
+
 	int nTexHeight = g_AppSettings.m_bHighQualityTextures ? 256 : 64;
 
 	LPBYTE pTextureBits = new BYTE[nTexWidth * nTexHeight * 4];
@@ -569,9 +558,9 @@ void CMahjonggView::CreateTileTexture(GLuint unTextureName, ATL::CImage& objImag
 	memset(pTextureBits, 0, sizeof(BYTE) * nTexWidth * nTexHeight * 4);
 
 	// scale texture image
-	gluScaleImage(GL_RGBA, 
-		nImageWidth, nImageHeight, GL_UNSIGNED_BYTE, pSourceBits, 
-		nTexWidth, nTexHeight, GL_UNSIGNED_BYTE, pTextureBits);
+	gluScaleImage(GL_RGBA,
+								nImageWidth, nImageHeight, GL_UNSIGNED_BYTE, pSourceBits,
+								nTexWidth, nTexHeight, GL_UNSIGNED_BYTE, pTextureBits);
 
 	// create texture
 	glBindTexture(GL_TEXTURE_2D, unTextureName);
@@ -598,8 +587,7 @@ void CMahjonggView::CreateTileTexture(GLuint unTextureName, ATL::CImage& objImag
 	delete [] pSourceBits;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 bool CMahjonggView::LoadTileTextures()
 {
 	QPROFILE_FUN(_T("CMahjonggView::LoadTileTextures"));
@@ -628,8 +616,7 @@ bool CMahjonggView::LoadTileTextures()
 	return true;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 bool CMahjonggView::LoadGeometry()
 {
 	{
@@ -650,8 +637,7 @@ bool CMahjonggView::LoadGeometry()
 	return true;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 void CMahjonggView::OnUpdateOptions()
 {
 	C3DModel* pModel = NULL;
@@ -694,8 +680,7 @@ void CMahjonggView::OnUpdateOptions()
 	_TRACE(_T("Object loaded. %d triangles used\n"), uTriangles);
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 unsigned int CMahjonggView::CreateListFromModel(GLuint nDisplayList, C3DObject* pObject)
 {
 	QPROFILE_FUN(_T("CMahjonggView::CreateListFromModel"));
@@ -721,8 +706,8 @@ unsigned int CMahjonggView::CreateListFromModel(GLuint nDisplayList, C3DObject* 
 		if (!g_AppSettings.m_bSmoothTiles)
 		{
 			glNormal3f(pObject->pFaces[j].vFaceNormal.x,
-												pObject->pFaces[j].vFaceNormal.y,
-												pObject->pFaces[j].vFaceNormal.z);
+								 pObject->pFaces[j].vFaceNormal.y,
+								 pObject->pFaces[j].vFaceNormal.z);
 		}
 
 		// Go through each corner of the triangle and draw it.
@@ -779,21 +764,16 @@ unsigned int CMahjonggView::CreateListFromModel(GLuint nDisplayList, C3DObject* 
 	return uTriangles;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 void CMahjonggView::UpdateStatus()
 {
 }
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
 bool CMahjonggView::UpdateUI()
 {
 	return false;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 inline void CMahjonggView::DrawTile(DWORD dwFlags, int nTileImage, GLfloat* pvLayer)
 {
 	QPROFILE_FUN(_T("CMahjonggView::DrawTile"));
@@ -859,8 +839,7 @@ inline void CMahjonggView::DrawTile(DWORD dwFlags, int nTileImage, GLfloat* pvLa
 	}
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 void CMahjonggView::CalculateFrameRate()
 {
 	static float framesPerSecond    = 0.0f;		// This will store our fps
@@ -918,7 +897,7 @@ bool CMahjonggView::Deactivate()
  * @brief CreateGLContext
  *
  *
- * 
+ *
  * @return void
  */
 HGLRC CMahjonggView::CreateGLContext(HDC hDC)
@@ -987,7 +966,7 @@ HGLRC CMahjonggView::CreateGLContext(HDC hDC)
  * @brief InitExtensions
  *
  * Initialize OpenGL extensions
- * 
+ *
  * @param HDC hDC
  * @return bool
  */

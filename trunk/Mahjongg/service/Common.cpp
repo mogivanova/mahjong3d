@@ -63,7 +63,7 @@ CString MakeUserPath(CString strPathName)
  * @brief MakeFullPath
  *
  * Make full path for a file name
- * 
+ *
  * @param strFileName
  * @return CString
  */
@@ -92,8 +92,7 @@ CString MakeFullPath(CString strFileName)
 	return CString(pszFullPath);
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 void Sound(UINT nIDResource)
 {
 	if (g_AppSettings.m_bSound)

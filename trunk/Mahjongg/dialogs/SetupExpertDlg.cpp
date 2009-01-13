@@ -16,21 +16,18 @@
 
 #include "SetupExpertDlg.h"
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 CSetupExpertDlg::CSetupExpertDlg(void)
 {
 	m_pCurrentPage = NULL;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 CSetupExpertDlg::~CSetupExpertDlg(void)
 {
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CSetupExpertDlg::OnInitDialog(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM /*lParam*/, BOOL& /*bHandled*/)
 {
 	CenterWindow(GetParent());
@@ -71,16 +68,14 @@ LRESULT CSetupExpertDlg::OnInitDialog(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM /
 	return 0;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CSetupExpertDlg::OnCloseCmd(WORD /*wNotifyCode*/, WORD wID, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 	EndDialog(IDCANCEL);
 	return 0;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CSetupExpertDlg::OnOk(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 	m_dlgGame.DoDataExchange(TRUE);
@@ -127,8 +122,7 @@ LRESULT CSetupExpertDlg::OnOk(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl
 	return 0;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 void CSetupExpertDlg::AddPage(LPCTSTR pszPageName, CSetupPage *pPage, int nImage)
 {
 	_ASSERT(pPage != NULL);
@@ -140,8 +134,7 @@ void CSetupExpertDlg::AddPage(LPCTSTR pszPageName, CSetupPage *pPage, int nImage
 	m_ctrlSelector.SetItemData(nItem, (DWORD)pPage);
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CSetupExpertDlg::OnSelectionChange(int idCtrl, LPNMHDR pnmh, BOOL& bHandled)
 {
 	int nSelected = m_ctrlSelector.GetSelectedIndex();

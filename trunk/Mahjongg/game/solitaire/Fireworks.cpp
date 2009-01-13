@@ -21,8 +21,7 @@
 
 CRect scrRect;
 
-/////////////////////////////////////////////////////////////////////////
-//
+
 void CFireWorks::CFWSpark::Draw()
 {
 	GLfloat sx = x / 150.0f;
@@ -31,8 +30,7 @@ void CFireWorks::CFWSpark::Draw()
 	glVertex3f(sx, sy, 0);
 }
 
-/////////////////////////////////////////////////////////////////////////
-//
+
 void CFireWorks::CFWBullet::Init()
 {
 	int nX = randomMT(16000) - 8000;
@@ -54,8 +52,7 @@ void CFireWorks::CFWBullet::Init()
 	state = FW_FIRED;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 void CFireWorks::CFWBullet::MoveFired()
 {
 	readytoexplode = 0;
@@ -77,8 +74,7 @@ void CFireWorks::CFWBullet::MoveFired()
 	}
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 void CFireWorks::CFWBullet::Explode()
 {
 	for (int i = 0; i < SPARKS; i++)
@@ -94,8 +90,7 @@ void CFireWorks::CFWBullet::Explode()
 	}
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 void CFireWorks::CFWBullet::MoveExploded()
 {
 	upcount = 0;
@@ -122,6 +117,7 @@ void CFireWorks::CFWBullet::Draw()
 	{
 		switch (state)
 		{
+
 		case FW_FIRED:
 			glColor3ub(255, 255, 255);
 			Spark[i].Draw();

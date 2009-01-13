@@ -32,7 +32,7 @@ protected:
 	CString m_strValue;
 
 public:
-	Item(){};
+	Item() {};
 
 	Item(CString nm, CString vl)
 	{

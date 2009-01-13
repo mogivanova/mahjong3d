@@ -70,7 +70,7 @@ inline void _cdecl TraceLog(LPCTSTR lpszFormat, ...)
 #define _TRACE_LAST_ERROR __noop
 */
 
-inline void _cdecl DebugTrace(const char* pszFormat, ...){}
+inline void _cdecl DebugTrace(const char* pszFormat, ...) {}
 
 #define _TRACE __noop
 #define _TRACE_LAST_ERROR __noop

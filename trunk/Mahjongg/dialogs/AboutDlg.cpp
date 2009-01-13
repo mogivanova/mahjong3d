@@ -44,16 +44,14 @@ LRESULT CAboutDlg::OnInitDialog(UINT /*uMsg*/, WPARAM /*wParam*/, LPARAM /*lPara
 	return TRUE;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CAboutDlg::OnCloseCmd(WORD /*wNotifyCode*/, WORD wID, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 	EndDialog(wID);
 	return 0;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CAboutDlg::OnBnClickedLicense(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 	// TODO: Add your control notification handler code here
@@ -61,8 +59,7 @@ LRESULT CAboutDlg::OnBnClickedLicense(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /
 	return 0;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CAboutDlg::OnBnClickedRegister(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 	DialogBox(NULL, MAKEINTRESOURCE(IDD_REGISTER), m_hWnd, (DLGPROC)RegisterDlgProc);
@@ -70,8 +67,7 @@ LRESULT CAboutDlg::OnBnClickedRegister(WORD /*wNotifyCode*/, WORD /*wID*/, HWND 
 	return 0;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CAboutDlg::OnBnClickedBuyNow(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 	ShellExecute(GetDesktopWindow(), _T("open"), LoadResourceString(IDS_REGISTRATION), NULL, NULL, 0);
@@ -79,8 +75,7 @@ LRESULT CAboutDlg::OnBnClickedBuyNow(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*
 	return 0;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 LRESULT CAboutDlg::OnBnClickedEmail(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 	ShellExecute(GetDesktopWindow(), _T("open"),
@@ -88,9 +83,6 @@ LRESULT CAboutDlg::OnBnClickedEmail(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*h
 
 	return 0;
 }
-
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
 LRESULT CAboutDlg::OnBnClickedWWW(WORD /*wNotifyCode*/, WORD /*wID*/, HWND /*hWndCtl*/, BOOL& /*bHandled*/)
 {
 	ShellExecute(GetDesktopWindow(), _T("open"), LoadResourceString(IDS_WWW), NULL, NULL, 0);

@@ -20,15 +20,13 @@
 
 #include "../../Service/ZLib/ZLibArchive.h"
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 CTileset::CTileset()
 {
 	m_bLoaded = false;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 CTileset::~CTileset()
 {
 
@@ -48,20 +46,20 @@ bool CTileset::LoadResource()
 
 	for (int N = 0; N < 43; N++)
 	{
-		if(SUCCEEDED(ResourceStream::Create(_Module.GetResourceInstance(), MAKEINTRESOURCE(TILE00 + N), _T("JPEG"), &spStream)))
+		if (SUCCEEDED(ResourceStream::Create(_Module.GetResourceInstance(), MAKEINTRESOURCE(TILE00 + N), _T("JPEG"), &spStream)))
 		{
 			m_aImages[N].Load(spStream);
 			spStream.Release();
 		}
 	}
 
-	if(SUCCEEDED(ResourceStream::Create(_Module.GetResourceInstance(), MAKEINTRESOURCE(LEFT_SIDE), _T("JPEG"), &spStream)))
+	if (SUCCEEDED(ResourceStream::Create(_Module.GetResourceInstance(), MAKEINTRESOURCE(LEFT_SIDE), _T("JPEG"), &spStream)))
 	{
 		m_aSideImages[0].Load(spStream);
 		spStream.Release();
 	}
 
-	if(SUCCEEDED(ResourceStream::Create(_Module.GetResourceInstance(), MAKEINTRESOURCE(BOTTOM_SIDE), _T("JPEG"), &spStream)))
+	if (SUCCEEDED(ResourceStream::Create(_Module.GetResourceInstance(), MAKEINTRESOURCE(BOTTOM_SIDE), _T("JPEG"), &spStream)))
 	{
 		m_aSideImages[1].Load(spStream);
 		spStream.Release();
@@ -108,8 +106,7 @@ bool CTileset::Load(LPCTSTR pszFileName)
 	return true;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 bool CTileset::LoadMJTileset(LPCTSTR pszPathName)
 {
 	CZLibArchive objZA;
@@ -188,8 +185,7 @@ bool CTileset::LoadMJTileset(LPCTSTR pszPathName)
 	return true;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 bool CTileset::LoadKyodaiTileset(LPCTSTR pszPathName)
 {
 	ATL::CImage objTilesetImage;
@@ -253,9 +249,6 @@ bool CTileset::LoadKyodaiTileset(LPCTSTR pszPathName)
 	return true;
 }
 
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
 void CTileset::GetSubImage(ATL::CImage &src, CRect rect, ATL::CImage &dst)
 {
 	unsigned int nTileWidth = rect.right - rect.left;
@@ -272,8 +265,7 @@ void CTileset::GetSubImage(ATL::CImage &src, CRect rect, ATL::CImage &dst)
 	}
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////
-//
+
 bool CTileset::LoadDescription(CString strPathName, CTilesetDescription** pDescription)
 {
 	*pDescription = NULL;

@@ -3,8 +3,7 @@
 #include "resource.h"
 
 #define APSTUDIO_READONLY_SYMBOLS
-/////////////////////////////////////////////////////////////////////////////
-//
+
 // Generated from the TEXTINCLUDE 2 resource.
 //
 #include "atlres.h"
@@ -21,8 +20,7 @@ LANGUAGE LANG_NEUTRAL, SUBLANG_NEUTRAL
 #pragma code_page(1251)
 #endif //_WIN32
 
-/////////////////////////////////////////////////////////////////////////////
-//
+
 // Accelerator
 //
 
@@ -44,9 +42,6 @@ BEGIN
     "X",            ID_APP_EXIT,            VIRTKEY, ALT, NOINVERT
 END
 
-
-/////////////////////////////////////////////////////////////////////////////
-//
 // Bitmap
 //
 
@@ -57,9 +52,6 @@ IDB_LAYOUT_ICON         BITMAP                  "res\\layout_i.bmp"
 IDB_SETUP               BITMAP                  "res\\setup.bmp"
 IDB_TILE_SMALL          BITMAP                  "res\\TileSmall.bmp"
 IDB_GAME_ICONS          BITMAP                  "res\\game_icons.bmp"
-
-/////////////////////////////////////////////////////////////////////////////
-//
 // WAVE
 //
 
@@ -72,22 +64,19 @@ IDR_REMOVE              WAVE                    "res\\REMOVE.WAV"
 IDR_SELECT2             WAVE                    "res\\SELECT2.WAV"
 IDR_SELECT              WAVE                    "res\\SELECT.WAV"
 
-/////////////////////////////////////////////////////////////////////////////
-//
+
 // LAYOUT
 //
 
 IDRL_TRADITIONAL        LAYOUT                  "res\\Layouts\\Traditional.mjl"
 
-/////////////////////////////////////////////////////////////////////////////
-//
+
 // LANGUAGE
 //
 
 IDR_LANG_DEFAULT        LANGUAGE                "Languages\\Default.xml"
 
-/////////////////////////////////////////////////////////////////////////////
-//
+
 // Icon
 //
 
@@ -99,8 +88,7 @@ IDI_SKIN                ICON                    "res\\ico_skin.ico"
 IDI_LAYOUT              ICON                    "res\\ico_layout.ico"
 IDI_SAVE_GAME           ICON                    "res\\ico_savegame.ico"
 
-/////////////////////////////////////////////////////////////////////////////
-//
+
 // Version
 //
 
@@ -136,9 +124,6 @@ BEGIN
     END
 END
 
-
-/////////////////////////////////////////////////////////////////////////////
-//
 // JPEG
 //
 
@@ -192,8 +177,7 @@ IDR_GAME_WON            JPEG                    "res\\Game Won.jpg"
 IDR_BACKGROUND          JPEG                    "res\\Background.jpg"
 IDR_GAME_OVER_DE        JPEG                    "res\\game_over_de.jpg"
 
-/////////////////////////////////////////////////////////////////////////////
-//
+
 // Cursor
 //
 
@@ -201,8 +185,7 @@ IDC_TILE                CURSOR                  "res\\tile.cur"
 IDC_ROTATING            CURSOR                  "res\\rotating.cur"
 IDC_HANDCUR             CURSOR                  "res\\handcur.cur"
 
-/////////////////////////////////////////////////////////////////////////////
-//
+
 // OBJECT3D
 //
 
@@ -210,8 +193,7 @@ IDR_TILE_LOW            OBJECT3D                "res\\3dobjects\\tile_simple.3ds
 IDR_TILE_HIGH           OBJECT3D                "res\\3dobjects\\tile_high.3ds"
 IDR_TILE_MEDIUM         OBJECT3D                "res\\3dobjects\\tile_medium.3ds"
 
-/////////////////////////////////////////////////////////////////////////////
-//
+
 // Dialog
 //
 
@@ -390,9 +372,6 @@ BEGIN
     LTEXT           "str_register_for_free_www",IDC_REGISTER_LINK,6,84,228,8,SS_NOTIFY
 END
 
-
-/////////////////////////////////////////////////////////////////////////////
-//
 // DESIGNINFO
 //
 
@@ -519,9 +498,6 @@ BEGIN
 END
 #endif    // APSTUDIO_INVOKED
 
-
-/////////////////////////////////////////////////////////////////////////////
-//
 // Menu
 //
 
@@ -674,9 +650,6 @@ BEGIN
 END
 #endif
 
-
-/////////////////////////////////////////////////////////////////////////////
-//
 // Dialog Info
 //
 
@@ -687,9 +660,6 @@ BEGIN
     0
 END
 
-
-/////////////////////////////////////////////////////////////////////////////
-//
 // String Table
 //
 
@@ -770,8 +740,7 @@ LANGUAGE LANG_RUSSIAN, SUBLANG_DEFAULT
 #endif //_WIN32
 
 #ifdef APSTUDIO_INVOKED
-/////////////////////////////////////////////////////////////////////////////
-//
+
 // TEXTINCLUDE
 //
 
@@ -802,8 +771,7 @@ LANGUAGE LANG_ENGLISH, SUBLANG_ENGLISH_US
 #endif //_WIN32
 
 #ifdef APSTUDIO_INVOKED
-/////////////////////////////////////////////////////////////////////////////
-//
+
 // TEXTINCLUDE
 //
 
@@ -823,11 +791,8 @@ END
 #endif    // English (U.S.) resources
 /////////////////////////////////////////////////////////////////////////////
 
-
-
 #ifndef APSTUDIO_INVOKED
-/////////////////////////////////////////////////////////////////////////////
-//
+
 // Generated from the TEXTINCLUDE 3 resource.
 //
 #ifdef MY_PLAY_CITY
