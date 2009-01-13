@@ -13,8 +13,6 @@
 
 #pragma once
 
-#include "..\..\Service\OpenGL\OpenGLDriver.h"
-
 #define INITIALSPD 21000
 #define EXPLODEHEIGHT 200
 
@@ -54,7 +52,7 @@ protected:
 			time = 0;
 		}
 
-		void Draw(COpenGLDriver* pDriver);
+		void Draw();
 	};
 
 	class CFWBullet
@@ -83,7 +81,7 @@ protected:
 		void MoveExploded();
 		void Explode();
 
-		void Draw(COpenGLDriver* pDriver);
+		void Draw();
 	};
 
 public:
@@ -98,6 +96,6 @@ public:
 	void Init();
 	void Step();
 
-	void Draw(COpenGLDriver* pDriver);
+	void Draw();
 };
 

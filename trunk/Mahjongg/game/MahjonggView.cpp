@@ -28,8 +28,6 @@ CMahjonggView::CMahjonggView(CMainFrame* pContainer)
 {
 	m_pContainer = pContainer;
 
-	m_pDriver = NULL;
-
 	m_bBusy = false;
 	m_bInitialized = false;
 	m_bReady = false;
@@ -67,14 +65,20 @@ BOOL CMahjonggView::PreTranslateMessage(MSG* pMsg)
 	return FALSE;
 }
 
-////////////////////////////////////////////////////////////////////////////////////////////////////
-//
+/**
+ * @brief Init
+ *
+ * Initialize view
+ * 
+ * @param void
+ * @return bool
+ */
 bool CMahjonggView::Init(void)
 {
 	m_hDC = ::GetDC(m_hWnd);
 	_ASSERT(m_hDC != NULL);
 
-	m_hRC = m_pDriver->Attach(m_hDC);
+	m_hRC = CreateGLContext(m_hDC);
 
 	if (m_hRC == NULL)
 		return false;
@@ -82,31 +86,31 @@ bool CMahjonggView::Init(void)
 	//
 	GetClientRect(&m_rectOld);
 
-	m_pDriver->ViewPort(0, 0, m_rectOld.right, m_rectOld.bottom);
+	glViewport(0, 0, m_rectOld.right, m_rectOld.bottom);
 
-	m_pDriver->MatrixMode(GL_PROJECTION);
+	glMatrixMode(GL_PROJECTION);
 
-	m_pDriver->LoadIdentity();
+	glLoadIdentity();
 
-	m_pDriver->Perspective(45.0f, (GLfloat)m_rectOld.right / (GLfloat)m_rectOld.bottom, 1.0f, 30.0f);
+	gluPerspective(45.0f, (GLfloat)m_rectOld.right / (GLfloat)m_rectOld.bottom, 1.0f, 30.0f);
 
-	m_pDriver->MatrixMode(GL_MODELVIEW);
+	glMatrixMode(GL_MODELVIEW);
 
 	// create command lists
 	CreateLists(m_hDC);
 
-	m_pDriver->ClearDepth(1.0f);
+	glClearDepth(1.0f);
 
-	m_pDriver->DepthFunc(GL_LEQUAL);
+	glDepthFunc(GL_LEQUAL);
 
-	m_pDriver->Enable(GL_DEPTH_TEST);
+	glEnable(GL_DEPTH_TEST);
 
-	//m_pDriver->Enable(GL_ALPHA_TEST);
-	//m_pDriver->Enable(GL_STENCIL_TEST);
+	//glEnable(GL_ALPHA_TEST);
+	//glEnable(GL_STENCIL_TEST);
 
-	//m_pDriver->Enable(GL_AUTO_NORMAL);
+	//glEnable(GL_AUTO_NORMAL);
 
-	m_pDriver->Enable(GL_LIGHTING);
+	glEnable(GL_LIGHTING);
 
 	SYSTEMTIME tm;
 
@@ -115,20 +119,20 @@ bool CMahjonggView::Init(void)
 	SetupLights(tm);
 
 	// enable lighting
-	m_pDriver->Enable(GL_LIGHT0);
+	glEnable(GL_LIGHT0);
 
-	m_pDriver->Disable(GL_LIGHT1);
+	glDisable(GL_LIGHT1);
 
 	// prepare tileset texture
 	ZeroMemory(m_arrTileTexNames, sizeof(m_arrTileTexNames));
 
-	m_pDriver->GenTextures(43, m_arrTileTexNames);
+	glGenTextures(43, m_arrTileTexNames);
 
 	ZeroMemory(m_arrTileSideTexNames, sizeof(m_arrTileSideTexNames));
 
-	m_pDriver->GenTextures(2, m_arrTileSideTexNames);
+	glGenTextures(2, m_arrTileSideTexNames);
 
-	m_pDriver->TexEnv(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
+	glTexEnvi(GL_TEXTURE_ENV, GL_TEXTURE_ENV_MODE, GL_MODULATE);
 
 	// load geometry
 	LoadGeometry();
@@ -206,12 +210,12 @@ LRESULT CMahjonggView::OnSize(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHa
 		m_rectOld.right = cx;
 		m_rectOld.bottom = cy;
 
-		m_pDriver->ViewPort(0, 0, cx, cy);
-		m_pDriver->MatrixMode(GL_PROJECTION);
-		m_pDriver->LoadIdentity();
-		m_pDriver->Perspective(45.0f, (GLfloat)cx / (GLfloat)cy, 1.0f, 40.0f);
-		m_pDriver->MatrixMode(GL_MODELVIEW);
-		m_pDriver->RasterPos(0, 0);
+		glViewport(0, 0, cx, cy);
+		glMatrixMode(GL_PROJECTION);
+		glLoadIdentity();
+		gluPerspective(45.0f, (GLfloat)cx / (GLfloat)cy, 1.0f, 40.0f);
+		glMatrixMode(GL_MODELVIEW);
+		glRasterPos2i(0, 0);
 	}
 
 	UpdateView();
@@ -256,40 +260,59 @@ BOOL CMahjonggView::UISetCheck(int nID, int nCheck, BOOL bForceUpdate /* = FALSE
 	return m_pContainer->UISetCheck(nID, nCheck, bForceUpdate);
 }
 
+/**
+ * @brief UIUpdateMenuBar
+ *
+ *
+ * 
+ * @param BOOL bForceUpdate
+ * @param BOOL bMainMenu
+ * @return BOOL
+ */
 BOOL CMahjonggView::UIUpdateMenuBar(BOOL bForceUpdate /* = FALSE */, BOOL bMainMenu /* = FALSE */)
 {
 	return m_pContainer->UIUpdateMenuBar(bForceUpdate, bMainMenu);
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
-void CMahjonggView::SetDriver(COpenGLDriver* pDriver)
-{
-	m_pDriver = pDriver;
-}
-
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+/**
+ * @brief SetupLights
+ *
+ *
+ * 
+ * @param SYSTEMTIME & tm
+ * @return bool
+ */
 bool CMahjonggView::SetupLights(SYSTEMTIME& tm)
 {
 
 	return false;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+/**
+ * @brief DrawScene
+ *
+ *
+ * 
+ * @return bool
+ */
 bool CMahjonggView::DrawScene()
 {
 	return false;
 }
 
-///////////////////////////////////////////////////////////////////////////////////////////////////
-//
+/**
+ * @brief CreateLists
+ *
+ *
+ * 
+ * @param HDC hDC
+ * @return bool
+ */
 bool CMahjonggView::CreateLists(HDC hDC)
 {
 	///////////////////////////////////////////////////////////////////////////
 	// list of material properties
-	m_pDriver->NewList(eMaterialTileBottom, GL_COMPILE);
+	glNewList(eMaterialTileBottom, GL_COMPILE);
 	{
 		//GLfloat ambient[] = glRGB(253, 251, 230);
 		//GLfloat diffuse[] = glRGB(253, 251, 230);
@@ -299,18 +322,18 @@ bool CMahjonggView::CreateLists(HDC hDC)
 		GLfloat emission[] = glRGB(0, 0, 0);
 		GLfloat shininess[] = {0.0f};
 
-		m_pDriver->Material(GL_FRONT, GL_AMBIENT, ambient);
-		m_pDriver->Material(GL_FRONT, GL_DIFFUSE, diffuse);
-		m_pDriver->Material(GL_FRONT, GL_SPECULAR, specular);
-		m_pDriver->Material(GL_FRONT, GL_EMISSION, emission);
-		m_pDriver->Material(GL_FRONT, GL_SHININESS, shininess);
+		glMaterialfv(GL_FRONT, GL_AMBIENT, ambient);
+		glMaterialfv(GL_FRONT, GL_DIFFUSE, diffuse);
+		glMaterialfv(GL_FRONT, GL_SPECULAR, specular);
+		glMaterialfv(GL_FRONT, GL_EMISSION, emission);
+		glMaterialfv(GL_FRONT, GL_SHININESS, shininess);
 	}
 
-	m_pDriver->EndList();
+	glEndList();
 
 	///////////////////////////////////////////////////////////////////////////
 	// list of selected material properties
-	m_pDriver->NewList(eMaterialTileBottomSelected, GL_COMPILE);
+	glNewList(eMaterialTileBottomSelected, GL_COMPILE);
 	{
 		GLfloat ambient[] = glRGB(170, 170, 170);
 		GLfloat diffuse[] = glRGB(170, 170, 170);
@@ -318,16 +341,16 @@ bool CMahjonggView::CreateLists(HDC hDC)
 		GLfloat emission[] = glRGB(70, 70, 0);
 		GLfloat shininess[] = {0.0f};
 
-		m_pDriver->Material(GL_FRONT, GL_AMBIENT, ambient);
-		m_pDriver->Material(GL_FRONT, GL_DIFFUSE, diffuse);
-		m_pDriver->Material(GL_FRONT, GL_SPECULAR, specular);
-		m_pDriver->Material(GL_FRONT, GL_EMISSION, emission);
-		m_pDriver->Material(GL_FRONT, GL_SHININESS, shininess);
+		glMaterialfv(GL_FRONT, GL_AMBIENT, ambient);
+		glMaterialfv(GL_FRONT, GL_DIFFUSE, diffuse);
+		glMaterialfv(GL_FRONT, GL_SPECULAR, specular);
+		glMaterialfv(GL_FRONT, GL_EMISSION, emission);
+		glMaterialfv(GL_FRONT, GL_SHININESS, shininess);
 	}
 
-	m_pDriver->EndList();
+	glEndList();
 
-	m_pDriver->NewList(eMaterialTileTop, GL_COMPILE);
+	glNewList(eMaterialTileTop, GL_COMPILE);
 	{
 		GLfloat ambient[] = glRGBA(192, 192, 192, 1.0f);
 		GLfloat diffuse[] = glRGBA(192, 192, 192, 1.0f);
@@ -335,18 +358,18 @@ bool CMahjonggView::CreateLists(HDC hDC)
 		GLfloat emission[] = glRGB(0, 0, 0);
 		GLfloat shininess[] = {0.0f};
 
-		m_pDriver->Material(GL_FRONT, GL_AMBIENT, ambient);
-		m_pDriver->Material(GL_FRONT, GL_DIFFUSE, diffuse);
-		m_pDriver->Material(GL_FRONT, GL_SPECULAR, specular);
-		m_pDriver->Material(GL_FRONT, GL_EMISSION, emission);
-		m_pDriver->Material(GL_FRONT, GL_SHININESS, shininess);
+		glMaterialfv(GL_FRONT, GL_AMBIENT, ambient);
+		glMaterialfv(GL_FRONT, GL_DIFFUSE, diffuse);
+		glMaterialfv(GL_FRONT, GL_SPECULAR, specular);
+		glMaterialfv(GL_FRONT, GL_EMISSION, emission);
+		glMaterialfv(GL_FRONT, GL_SHININESS, shininess);
 	}
 
-	m_pDriver->EndList();
+	glEndList();
 
 	///////////////////////////////////////////////////////////////////////////
 	// list of selected material properties
-	m_pDriver->NewList(eMaterialTileTopSelected, GL_COMPILE);
+	glNewList(eMaterialTileTopSelected, GL_COMPILE);
 	{
 		GLfloat ambient[] = glRGB(192, 192, 192);
 		GLfloat diffuse[] = glRGB(192, 192, 192);
@@ -354,18 +377,18 @@ bool CMahjonggView::CreateLists(HDC hDC)
 		GLfloat emission[] = glRGB(92, 92, 0);
 		GLfloat shininess[] = {0.0f};
 
-		m_pDriver->Material(GL_FRONT, GL_AMBIENT, ambient);
-		m_pDriver->Material(GL_FRONT, GL_DIFFUSE, diffuse);
-		m_pDriver->Material(GL_FRONT, GL_SPECULAR, specular);
-		m_pDriver->Material(GL_FRONT, GL_EMISSION, emission);
-		m_pDriver->Material(GL_FRONT, GL_SHININESS, shininess);
+		glMaterialfv(GL_FRONT, GL_AMBIENT, ambient);
+		glMaterialfv(GL_FRONT, GL_DIFFUSE, diffuse);
+		glMaterialfv(GL_FRONT, GL_SPECULAR, specular);
+		glMaterialfv(GL_FRONT, GL_EMISSION, emission);
+		glMaterialfv(GL_FRONT, GL_SHININESS, shininess);
 	}
 
-	m_pDriver->EndList();
+	glEndList();
 
 	//////////////////////////////////
 	//
-	m_pDriver->NewList(eMaterialFaceNormal, GL_COMPILE);
+	glNewList(eMaterialFaceNormal, GL_COMPILE);
 	{
 		//GLfloat ambient[] = glRGB(253, 251, 230);
 		//GLfloat diffuse[] = glRGB(253, 251, 230);
@@ -375,18 +398,18 @@ bool CMahjonggView::CreateLists(HDC hDC)
 		GLfloat emission[] = glRGB(0, 0, 0);
 		GLfloat shininess[] = {0.0f};
 
-		m_pDriver->Material(GL_FRONT, GL_AMBIENT, ambient);
-		m_pDriver->Material(GL_FRONT, GL_DIFFUSE, diffuse);
-		m_pDriver->Material(GL_FRONT, GL_SPECULAR, specular);
-		m_pDriver->Material(GL_FRONT, GL_EMISSION, emission);
-		m_pDriver->Material(GL_FRONT, GL_SHININESS, shininess);
+		glMaterialfv(GL_FRONT, GL_AMBIENT, ambient);
+		glMaterialfv(GL_FRONT, GL_DIFFUSE, diffuse);
+		glMaterialfv(GL_FRONT, GL_SPECULAR, specular);
+		glMaterialfv(GL_FRONT, GL_EMISSION, emission);
+		glMaterialfv(GL_FRONT, GL_SHININESS, shininess);
 	}
 
-	m_pDriver->EndList();
+	glEndList();
 
 	///////////////////////////////////////////////////////////////////////////
 	// list of selected material properties
-	m_pDriver->NewList(eMaterialFaceHint, GL_COMPILE);
+	glNewList(eMaterialFaceHint, GL_COMPILE);
 	{
 		GLfloat ambient[] = {0.2f, 0.2f, 1.0f, 1.0f};
 		GLfloat diffuse[] = {0.2f, 0.2f, 1.0f, 1.0f};
@@ -394,18 +417,18 @@ bool CMahjonggView::CreateLists(HDC hDC)
 		GLfloat emission[] = {0.0f, 0.0f, 1.0f, 1.0f};
 		GLfloat shininess[] = {0.0f};
 
-		m_pDriver->Material(GL_FRONT, GL_AMBIENT, ambient);
-		m_pDriver->Material(GL_FRONT, GL_DIFFUSE, diffuse);
-		m_pDriver->Material(GL_FRONT, GL_SPECULAR, specular);
-		m_pDriver->Material(GL_FRONT, GL_EMISSION, emission);
-		m_pDriver->Material(GL_FRONT, GL_SHININESS, shininess);
+		glMaterialfv(GL_FRONT, GL_AMBIENT, ambient);
+		glMaterialfv(GL_FRONT, GL_DIFFUSE, diffuse);
+		glMaterialfv(GL_FRONT, GL_SPECULAR, specular);
+		glMaterialfv(GL_FRONT, GL_EMISSION, emission);
+		glMaterialfv(GL_FRONT, GL_SHININESS, shininess);
 	}
 
-	m_pDriver->EndList();
+	glEndList();
 
 	///////////////////////////////////////////////////////////////////////////
 	// list of selected material properties
-	m_pDriver->NewList(eMaterialFaceSelected, GL_COMPILE);
+	glNewList(eMaterialFaceSelected, GL_COMPILE);
 	{
 		GLfloat ambient[] = glRGB(255, 255, 0);
 		GLfloat diffuse[] = glRGB(255, 255, 0);
@@ -413,35 +436,35 @@ bool CMahjonggView::CreateLists(HDC hDC)
 		GLfloat emission[] = glRGB(50, 50, 0);
 		GLfloat shininess[] = {0.5f};
 
-		m_pDriver->Material(GL_FRONT, GL_AMBIENT, ambient);
-		m_pDriver->Material(GL_FRONT, GL_DIFFUSE, diffuse);
-		m_pDriver->Material(GL_FRONT, GL_SPECULAR, specular);
-		m_pDriver->Material(GL_FRONT, GL_EMISSION, emission);
-		m_pDriver->Material(GL_FRONT, GL_SHININESS, shininess);
+		glMaterialfv(GL_FRONT, GL_AMBIENT, ambient);
+		glMaterialfv(GL_FRONT, GL_DIFFUSE, diffuse);
+		glMaterialfv(GL_FRONT, GL_SPECULAR, specular);
+		glMaterialfv(GL_FRONT, GL_EMISSION, emission);
+		glMaterialfv(GL_FRONT, GL_SHININESS, shininess);
 	}
 
-	m_pDriver->EndList();
+	glEndList();
 
 	///////////////////////////////////////////////////////////////////////////
 	// list of material properties
-	m_pDriver->NewList(LIST_BACKGROUND, GL_COMPILE);
+	glNewList(LIST_BACKGROUND, GL_COMPILE);
 	{
-		m_pDriver->Begin(GL_QUADS);
+		glBegin(GL_QUADS);
 		{
-			m_pDriver->TexCoord(0.0f, 0.0f);
-			m_pDriver->Vertex(-1, -1, 1);
-			m_pDriver->TexCoord(1.0f, 0.0f);
-			m_pDriver->Vertex(1, -1, 1);
-			m_pDriver->TexCoord(1.0f, 1.0f);
-			m_pDriver->Vertex(1, 1, 1);
-			m_pDriver->TexCoord(0.0f, 1.0f);
-			m_pDriver->Vertex(-1, 1, 1);
+			glTexCoord2f(0.0f, 0.0f);
+			glVertex3f(-1, -1, 1);
+			glTexCoord2f(1.0f, 0.0f);
+			glVertex3f(1, -1, 1);
+			glTexCoord2f(1.0f, 1.0f);
+			glVertex3f(1, 1, 1);
+			glTexCoord2f(0.0f, 1.0f);
+			glVertex3f(-1, 1, 1);
 		}
 
-		m_pDriver->End();
+		glEnd();
 	}
 
-	m_pDriver->EndList();
+	glEndList();
 
 
 	return true;
@@ -546,29 +569,29 @@ void CMahjonggView::CreateTileTexture(GLuint unTextureName, ATL::CImage& objImag
 	memset(pTextureBits, 0, sizeof(BYTE) * nTexWidth * nTexHeight * 4);
 
 	// scale texture image
-	m_pDriver->ScaleImage(GL_RGBA, 
+	gluScaleImage(GL_RGBA, 
 		nImageWidth, nImageHeight, GL_UNSIGNED_BYTE, pSourceBits, 
 		nTexWidth, nTexHeight, GL_UNSIGNED_BYTE, pTextureBits);
 
 	// create texture
-	m_pDriver->BindTexture(GL_TEXTURE_2D, unTextureName);
+	glBindTexture(GL_TEXTURE_2D, unTextureName);
 
 	if (g_AppSettings.m_bHighQualityTextures)
 	{
-		m_pDriver->TexParameter(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
-		m_pDriver->TexParameter(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_LINEAR);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_LINEAR);
 	}
 	else
 	{
-		m_pDriver->TexParameter(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
-		m_pDriver->TexParameter(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MIN_FILTER, GL_NEAREST);
+		glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_MAG_FILTER, GL_NEAREST);
 	}
 
-	m_pDriver->TexParameter(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_S, GL_CLAMP);
 
-	m_pDriver->TexParameter(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
+	glTexParameteri(GL_TEXTURE_2D, GL_TEXTURE_WRAP_T, GL_CLAMP);
 
-	m_pDriver->TexImage2D(0, GL_RGB, nTexWidth, nTexHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, pTextureBits);
+	glTexImage2D(GL_TEXTURE_2D, 0, GL_RGB, nTexWidth, nTexHeight, 0, GL_RGBA, GL_UNSIGNED_BYTE, pTextureBits);
 
 	// release memory
 	delete [] pTextureBits;
@@ -685,10 +708,10 @@ unsigned int CMahjonggView::CreateListFromModel(GLuint nDisplayList, C3DObject* 
 
 	float fwmin = 0.0f, fwmax = 0.0f, fhmin = 0.0f, fhmax = 0.0f, fdmin = 0.0f, fdmax = 0.0f;
 
-	m_pDriver->NewList(nDisplayList, GL_COMPILE);
+	glNewList(nDisplayList, GL_COMPILE);
 
 	// This determines if we are in wireframe or normal mode
-	m_pDriver->Begin(GL_TRIANGLES);
+	glBegin(GL_TRIANGLES);
 
 	// Go through all of the faces (polygons) of the object and draw them
 
@@ -697,7 +720,7 @@ unsigned int CMahjonggView::CreateListFromModel(GLuint nDisplayList, C3DObject* 
 		//if(!pObject->pFaces[j].bSmooth)
 		if (!g_AppSettings.m_bSmoothTiles)
 		{
-			m_pDriver->Normal(pObject->pFaces[j].vFaceNormal.x,
+			glNormal3f(pObject->pFaces[j].vFaceNormal.x,
 												pObject->pFaces[j].vFaceNormal.y,
 												pObject->pFaces[j].vFaceNormal.z);
 		}
@@ -713,14 +736,14 @@ unsigned int CMahjonggView::CreateListFromModel(GLuint nDisplayList, C3DObject* 
 
 			if (g_AppSettings.m_bSmoothTiles)
 			{
-				m_pDriver->Normal(pObject->pNormals[index].x, pObject->pNormals[index].y, pObject->pNormals[index].z);
+				glNormal3f(pObject->pNormals[index].x, pObject->pNormals[index].y, pObject->pNormals[index].z);
 			}
 
 			if (pObject->pTexVerts)
-				m_pDriver->TexCoord(pObject->pTexVerts[index].x, pObject->pTexVerts[index].y);
+				glTexCoord2f(pObject->pTexVerts[index].x, pObject->pTexVerts[index].y);
 
 			// vertex
-			m_pDriver->Vertex(pObject->pVerts[index].x, pObject->pVerts[index].y, pObject->pVerts[index].z);
+			glVertex3f(pObject->pVerts[index].x, pObject->pVerts[index].y, pObject->pVerts[index].z);
 
 			if (pObject->pVerts[index].x < fwmin)
 				fwmin = pObject->pVerts[index].x;
@@ -749,9 +772,9 @@ unsigned int CMahjonggView::CreateListFromModel(GLuint nDisplayList, C3DObject* 
 	m_fTileHeight = fhmax - fhmin;
 	m_fTileDepth = fdmax - fdmin;
 
-	m_pDriver->End();                // End the drawing
+	glEnd();                // End the drawing
 
-	m_pDriver->EndList();
+	glEndList();
 
 	return uTriangles;
 }
@@ -780,21 +803,21 @@ inline void CMahjonggView::DrawTile(DWORD dwFlags, int nTileImage, GLfloat* pvLa
 	if (g_AppSettings.m_bTexturedSides)
 	{
 		// textured tile sides
-		m_pDriver->Enable(GL_TEXTURE_2D);
-		m_pDriver->BindTexture(GL_TEXTURE_2D, m_arrTileTexNames[0]);
-		m_pDriver->CallList(eMaterialFaceNormal);
+		glEnable(GL_TEXTURE_2D);
+		glBindTexture(GL_TEXTURE_2D, m_arrTileTexNames[0]);
+		glCallList(eMaterialFaceNormal);
 	}
 	else
 	{
 		// plain tile sides
-		m_pDriver->Disable(GL_TEXTURE_2D);
-		m_pDriver->CallList(eMaterialTileTop);
+		glDisable(GL_TEXTURE_2D);
+		glCallList(eMaterialTileTop);
 	}
 
 	if (pvLayer != NULL && g_AppSettings.m_bColoredLayers)
-		m_pDriver->Material(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, pvLayer);
+		glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, pvLayer);
 
-	m_pDriver->CallList(eTileBody);
+	glCallList(eTileBody);
 
 	// draw tile face
 	if ((dwFlags & TF_FACE) == TF_FACE)
@@ -804,20 +827,20 @@ inline void CMahjonggView::DrawTile(DWORD dwFlags, int nTileImage, GLfloat* pvLa
 			if (g_AppSettings.m_bTexturedSides)
 			{
 				//
-				m_pDriver->Enable(GL_TEXTURE_2D);
-				m_pDriver->BindTexture(GL_TEXTURE_2D, m_arrTileTexNames[0]);
-				m_pDriver->CallList(eMaterialFaceNormal);
+				glEnable(GL_TEXTURE_2D);
+				glBindTexture(GL_TEXTURE_2D, m_arrTileTexNames[0]);
+				glCallList(eMaterialFaceNormal);
 			}
 			else
 			{
-				m_pDriver->Disable(GL_TEXTURE_2D);
-				m_pDriver->CallList(eMaterialTileTop);
+				glDisable(GL_TEXTURE_2D);
+				glCallList(eMaterialTileTop);
 			}
 		}
 		else
 		{
-			m_pDriver->Enable(GL_TEXTURE_2D);
-			m_pDriver->BindTexture(GL_TEXTURE_2D, m_arrTileTexNames[nTileImage]);
+			glEnable(GL_TEXTURE_2D);
+			glBindTexture(GL_TEXTURE_2D, m_arrTileTexNames[nTileImage]);
 
 			GLuint uMaterial = eMaterialFaceNormal;
 
@@ -827,12 +850,12 @@ inline void CMahjonggView::DrawTile(DWORD dwFlags, int nTileImage, GLfloat* pvLa
 				uMaterial = eMaterialFaceHint;
 
 			if (uMaterial == eMaterialFaceNormal && pvLayer != NULL && g_AppSettings.m_bColoredLayers)
-				m_pDriver->Material(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, pvLayer);
+				glMaterialfv(GL_FRONT, GL_AMBIENT_AND_DIFFUSE, pvLayer);
 			else
-				m_pDriver->CallList(uMaterial);
+				glCallList(uMaterial);
 		}
 
-		m_pDriver->CallList(eTileNear);
+		glCallList(eTileNear);
 	}
 }
 
@@ -889,4 +912,101 @@ bool CMahjonggView::Deactivate()
 {
 	m_bActive = false;
 	return true;
+}
+
+/**
+ * @brief CreateGLContext
+ *
+ *
+ * 
+ * @return void
+ */
+HGLRC CMahjonggView::CreateGLContext(HDC hDC)
+{
+	PIXELFORMATDESCRIPTOR pfd =
+	{
+		sizeof(PIXELFORMATDESCRIPTOR),	/* size of this pfd */
+		1,				/* version num */
+		PFD_DRAW_TO_WINDOW |		/* support window */
+		PFD_SUPPORT_OPENGL |		/* support OpenGL */
+		PFD_DOUBLEBUFFER,		/* support double buffering */
+		PFD_TYPE_RGBA,			/* RGBA type */
+		24,				/* 8-bit color depth */
+		0, 0, 0, 0, 0, 0,		/* color bits (ignored) */
+		0,				/* no alpha buffer */
+		0,				/* alpha bits (ignored) */
+		0,				/* no accumulation buffer */
+		0, 0, 0, 0,			/* accum bits (ignored) */
+		16,				/* 16-bit depth buffer */
+		0,				/* no stencil buffer */
+		0,				/* no auxiliary buffers */
+		PFD_MAIN_PLANE,			/* main layer */
+		0,				/* reserved */
+		0, 0, 0,			/* no layer, visible, damage masks */
+	};
+
+	int SelectedPixelFormat = ChoosePixelFormat(hDC, &pfd);
+
+	if (SelectedPixelFormat == 0)
+	{
+		_TRACE(_T("OpenGL error: ChoosePixelFormat is failed\r\n"));
+		return NULL;
+	}
+
+	BOOL retVal = SetPixelFormat(hDC, SelectedPixelFormat, &pfd);
+
+	if (retVal != TRUE)
+	{
+		_TRACE(_T("OpenGL error: SetPixelFormat is failed\r\n"));
+		return NULL;
+	}
+
+	HGLRC hRC = wglCreateContext(hDC);
+
+	if (hRC == NULL)
+	{
+		_TRACE(_T("OpenGL error: CreateContext is failed\r\n"));
+		return NULL;
+	}
+
+	wglMakeCurrent(hDC, hRC);
+
+	// extensions
+	CString m_strVendor = GetGLString(GL_VENDOR);
+	CString m_strRenderer = GetGLString(GL_RENDERER);
+	CString m_strVersion = GetGLString(GL_VERSION);
+
+	_TRACE(_T("%s %s %s\r\n"), m_strVendor, m_strRenderer, m_strVersion);
+
+	InitExtensions(hDC);
+
+	return hRC;
+}
+
+/**
+ * @brief InitExtensions
+ *
+ * Initialize OpenGL extensions
+ * 
+ * @param HDC hDC
+ * @return bool
+ */
+bool CMahjonggView::InitExtensions( HDC hDC )
+{
+
+	return false;
+}
+
+CString CMahjonggView::GetGLString(GLenum enName)
+{
+	USES_CONVERSION;
+
+	const char* szResult = (const char*)glGetString(enName);
+
+	if (szResult == NULL)
+	{
+		return _T("");
+	}
+
+	return CString(A2CT(szResult));
 }

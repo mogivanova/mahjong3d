@@ -140,9 +140,13 @@ LRESULT CMainFrame::OnSettingChange(UINT uMsg, WPARAM wParam, LPARAM lParam, BOO
 	return 0;
 }
 
-/*------------------------------------------------------------------------------>8-- Cut here -----
-*
-*/
+/**
+ * @brief FinalConstruct
+ *
+ *
+ * 
+ * @return void
+ */
 void CMainFrame::FinalConstruct()
 {
 	// initialize driver
@@ -170,15 +174,6 @@ void CMainFrame::FinalConstruct()
 		return;
 	}
 
-	if (!m_objDriver.Initialize())
-	{
-		MessageBox(g_LangManager.GetString("error_no_driver"),
-							 g_LangManager.GetString("caption_error"), MB_OK | MB_ICONSTOP);
-	}
-	else
-	{
-		m_objSolitaireView.SetDriver(&m_objDriver);
-
 		BOOL bHandled = FALSE;
 
 		switch (g_AppSettings.m_enmGameMode)
@@ -191,12 +186,19 @@ void CMainFrame::FinalConstruct()
 		default:
 			break;
 		}
-	}
 }
 
-/*------------------------------------------------------------------------------>8-- Cut here -----
-*
-*/
+/**
+ * @brief OnDestroy
+ *
+ *
+ * 
+ * @param UINT uMsg
+ * @param WPARAM wParam
+ * @param LPARAM lParam
+ * @param BOOL & bHandled
+ * @return LRESULT
+ */
 LRESULT CMainFrame::OnDestroy(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& bHandled)
 {
 	HtmlHelp(NULL, NULL, HH_CLOSE_ALL, 0) ;

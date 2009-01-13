@@ -4,7 +4,6 @@
 
 class CMJCryptStream
 {
-
 public:
 	CMJCryptStream();
 
@@ -47,6 +46,6 @@ public:
 protected:
 	CBuffer m_objBuffer;
 
-	DWORD m_dwSize;
+	size_t m_dwSize;
 	LPBYTE m_pCurrent;
 };

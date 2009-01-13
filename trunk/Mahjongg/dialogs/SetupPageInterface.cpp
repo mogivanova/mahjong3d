@@ -37,7 +37,7 @@ LRESULT CSetupPageInterface::OnInitDialog(UINT , WPARAM , LPARAM , BOOL&)
 	else
 	{
 		// store items
-		for (int i = 0; i < m_arrNames.GetSize(); i++)
+		for (DWORD_PTR i = 0; i < m_arrNames.GetSize(); i++)
 		{
 			CString strItem = m_arrLocalNames[i] + " (" + m_arrNames[i] + ")";
 			int nItemIndex = m_ctlLanguages.AddString(strItem);
@@ -45,7 +45,7 @@ LRESULT CSetupPageInterface::OnInitDialog(UINT , WPARAM , LPARAM , BOOL&)
 			m_ctlLanguages.SetItemData(nItemIndex, i);
 		}
 
-		for (int i = 0; i < m_ctlLanguages.GetCount(); i++)
+		for (DWORD_PTR i = 0; i < m_ctlLanguages.GetCount(); i++)
 		{
 			if (m_arrNames[m_ctlLanguages.GetItemData(i)] == g_AppSettings.m_strLanguage)
 				m_ctlLanguages.SetCurSel(i);
